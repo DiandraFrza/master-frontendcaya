@@ -78,7 +78,7 @@
                             <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
                                 <div
                                     class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                                    <img src="../../assets/images/blog/middle/img1.webp" alt=""
+                                    <img src="@/assets/images/blog/middle/img1.webp" alt=""
                                         class="size-full object-cover">
                                 </div>
                                 <div class="relative">
@@ -106,7 +106,7 @@
                             <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
                                 <div
                                     class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                                    <img src="../../assets/images/blog/middle/img2.webp" alt=""
+                                    <img src="@/assets/images/blog/middle/img2.webp" alt=""
                                         class="size-full object-cover">
                                 </div>
                                 <div class="relative">
@@ -134,7 +134,7 @@
                             <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
                                 <div
                                     class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                                    <img src="../../assets/images/blog/middle/img3.webp" alt=""
+                                    <img src="@/assets/images/blog/middle/img3.webp" alt=""
                                         class="size-full object-cover">
                                 </div>
                                 <div class="relative">
@@ -162,7 +162,7 @@
                             <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
                                 <div
                                     class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                                    <img src="../../assets/images/blog/middle/img1.webp" alt=""
+                                    <img src="@/assets/images/blog/middle/img1.webp" alt=""
                                         class="size-full object-cover">
                                 </div>
                                 <div class="relative">
@@ -190,7 +190,7 @@
                             <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
                                 <div
                                     class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                                    <img src="../../assets/images/blog/middle/img2.webp" alt=""
+                                    <img src="@/assets/images/blog/middle/img2.webp" alt=""
                                         class="size-full object-cover">
                                 </div>
                                 <div class="relative">
@@ -218,7 +218,7 @@
                             <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
                                 <div
                                     class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                                    <img src="../../assets/images/blog/middle/img3.webp" alt=""
+                                    <img src="@/assets/images/blog/middle/img3.webp" alt=""
                                         class="size-full object-cover">
                                 </div>
                                 <div class="relative">
@@ -322,7 +322,7 @@
                             <div class="widget-post-bx">
                                 <div class="flex items-center mb-6.25">
                                     <div class="w-22.5 min-w-22.5 h-25 rounded-2xl relative overflow-hidden">
-                                        <img loading="lazy" src="../../assets/images/blog/small/img1.webp" alt="img1"
+                                        <img loading="lazy" src="@/assets/images/blog/small/img1.webp" alt="img1"
                                             width="150" height="150" class="size-full object-cover">
                                     </div>
                                     <div class="relative ml-4">
@@ -338,7 +338,7 @@
                                 </div>
                                 <div class="flex items-center mb-6.25">
                                     <div class="w-22.5 min-w-22.5 h-25 rounded-2xl relative overflow-hidden">
-                                        <img loading="lazy" src="../../assets/images/blog/small/img2.webp" alt="img2"
+                                        <img loading="lazy" src="@/assets/images/blog/small/img2.webp" alt="img2"
                                             width="150" height="150" class="size-full object-cover">
                                     </div>
                                     <div class="relative ml-4">
@@ -354,7 +354,7 @@
                                 </div>
                                 <div class="flex items-center mb-6.25">
                                     <div class="w-22.5 min-w-22.5 h-25 rounded-2xl relative overflow-hidden">
-                                        <img loading="lazy" src="../../assets/images/blog/small/img3.webp" alt="img3"
+                                        <img loading="lazy" src="@/assets/images/blog/small/img3.webp" alt="img3"
                                             width="150" height="150" class="size-full object-cover">
                                     </div>
                                     <div class="relative ml-4">

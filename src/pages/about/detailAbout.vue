@@ -91,8 +91,8 @@ import Keunggulan from './keunggulanAbout.vue';
                 <div class="lg:w-1/2 w-full mb-3.75">
                   <div class="2xxl:-ml-20 2xxl:pr-48.75 xl:pr-33.75 lg:pr-18.75 max-lg:mb-5">
                     <div class="flex items-center relative max-lg:h-130 max-sm:!h-87.5">
-                      <img src="./images/about/img1.webp" alt="" class="size-full object-cover rounded-2xl">
-                      <img src="./images/about/img2.webp" alt=""
+                      <img src="@/assets/images/about/img1.webp" alt="" class="size-full object-cover rounded-2xl">
+                      <img src="@/assets/images/about/img2.webp" alt=""
                         class="xl:-ml-32.5 -ml-25 xl:w-55 w-37.5 xl:h-65 h-45 object-cover rounded-2xl">
                     </div>
                   </div>
@@ -102,7 +102,7 @@ import Keunggulan from './keunggulanAbout.vue';
                     <div class="text-xl font-medium italic text-primary inline-block font-sub-title wow fadeInUp"
                       data-wow-delay="0.2s" data-wow-duration="0.8s">About Us</div>
                     <h2 class="2xxl:text-4xxl lg:text-[38px] sm:text-[32px] text-2xxl capitalize wow fadeInUp"
-                      data-wow-delay="0.2s" data-wow-duration="0.8s">We are specialize in Pediatric Care </h2>
+                      data-wow-delay="0.2s" data-wow-duration="0.8s">Menebar Manfaat melalui Layanan Laboratorium Berkualitas</h2>
                     <p class="xl:text-lg text-base font-light md:mb-12 mb-6 wow fadeInUp" data-wow-delay="0.4s"
                       data-wow-duration="0.8s">Puji syukur kehadirat Allah, Tuhan Yang Maha Esa, karena atas
                       karunia-Nya, Caya Laboratorium Klinik telah hadir untuk mendukung dan memberikan pelayanan
@@ -118,12 +118,12 @@ import Keunggulan from './keunggulanAbout.vue';
                       yang menebarkan kemanfaatan dan kesejahteraan bagi masyarakat Indonesia.</p>
                   </div>
                   <div class="flex flex-wrap items-center wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="0.8s">
-                    <button href="about-us.html" class="btn btn-primary btn-rounded me-6 wow fadeInUp"
+                    <button href="about-us.html" class="btn-primary px-4 py-3 rounded me-6 wow fadeInUp"
                       data-wow-delay="0.6s" data-wow-duration="0.8s">
                       Buat Janji
                       <i class="feather icon-arrow-right ms-2"></i>
                     </button>
-                    <button href="about-us.html" class="btn btn-primary btn-rounded me-6 wow fadeInUp"
+                    <button href="about-us.html" class="btn-primary px-4 py-3 rounded me-6 wow fadeInUp"
                       data-wow-delay="0.6s" data-wow-duration="0.8s">
                       Chat WA
                       <i class="feather icon-arrow-right ms-2"></i>
@@ -133,20 +133,6 @@ import Keunggulan from './keunggulanAbout.vue';
               </div>
             </div>
           </section>
-
-          <div class="relative 2xxl:p-7.5 sm:p-5 p-3.75 bg-[#43A047] overflow-hidden">
-            <ul class="flex items-center flex-nowrap animate-ticker [animation-duration:15s] scroll-skew">
-              <li v-for="(item, index) in items" :key="index"
-                class="text-white 2xxl:text-3xl md:text-2xl sm:text-xl text-base font-normal flex items-center relative capitalize px-4 py-2 wow bounceIn"
-                :data-wow-delay="`${(index % 3) * 0.1 + 0.1}s`" data-wow-duration="0.8s">
-                <span class="whitespace-nowrap">{{ item }}</span>
-                <span v-if="index < items.length - 1"
-                  class="2xxl:size-7.5 md:size-5 sm:size-4.5 size-3.5 2xxl:mx-8 md:mx-6 sm:mx-4 mx-3 bg-starsvg-white bg-center bg-no-repeat bg-size-[100%] flex-shrink-0"></span>
-              </li>
-            </ul>
-          </div>
-          <!-- Stats -->
-          <Stats />
 
           <!-- Timeline / Sejarah -->
           <Timeline />
@@ -162,26 +148,6 @@ import Keunggulan from './keunggulanAbout.vue';
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: 'ScrollingTicker',
-  data() {
-    return {
-      items: [
-        'Standar Syariah',
-        'Hasil Lab Cepat',
-        'MCU Berbasis K3',
-        'Sesuai Standar Syariah',
-        'Hasil Lab Cepat',
-        'MCU Berbasis K3'
-      ]
-    }
-  },
-  mounted() {
-    this.items = [...this.items, ...this.items];
-  }
-}
-</script>
 <style scoped>
 .animate-ticker {
   animation: ticker 15s linear infinite;

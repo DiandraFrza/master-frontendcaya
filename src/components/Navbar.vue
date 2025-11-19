@@ -46,7 +46,7 @@
       <div class="flex-none flex items-center gap-3">
         <!-- Tombol Reservasi - Hanya tampil di desktop -->
         <button @click="onReserve"
-          class="hidden sm:flex group rounded-[3px] px-4 py-1 font-semibold text-sm bg-gradient-to-r from-[#FF7D14] to-[#F94327] outline-4 outline-[#f5751f] shadow-lg hover:scale-[1.05] transition-all duration-300 items-center"
+          class="hidden sm:flex group rounded-[3px] px-4 py-1 font-semibold text-sm bg-linear-to-r from-[#FF7D14] to-[#F94327] outline-4 outline-[#f5751f] shadow-lg hover:scale-[1.05] transition-all duration-300 items-center"
           :style="navBg ? { color: '#000000' } : { color: '#fff' }">
           Reservasi
           <div class="ml-1 group-hover:translate-x-0.5 inline-block transition-transform duration-300 -rotate-90">
