@@ -2,7 +2,7 @@
     <!-- Footer -->
     <div>
         <footer
-            class="bg-cover bg-no-repeat bg-center bg-[#19b469] bg-blend-luminosity text-bodycolor [--color-bodycolor:#BED2E7] [--color-heading:#fff]"
+            class="bg-cover bg-no-repeat bg-center bg-[#f8f8f8] bg-blend-luminosity text-bodycolor [--color-bodycolor:#BED2E7] [--color-heading:#FF7D14]"
             style="background-image: url('/images/background/bg1.webp')"
         >
             <!-- Footer Top -->
@@ -16,12 +16,13 @@
                         >
                             <div class="mb-7.5 me-2">
                                 <h2
-                                    class="relative text-xl sm:mb-5 mb-3.75 font-medium text-white"
+                                    class="relative text-xl sm:mb-5 mb-3.75 font-medium text-[#000]"
                                 >
-                                    Important Updates <br />Waiting for you
+                                <!-- Dapatkan informasi terbaru seputar layanan kesehatan, promo MCU, dan update penting dari Caya Medical Center. Kami kirim langsung ke inbox kamu. -->
+                                    Dapatkan Informasi <br />Terbaru untukmu.
                                 </h2>
-                                <p class="text-2sm leading-[1.7] mb-5">
-                                    Get our latest and best contents right into your inbox
+                                <p class="text-2sm leading-[1.7] mb-5 text-[#424242]">
+                                    seputar layanan kesehatan, promo MCU, dan update penting dari Caya Medical Center.
                                 </p>
                                 <form 
                                     class="dzSubscribe style-1" 
@@ -37,7 +38,7 @@
                                             v-model="email"
                                             required
                                             type="email"
-                                            class="relative flex-1 w-[1%] py-3.75 pl-6.25 pr-15 text-base text-left text-black border border-white bg-white placeholder:text-black rounded-6xl"
+                                            class="relative flex-1 w-[1%] py-3.75 pl-6.25 pr-15 text-base text-left text-white border border-[#FF7D14] bg-[#FF7D14] placeholder:text-white rounded-6xl"
                                             placeholder="Your Email Address"
                                         />
                                         <div
@@ -49,7 +50,7 @@
                                                 :disabled="isSubmitting"
                                             >
                                                 <i
-                                                    class="flaticon-message text-primary"
+                                                    class="flaticon-message text-white"
                                                 ></i>
                                             </button>
                                         </div>
@@ -65,17 +66,17 @@
                             <div class="row">
                                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                                     <div class="mb-7.5 2xl:pl-7.5">
-                                        <h2 class="text-xl mb-5 font-medium text-white">
+                                        <h2 class="text-xl mb-5 font-medium text-[#000]">
                                             Our Services
                                         </h2>
                                         <ul>
                                             <li
                                                 v-for="service in services"
                                                 :key="service.name"
-                                                class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5"
+                                                class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-black"
                                             >
                                                 <a
-                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-white hover:text-white/80"
+                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000] hover:text-[#000]/80"
                                                     :href="service.link"
                                                 >
                                                     <span>{{ service.name }}</span>
@@ -86,7 +87,7 @@
                                 </div>
                                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                                     <div class="mb-7.5 2xl:pl-7.5">
-                                        <h2 class="text-xl mb-5 font-medium text-white">
+                                        <h2 class="text-xl mb-5 font-medium text-[#000]">
                                             Useful Links
                                         </h2>
                                         <ul>
@@ -96,7 +97,7 @@
                                                 class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5"
                                             >
                                                 <a
-                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-white hover:text-white/80"
+                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000]! hover:text-[#000]/80 svg-hitam"
                                                     :href="link.href"
                                                 >
                                                     <span>{{ link.name }}</span>
@@ -107,17 +108,17 @@
                                 </div>
                                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                                     <div class="mb-7.5 2xl:pl-7.5">
-                                        <h2 class="text-xl mb-5 font-medium text-white">
+                                        <h2 class="text-xl mb-5 font-medium text-[#000]">
                                             Our Locations
                                         </h2>
                                         <ul>
                                             <li
                                                 v-for="location in locations"
                                                 :key="location"
-                                                class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5"
+                                                class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-[#000]"
                                             >
                                                 <a
-                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-white hover:text-white/80"
+                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000] hover:text-[#000]/80"
                                                     href="#"
                                                 >
                                                     <span>{{ location }}</span>
@@ -128,17 +129,17 @@
                                 </div>
                                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                                     <div class="mb-7.5 2xl:pl-7.5">
-                                        <h2 class="text-xl mb-5 font-medium text-white">
+                                        <h2 class="text-xl mb-5 font-medium text-[#000]">
                                             Quick Links
                                         </h2>
                                         <ul>
                                             <li
                                                 v-for="quickLink in quickLinks"
                                                 :key="quickLink.name"
-                                                class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5"
+                                                class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-[#000]"
                                             >
                                                 <a
-                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-white hover:text-white/80"
+                                                    class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000] hover:text-[#000]/80"
                                                     :href="quickLink.href"
                                                 >
                                                     <span>{{ quickLink.name }}</span>
@@ -157,7 +158,7 @@
             <!-- Footer Middle -->
             <div class="footer-middle">
                 <div class="container">
-                    <div class="py-6.25 px-10 bg-white/5 rounded-2lg">
+                    <div class="py-6.25 px-10 bg-[#000]/5 rounded-2lg">
                         <div class="row g-3 items-center">
                             <div
                                 class="xl:w-1/4 md:w-full sm:w-1/2 wow fadeInUp"
@@ -165,11 +166,11 @@
                                 data-wow-duration="0.8s"
                             >
                                 <h3
-                                    class="md:text-2xl text-[19px] mb-0.75 text-white"
+                                    class="md:text-2xl text-[19px] mb-0.75 text-[#000]"
                                 >
-                                    Get in Touch with us
+                                    Hubungi kami
                                 </h3>
-                                <p class="mb-0 text-white/80">We're here to help you and your family</p>
+                                <p class="mb-0 text-[#000]/80">Kami siap membantu Anda dan keluarga.</p>
                             </div>
                             <div
                                 class="xl:w-1/4 md:w-1/3 sm:w-1/2 wow fadeInUp"
@@ -178,18 +179,18 @@
                             >
                                 <div class="flex gap-3.75">
                                     <div
-                                        class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-primary text-white"
+                                        class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-[#000]"
                                     >
                                         <span class="icon-cell">
-                                            <i class="feather icon-phone flex"></i>
+                                            <i class="feather icon-phone flex text-white"></i>
                                         </span>
                                     </div>
                                     <div class="overflow-hidden">
-                                        <h5 class="lg:text-lg text-base font-medium text-white mb-1.25">
+                                        <h5 class="lg:text-lg text-base font-medium text-[#000] mb-1.25">
                                             Call Us
                                         </h5>
                                         <p class="text-2sm font-light mb-0">
-                                            <a href="tel:+11234567890" class="text-white/80 hover:text-white">+1 123 456 7890</a>
+                                            <a href="tel:+(021)77829190" class="text-[#000]/80 hover:text-[#000]">+(021) 77829190</a>
                                         </p>
                                     </div>
                                 </div>
@@ -201,18 +202,18 @@
                             >
                                 <div class="flex gap-3.75">
                                     <div
-                                        class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-primary text-white"
+                                        class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-[#000]"
                                     >
                                         <span class="icon-cell">
-                                            <i class="feather icon-mail flex"></i>
+                                            <i class="feather icon-mail flex text-white"></i>
                                         </span>
                                     </div>
                                     <div class="overflow-hidden">
-                                        <h5 class="lg:text-lg text-base font-medium text-white mb-1.25">
+                                        <h5 class="lg:text-lg text-base font-medium text-[#000] mb-1.25">
                                             Send us a Mail
                                         </h5>
                                         <p class="text-2sm font-light mb-0">
-                                            <a href="mailto:info@example.com" class="text-white/80 hover:text-white">info@example.com</a>
+                                            <a href="mailto:info@example.com" class="text-[#000]/80 hover:text-[#000]">info@example.com</a>
                                         </p>
                                     </div>
                                 </div>
@@ -224,18 +225,18 @@
                             >
                                 <div class="flex gap-3.75">
                                     <div
-                                        class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-primary text-white"
+                                        class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-[#000]"
                                     >
                                         <span class="icon-cell">
-                                            <i class="feather icon-clock flex"></i>
+                                            <i class="feather icon-clock flex text-white"></i>
                                         </span>
                                     </div>
                                     <div class="overflow-hidden">
-                                        <h5 class="lg:text-lg text-base font-medium text-white mb-1.25">
+                                        <h5 class="lg:text-lg text-base font-medium text-[#000] mb-1.25">
                                             Opening Time
                                         </h5>
-                                        <p class="text-2sm font-light mb-0 text-white/80">
-                                            Mon - Sat: 7:00 - 17:00
+                                        <p class="text-2sm font-light mb-0 text-[#000]/80">
+                                            Sen - Sab: 6:00 - 21:00
                                         </p>
                                     </div>
                                 </div>
@@ -251,18 +252,11 @@
                     <div class="py-5 text-base">
                         <div class="row">
                             <div class="lg:w-1/2 w-full lg:text-start text-center">
-                                <p class="copyright-text text-white/80">
+                                <p class="copyright-text text-[#000]/80">
                                     © {{ currentYear }}
-                                    <a href="/" class="text-white hover:text-white/80">Your Company</a>
+                                    <a href="/" class="text-[#000] hover:text-[#000]/80">Caya Medical Center</a>
                                     . All Rights Reserved.
                                 </p>
-                            </div>
-                            <div class="lg:w-1/2 w-full lg:text-end text-center">
-                                <img
-                                    src="/src/assets/images/card.webp"
-                                    alt="Payment Methods"
-                                    class="inline-block"
-                                />
                             </div>
                         </div>
                     </div>
@@ -282,11 +276,11 @@ export default {
             isSubmitting: false,
             newsletterMessage: '',
             services: [
-                { name: 'Emergency Care', link: '/services/emergency' },
-                { name: 'Operation Theater', link: '/services/operation' },
-                { name: 'Medical Checkup', link: '/services/checkup' },
-                { name: 'Diagnostic Center', link: '/services/diagnostic' },
-                { name: 'Outdoor Checkup', link: '/services/outdoor' }
+                { name: 'Paket MCU K3', link: '/services/emergency' },
+                { name: 'Screening Jantung', link: '/services/operation' },
+                { name: 'Panel Darah lengkap', link: '/services/checkup' },
+                { name: 'Chest X-Ray', link: '/services/diagnostic' },
+                { name: 'Audiometri', link: '/services/outdoor' }
             ],
             usefulLinks: [
                 { name: 'Privacy Policy', href: '/privacy' },
@@ -296,18 +290,18 @@ export default {
                 { name: 'Our Sitemap', href: '/sitemap' }
             ],
             locations: [
-                'New York',
-                'London SF',
-                'Edinburgh',
-                'Los Angeles',
-                'Las Vegas'
+                'Depok',
+                'Buli',
+                'Jakarta',
+                'Surabaya',
+                'Tanjung Pinang'
             ],
             quickLinks: [
-                { name: 'About Us', href: '/about' },
-                { name: 'Our Services', href: '/services' },
-                { name: 'Our Team', href: '/team' },
-                { name: 'Appointments', href: '/appointment' },
-                { name: 'Contact Us', href: '/contact' }
+                { name: 'Home', href: '/home' },
+                { name: 'About', href: '/about' },
+                { name: 'Medical Check Up', href: '/mcu' },
+                { name: 'Our Clinics', href: '/cabang' },
+                { name: 'Blog', href: '/blog' }
             ]
         }
     },

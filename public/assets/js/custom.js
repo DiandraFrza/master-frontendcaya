@@ -339,3 +339,24 @@ window.addEventListener("load", function () {
 window.addEventListener("resize", function () {
   ClinicMaster.resize();
 });
+
+function initScrollSkew() {
+  const ticker = document.querySelector('.scroll-skew');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > lastScrollY) {
+      // Scroll ke bawah - miring ke kiri
+      ticker.classList.add('scroll-skew-left');
+      ticker.classList.remove('scroll-skew-right');
+    } else {
+      // Scroll ke atas - miring ke kanan
+      ticker.classList.add('scroll-skew-right');
+      ticker.classList.remove('scroll-skew-left');
+    }
+    
+    lastScrollY = currentScrollY;
+  });
+}

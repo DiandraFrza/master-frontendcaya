@@ -1,423 +1,247 @@
+<script setup>
+import { ref } from 'vue'
+
+const services = ref([
+  {
+    id: 1,
+    title: "Paket MCU K3 - Basic",
+    description: "Konsultasi + CBC + Urinalisis + ECG + Chest X-ray + Sertifikat.",
+    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"
+  },
+  {
+    id: 2,
+    title: "Screening Jantung (ECG)",
+    description: "Pemeriksaan cepat non-invasif, interpretasi dokter spesialis.",
+    icon: "M2 12h4l3-9 4 18 3-9h4"
+  },
+  {
+    id: 3,
+    title: "Panel Darah Lengkap (CBC)",
+    description: "Deteksi anemia, infeksi, dan parameter penting darah lainnya.",
+    icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z"
+  },
+  {
+    id: 4,
+    title: "Chest X-Ray",
+    description: "Evaluasi paru dan struktur dada — wajib di banyak paket K3.",
+    icon: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"
+  },
+  {
+    id: 5,
+    title: "Audiometri",
+    description: "Tes pendengaran untuk deteksi gangguan akibat lingkungan kerja.",
+    icon: "M9 19V6l12-3v13"
+  },
+  {
+    id: 6,
+    title: "Konsultasi Dokter & Rekomendasi",
+    description: "Saran medis tertulis dan klasifikasi rekomendasi untuk HR.",
+    icon: "M13 16h-1v-4h-1m1-4h.01"
+  }
+])
+
+const branches = ref([
+  { id: 'depok', title: 'Depok', promo: 'Promo Check-up Korporat - Gratis Konsultasi HR', link: '/branches/depok' },
+  { id: 'buli', title: 'Buli', promo: 'Pemeriksaan Fast-Track untuk pekerja pabrik', link: '/branches/buli' },
+  { id: 'jakarta', title: 'Jakarta', promo: 'Expres Report 24 jam (terbatas)', link: '/branches/jakarta' },
+  { id: 'surabaya', title: 'Surabaya', promo: 'Onsite MCU untuk grup hingga 200 orang', link: '/branches/surabaya' },
+  { id: 'tanjungpinang', title: 'Tanjung Pinang', promo: 'Diskon paket K3 untuk klien baru', link: '/branches/tanjungpinang' }
+])
+
+const walkIn = ref([
+  { branch: 'Depok', services: ['Konsultasi Umum', 'CBC', 'Urinalisis', 'ECG'] },
+  { branch: 'Buli', services: ['Konsultasi Umum', 'Audiometri', 'Chest X-Ray'] },
+  { branch: 'Jakarta', services: ['Screening Jantung', 'CBC', 'Rapid Test'] },
+  { branch: 'Surabaya', services: ['Konsultasi & Rujukan', 'Urinalisis', 'X-Ray'] },
+  { branch: 'Tanjung Pinang', services: ['Konsultasi Umum', 'CBC', 'ECG'] }
+])
+
+const showModal = ref(false)
+const selectedService = ref(null)
+
+const openModal = (service) => {
+  selectedService.value = service
+  showModal.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+const closeModal = () => {
+  showModal.value = false
+  selectedService.value = null
+  document.body.style.overflow = ''
+}
+</script>
+
 <template>
-    <section class="2xxl:py-25 xl:py-17.5 md:py-12.5 sm:py-10 py-7.5 bg-light">
-        <div class="container">
-            <div class="row custom-tab">
-                <div class="xl:w-5/12 lg:w-1/3 w-full lg:mb-0 mb-6">
-                    <div class="sm:mb-7.5 mb-5">
-                        <div class="text-xl font-medium italic text-[#ff7a1f] inline-block font-sub-title wow fadeInUp"
-                            data-wow-delay="0.2s" data-wow-duration="0.8s">
-                            Our Services
-                        </div>
-                        <h2 class="2xxl:text-4xxl lg:text-[38px] sm:text-[32px] text-2xxl capitalize wow fadeInUp">
-                            Caring for Your Child, Every
-                            Step of the Way
-                        </h2>
-                    </div>
-                    <nav>
-                        <div class="lg:pe-12 pe-0 lg:mb-6 mb-4" id="nav-tab" role="tablist">
-                            <button
-                                class="tab-title text-heading xl:text-xl text-base bg-white w-full text-left mb-2 font-normal rounded-10xl xl:py-5 xl:px-7.5 py-3 px-5 leading-none flex justify-between items-center duration-500 [.tab-title.active]:bg-primary [.tab-title.active]:text-white active">
-                                Well Child Check ups
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_1839_4494)">
-                                        <path class="[.tab-title.active_&]:fill-white"
-                                            d="M21.748 10.3917C21.7477 10.3914 21.7475 10.3911 21.7472 10.3909L17.2568 5.92212C16.9204 5.58735 16.3763 5.5886 16.0414 5.92504C15.7066 6.26145 15.7079 6.80556 16.0443 7.14037L19.0591 10.1406H0.859375C0.384742 10.1406 0 10.5254 0 11C0 11.4746 0.384742 11.8594 0.859375 11.8594H19.0591L16.0443 14.8596C15.7079 15.1944 15.7066 15.7385 16.0414 16.0749C16.3763 16.4114 16.9205 16.4126 17.2568 16.0779L21.7472 11.6091C21.7475 11.6089 21.7477 11.6086 21.748 11.6083C22.0846 11.2724 22.0835 10.7265 21.748 10.3917Z"
-                                            fill="#676767" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1839_4494">
-                                            <rect width="22" height="22" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-                            <button
-                                class="tab-title text-heading xl:text-xl text-base bg-white w-full text-left mb-2 font-normal rounded-10xl xl:py-5 xl:px-7.5 py-3 px-5 leading-none flex justify-between items-center duration-500 [.tab-title.active]:bg-primary [.tab-title.active]:text-white">
-                                Growth Monitoring
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_1839_4494)">
-                                        <path class="[.tab-title.active_&]:fill-white"
-                                            d="M21.748 10.3917C21.7477 10.3914 21.7475 10.3911 21.7472 10.3909L17.2568 5.92212C16.9204 5.58735 16.3763 5.5886 16.0414 5.92504C15.7066 6.26145 15.7079 6.80556 16.0443 7.14037L19.0591 10.1406H0.859375C0.384742 10.1406 0 10.5254 0 11C0 11.4746 0.384742 11.8594 0.859375 11.8594H19.0591L16.0443 14.8596C15.7079 15.1944 15.7066 15.7385 16.0414 16.0749C16.3763 16.4114 16.9205 16.4126 17.2568 16.0779L21.7472 11.6091C21.7475 11.6089 21.7477 11.6086 21.748 11.6083C22.0846 11.2724 22.0835 10.7265 21.748 10.3917Z"
-                                            fill="#676767" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1839_4494">
-                                            <rect width="22" height="22" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-                            <button
-                                class="tab-title text-heading xl:text-xl text-base bg-white w-full text-left mb-2 font-normal rounded-10xl xl:py-5 xl:px-7.5 py-3 px-5 leading-none flex justify-between items-center duration-500 [.tab-title.active]:bg-primary [.tab-title.active]:text-white">
-                                Newborn Care
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_1839_4494)">
-                                        <path class="[.tab-title.active_&]:fill-white"
-                                            d="M21.748 10.3917C21.7477 10.3914 21.7475 10.3911 21.7472 10.3909L17.2568 5.92212C16.9204 5.58735 16.3763 5.5886 16.0414 5.92504C15.7066 6.26145 15.7079 6.80556 16.0443 7.14037L19.0591 10.1406H0.859375C0.384742 10.1406 0 10.5254 0 11C0 11.4746 0.384742 11.8594 0.859375 11.8594H19.0591L16.0443 14.8596C15.7079 15.1944 15.7066 15.7385 16.0414 16.0749C16.3763 16.4114 16.9205 16.4126 17.2568 16.0779L21.7472 11.6091C21.7475 11.6089 21.7477 11.6086 21.748 11.6083C22.0846 11.2724 22.0835 10.7265 21.748 10.3917Z"
-                                            fill="#676767" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1839_4494">
-                                            <rect width="22" height="22" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-                        </div>
-                    </nav>
-                    <a href="services.html" class="btn-icon text-primary wow fadeInUp" data-wow-delay="0.6s"
-                        data-wow-duration="0.8s" style="
-                                                visibility: visible;
-                                                animation-duration: 0.8s;
-                                                animation-delay: 0.6s;
-                                                animation-name: fadeInUp;
-                                            ">
-                        View All Services<i class="feather icon-arrow-right ms-2"></i>
-                    </a>
-                </div>
-                <div class="xl:w-7/12 lg:w-4/6 w-full">
-                    <div class="tab-content-area" id="nav-tabContent">
-                        <div class="tab-content">
-                            <div
-                                class="rounded-2xl opacity-100 duration-500 h-full overflow-hidden z-1 flex bg-white w-[inherit] flex-1">
-                                <div
-                                    class="flex 2xl:gap-7.5 md:gap-5 gap-2.5 2xl:p-7.5 p-5 2xl:min-w-187.5 lg:min-w-150 min-w-full max-md:flex-col">
-                                    <div
-                                        class="flex xl:w-75 xl:h-110 xl:min-w-75 md:w-62.5 md:min-w-62.5 md:h-100 sm:h-87.5 h-70 w-full min-w-full relative overflow-hidden">
-                                        <img src="../assets/images/about/img2.webp" alt="/"
-                                            class="size-full object-cover rounded-xxl" />
-                                        <a href="appointment.html"
-                                            class="btn btn-white !absolute 2xl:bottom-5 bottom-2.5 2xl:left-5 left-2.5 2xl:right-5 right-2.5 rounded-lg font-medium justify-center text-primary hover:!bg-primary hover:!border-primary hover:!text-white">
-                                            <i class="feather icon-calendar mr-1.25"></i>
-                                            Book An
-                                            appointment
-                                        </a>
-                                    </div>
-                                    <div class="relative flex flex-col py-3.75 max-md:!pb-0">
-                                        <div class="dz-info-top">
-                                            <h3 class="xl:text-2xl text-xl">
-                                                Well-Child
-                                                Check-ups
-                                            </h3>
-                                            <p class="lg:mb-7.5 mb-3.75 lg:text-lg text-base">
-                                                It is a long
-                                                established
-                                                fact that a
-                                                reader will
-                                                be
-                                                distracted
-                                                by the
-                                                readable
-                                                content of a
-                                                page when
-                                                looking at
-                                                its layout.
-                                            </p>
-                                            <ul class="font-medium mb-7.5">
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Excellent
-                                                    Laporatery
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    World
-                                                    Class
-                                                    Infrastructure
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Health
-                                                    Checkups
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between items-center">
-                                                <div class="flex items-center gap-3">
-                                                    <div class="size-15 min-w-15">
-                                                        <img src="../assets/images/about/img2.webp" alt=""
-                                                            class="size-full object-cover rounded-full" />
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="text-lg mb-0">
-                                                            Nashid
-                                                            Martines
-                                                        </h6>
-                                                        <p class="text-sm font-medium text-primary mb-0">
-                                                            Cardiac
-                                                            Surgery
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <a href="service-detail.html"
-                                                    class="btn btn-square btn-primary !rounded-full 2xl:!size-15 2xl:!min-w-15 !size-11.25 !min-w-11.25 text-2xl">
-                                                    <i class="feather icon-arrow-up-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="container mx-auto px-4 max-w-7xl">
 
-                        <div class="tab-content">
-                            <div
-                                class="rounded-2xl opacity-100 duration-500 h-full overflow-hidden z-1 flex bg-white w-[inherit] flex-1">
-                                <div
-                                    class="flex 2xl:gap-7.5 md:gap-5 gap-2.5 2xl:p-7.5 p-5 2xl:min-w-187.5 lg:min-w-150 min-w-full max-md:flex-col">
-                                    <div
-                                        class="flex xl:w-75 xl:h-110 xl:min-w-75 md:w-62.5 md:min-w-62.5 md:h-100 sm:h-87.5 h-70 w-full min-w-full relative overflow-hidden">
-                                        <img src="../assets/images/services/middle/img2.webp" alt="/"
-                                            class="size-full object-cover rounded-xxl" />
-                                        <a href="appointment.html"
-                                            class="btn btn-white !absolute 2xl:bottom-5 bottom-2.5 2xl:left-5 left-2.5 2xl:right-5 right-2.5 rounded-lg font-medium justify-center text-primary hover:!bg-primary hover:!border-primary hover:!text-white">
-                                            <i class="feather icon-calendar mr-1.25"></i>
-                                            Book An
-                                            appointment
-                                        </a>
-                                    </div>
-                                    <div class="relative flex flex-col py-3.75 max-md:!pb-0">
-                                        <div class="dz-info-top">
-                                            <h3 class="xl:text-2xl text-xl">
-                                                Well-Child
-                                                Check-ups
-                                            </h3>
-                                            <p class="lg:mb-7.5 mb-3.75 lg:text-lg text-base">
-                                                It is a long
-                                                established
-                                                fact that a
-                                                reader will
-                                                be
-                                                distracted
-                                                by the
-                                                readable
-                                                content of a
-                                                page when
-                                                looking at
-                                                its layout.
-                                            </p>
-                                            <ul class="font-medium mb-7.5">
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Excellent
-                                                    Laporatery
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    World
-                                                    Class
-                                                    Infrastructure
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Health
-                                                    Checkups
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between items-center">
-                                                <div class="flex items-center gap-3">
-                                                    <div class="size-15 min-w-15">
-                                                        <img src="../assets/images/about/img3.png" alt=""
-                                                            class="size-full object-cover rounded-full" />
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="text-lg mb-0">
-                                                            Nashid
-                                                            Martines
-                                                        </h6>
-                                                        <p class="text-sm font-medium text-primary mb-0">
-                                                            Cardiac
-                                                            Surgery
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <a href="service-detail.html"
-                                                    class="btn btn-square btn-primary !rounded-full 2xl:!size-15 2xl:!min-w-15 !size-11.25 !min-w-11.25 text-2xl">
-                                                    <i class="feather icon-arrow-up-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+      <div class="text-center max-w-4xl mx-auto mb-12">
+        <span
+          class="inline-block text-sm font-medium text-[#f15840] uppercase tracking-wider mb-4 bg-amber-100 px-3 py-1 rounded-full">
+          Layanan Unggulan MCU K3
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          Pemeriksaan MCU Profesional untuk Perusahaan & Individu
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          Paket sesuai standar K3, hasil rapi untuk kebutuhan HR, dan opsi onsite untuk pemeriksaan massal.
+        </p>
 
-                        <div class="tab-content">
-                            <div
-                                class="rounded-2xl opacity-100 duration-500 h-full overflow-hidden z-1 flex bg-white w-[inherit] flex-1">
-                                <div
-                                    class="flex 2xl:gap-7.5 md:gap-5 gap-2.5 2xl:p-7.5 p-5 2xl:min-w-187.5 lg:min-w-150 min-w-full max-md:flex-col">
-                                    <div
-                                        class="flex xl:w-75 xl:h-110 xl:min-w-75 md:w-62.5 md:min-w-62.5 md:h-100 sm:h-87.5 h-70 w-full min-w-full relative overflow-hidden">
-                                        <img src="../assets/images/services/middle/img3.webp" alt="/"
-                                            class="size-full object-cover rounded-xxl" />
-                                        <a href="appointment.html"
-                                            class="btn btn-white !absolute 2xl:bottom-5 bottom-2.5 2xl:left-5 left-2.5 2xl:right-5 right-2.5 rounded-lg font-medium justify-center text-primary hover:!bg-primary hover:!border-primary hover:!text-white">
-                                            <i class="feather icon-calendar mr-1.25"></i>
-                                            Book An
-                                            appointment
-                                        </a>
-                                    </div>
-                                    <div class="relative flex flex-col py-3.75 max-md:!pb-0">
-                                        <div class="dz-info-top">
-                                            <h3 class="xl:text-2xl text-xl">
-                                                Well-Child
-                                                Check-ups
-                                            </h3>
-                                            <p class="lg:mb-7.5 mb-3.75 lg:text-lg text-base">
-                                                It is a long
-                                                established
-                                                fact that a
-                                                reader will
-                                                be
-                                                distracted
-                                                by the
-                                                readable
-                                                content of a
-                                                page when
-                                                looking at
-                                                its layout.
-                                            </p>
-                                            <ul class="font-medium mb-7.5">
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Excellent
-                                                    Laporatery
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    World
-                                                    Class
-                                                    Infrastructure
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Health
-                                                    Checkups
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between items-center">
-                                                <div class="flex items-center gap-3">
-                                                    <div class="size-15 min-w-15">
-                                                        <img src="../assets/images/avatar/middle/img1.jpg" alt=""
-                                                            class="size-full object-cover rounded-full" />
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="text-lg mb-0">
-                                                            Nashid
-                                                            Martines
-                                                        </h6>
-                                                        <p class="text-sm font-medium text-primary mb-0">
-                                                            Cardiac
-                                                            Surgery
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <a href="service-detail.html"
-                                                    class="btn btn-square btn-primary !rounded-full 2xl:!size-15 2xl:!min-w-15 !size-11.25 !min-w-11.25 text-2xl">
-                                                    <i class="feather icon-arrow-up-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-content">
-                            <div
-                                class="rounded-2xl opacity-100 duration-500 h-full overflow-hidden z-1 flex bg-white w-[inherit] flex-1">
-                                <div
-                                    class="flex 2xl:gap-7.5 md:gap-5 gap-2.5 2xl:p-7.5 p-5 2xl:min-w-187.5 lg:min-w-150 min-w-full max-md:flex-col">
-                                    <div
-                                        class="flex xl:w-75 xl:h-110 xl:min-w-75 md:w-62.5 md:min-w-62.5 md:h-100 sm:h-87.5 h-70 w-full min-w-full relative overflow-hidden">
-                                        <img src="../assets/images/services/middle/img1.webp" alt="/"
-                                            class="size-full object-cover rounded-xxl" />
-                                        <a href="appointment.html"
-                                            class="btn btn-white !absolute 2xl:bottom-5 bottom-2.5 2xl:left-5 left-2.5 2xl:right-5 right-2.5 rounded-lg font-medium justify-center text-primary hover:!bg-primary hover:!border-primary hover:!text-white">
-                                            <i class="feather icon-calendar mr-1.25"></i>
-                                            Book An
-                                            appointment
-                                        </a>
-                                    </div>
-                                    <div class="relative flex flex-col py-3.75 max-md:!pb-0">
-                                        <div class="dz-info-top">
-                                            <h3 class="xl:text-2xl text-xl">
-                                                Well-Child
-                                                Check-ups
-                                            </h3>
-                                            <p class="lg:mb-7.5 mb-3.75 lg:text-lg text-base">
-                                                It is a long
-                                                established
-                                                fact that a
-                                                reader will
-                                                be
-                                                distracted
-                                                by the
-                                                readable
-                                                content of a
-                                                page when
-                                                looking at
-                                                its layout.
-                                            </p>
-                                            <ul class="font-medium mb-7.5">
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Excellent
-                                                    Laporatery
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    World
-                                                    Class
-                                                    Infrastructure
-                                                </li>
-                                                <li
-                                                    class="w-full relative lg:p-1.25 p-1 lg:ps-7.5 ps-6.25 xl:text-base text-2sm before:absolute before:left-0 before:font-black before:bg-circle-check before:size-5 before:bg-contain">
-                                                    Health
-                                                    Checkups
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between items-center">
-                                                <div class="flex items-center gap-3">
-                                                    <div class="size-15 min-w-15">
-                                                        <img src="../assets/images/avatar/middle/img1.jpg" alt=""
-                                                            class="size-full object-cover rounded-full" />
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="text-lg mb-0">
-                                                            Nashid
-                                                            Martines
-                                                        </h6>
-                                                        <p class="text-sm font-medium text-primary mb-0">
-                                                            Cardiac
-                                                            Surgery
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <a href="service-detail.html"
-                                                    class="btn btn-square btn-primary !rounded-full 2xl:!size-15 2xl:!min-w-15 !size-11.25 !min-w-11.25 text-2xl">
-                                                    <i class="feather icon-arrow-up-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="mt-6 flex justify-center gap-3">
+          <a href="/mcu"
+            class="inline-flex items-center gap-3 bg-[#F94327] text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg">
+            Lihat Semua Layanan
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="/appointment" class="inline-flex items-center gap-2 border border-gray-200 px-6 py-3 rounded-full">
+            Booking Sekarang
+          </a>
         </div>
-    </section>
+      </div>
+
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-2xl font-bold text-gray-900">Sebaran Cabang Caya</h3>
+          <p class="text-sm text-gray-500">Pilih cabang untuk lihat promo & layanan tersedia.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <article v-for="branch in branches" :key="branch.id"
+            class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between">
+              <div>
+                <h4 class="font-semibold text-gray-900 text-lg">{{ branch.title }}</h4>
+                <p class="text-sm text-gray-600 mt-2">{{ branch.promo }}</p>
+              </div>
+              <div class="flex flex-col items-end">
+                <span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full mb-2">Promo</span>
+                <a :href="branch.link" class="text-sm text-[#F94327] font-semibold">Lihat Promo →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-2xl font-bold text-gray-900">Layanan Walk-in per Cabang</h3>
+          <p class="text-sm text-gray-500">Layanan yang rutin tersedia di masing-masing cabang.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div v-for="item in walkIn" :key="item.branch"
+            class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg">
+            <h4 class="font-semibold text-gray-900 mb-3">{{ item.branch }}</h4>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li v-for="svc in item.services" :key="svc" class="flex items-center">
+                <span class="w-2 h-2 bg-[#F94327] rounded-full mr-3"></span>
+                {{ svc }}
+              </li>
+            </ul>
+            <div class="mt-4">
+              <a :href="'/branches/' + item.branch.toLowerCase().replace(/ /g, '')"
+                class="text-sm font-semibold text-[#F94327]">Detail Cabang →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <div class="text-center mb-8">
+          <h3 class="text-3xl font-bold text-gray-900 mb-2">Our Medical Services</h3>
+          <p class="text-gray-600 max-w-2xl mx-auto">Ringkasan layanan utama yang sering diminta perusahaan.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article v-for="service in services" :key="service.id"
+            class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all">
+            <div class="flex items-start gap-4">
+              <div
+                class="flex-none w-14 h-14 rounded-xl bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-white flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="service.icon" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold text-gray-900 text-lg mb-2">{{ service.title }}</h4>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">{{ service.description }}</p>
+                <div class="flex gap-3">
+                  <button @click="openModal(service)"
+                    class="bg-[#F94327] text-white px-4 py-2 rounded-lg text-sm font-medium">
+                    Detail
+                  </button>
+                  <a href="/mcu" class="border border-gray-200 px-4 py-2 rounded-lg text-sm">Lihat Paket</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <div class="bg-gradient-to-r from-[#FF7D14] to-[#F94327] rounded-3xl p-8 text-white shadow-xl">
+          <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Butuh Penawaran Khusus Perusahaan?</h3>
+          <p class="text-amber-100 mb-4 text-lg">Kirim kebutuhanmu, tim kami buat paket custom & onsite.</p>
+          <a href="https://wa.me/081290094900"
+            class="inline-flex items-center gap-3 bg-white text-amber-600 px-8 py-3 rounded-xl font-semibold">
+            Konsultasi Gratis via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="showModal"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
+      <div class="bg-white rounded-2xl max-w-md w-full mx-auto p-6 shadow-2xl" @click.stop>
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-gray-900">{{ selectedService?.title }}</h3>
+          <button @click="closeModal" class="text-gray-400 hover:text-gray-600 p-1 rounded-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-gray-600 mb-4">{{ selectedService?.description }}</p>
+
+        <div class="space-y-3">
+          <h4 class="font-semibold text-gray-900">Termasuk (contoh):</h4>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-center"><svg class="w-4 h-4 text-[#F94327] mr-3" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>Interpretasi Dokter</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-[#F94327] mr-3" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>Hasil Digital (PDF)</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-[#F94327] mr-3" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>Sertifikat (jika diperlukan)</li>
+          </ul>
+        </div>
+
+        <div class="mt-6 flex gap-3">
+          <a :href="'/appointment?service=' + encodeURIComponent(selectedService?.title || '')"
+            class="flex-1 bg-gradient-to-r from-[#FF7D14] to-[#F94327] text-white text-center py-3 px-4 rounded-xl font-semibold">
+            Book Sekarang
+          </a>
+          <a href="https://wa.me/081290094900"
+            class="flex-1 border border-[#F94327] text-amber-600 text-center py-3 px-4 rounded-xl font-semibold">
+            Tanya via WA
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
+
+<style scoped>
+.bg-white {
+  transition: all 0.25s ease;
+}
+</style>
