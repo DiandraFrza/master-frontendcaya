@@ -49,17 +49,17 @@
           </div>
 
           <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-            <a href="/about" class="btn btn-rounded text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3 me-0 sm:me-6">
+            <router-link to="/about" class="btn btn-rounded text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3 me-0 sm:me-6">
               Selengkapnya
               <i class="feather icon-arrow-right ms-2"></i>
-            </a>
+            </router-link>
 
-            <a href="/mcu" class="inline-flex items-center gap-2 btn-rounded1 font-semibold text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3">
+            <router-link to="/mcu" class="inline-flex items-center gap-2 btn-rounded1 font-semibold text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
               Lihat Paket MCU
-            </a>
+            </router-link>
           </div>
         </div>
       </div>

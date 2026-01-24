@@ -9,7 +9,7 @@
           <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Produk & Layanan</h1>
           <nav class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
             <ul class="inline-block rounded-5xl lg:py-2.5 py-1.5 lg:px-7.5 px-5 bg-white shadow-breadcrumb">
-              <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><a href="/" class="text-primary">Beranda</a></li>
+              <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><router-link to="/" class="text-primary">Beranda</router-link></li>
               <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading pl-2 relative before:content-['\f101'] before:float-left before:text-heading before:font-bold before:font-['Font_Awesome_5_Free'] before:text-sm before:pr-3 before:top-0.5 before:relative">Produk & Layanan</li>
             </ul>
           </nav>

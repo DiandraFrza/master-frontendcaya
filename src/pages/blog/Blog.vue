@@ -7,7 +7,7 @@
         <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Berita & Edukasi</h1>
         <nav class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
           <ul class="inline-block rounded-5xl lg:py-2.5 py-1.5 lg:px-7.5 px-5 bg-white shadow-breadcrumb">
-            <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><a href="/" class="text-primary">Beranda</a></li>
+            <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><router-link to="/" class="text-primary">Beranda</router-link></li>
             <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading pl-2 relative before:content-['\f101'] before:float-left before:text-heading before:font-bold before:font-['Font_Awesome_5_Free'] before:text-sm before:pr-3 before:top-0.5 before:relative">Berita & Edukasi</li>
           </ul>
         </nav>
@@ -70,9 +70,9 @@
                       <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
                     </ul>
                   </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><a href="/blog">Radiant reflections expert dermatology and skin.</a></h3>
+                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Radiant reflections expert dermatology and skin.</router-link></h3>
                   <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <a href="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </a>
+                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
                 </div>
               </div>
             </div>
@@ -88,9 +88,9 @@
                       <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
                     </ul>
                   </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><a href="/blog">Glow guide your path to perfect skin health</a></h3>
+                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Glow guide your path to perfect skin health</router-link></h3>
                   <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <a href="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </a>
+                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
                 </div>
               </div>
             </div>
@@ -106,9 +106,9 @@
                       <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
                     </ul>
                   </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><a href="/blog">Brilliant skin blog your dermatology care resource</a></h3>
+                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Brilliant skin blog your dermatology care resource</router-link></h3>
                   <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <a href="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </a>
+                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
                 </div>
               </div>
             </div>
@@ -124,9 +124,9 @@
                       <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
                     </ul>
                   </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><a href="/blog">Radiant reflections expert dermatology and skin.</a></h3>
+                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Radiant reflections expert dermatology and skin.</router-link></h3>
                   <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <a href="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </a>
+                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
                 </div>
               </div>
             </div>
@@ -142,9 +142,9 @@
                       <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
                     </ul>
                   </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><a href="/blog">Glow guide your path to perfect skin health</a></h3>
+                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Glow guide your path to perfect skin health</router-link></h3>
                   <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <a href="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </a>
+                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
                 </div>
               </div>
             </div>
@@ -157,18 +157,18 @@
                   <div class="mb-2.5">
                     <ul class="flex flex-wrap items-center gap-1.25">
                       <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
+                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a to="javascript:void(0);">Nashid Martines</a></li>
                     </ul>
                   </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><a href="/blog">Brilliant skin blog your dermatology care resource</a></h3>
+                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Brilliant skin blog your dermatology care resource</router-link></h3>
                   <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <a href="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </a>
+                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
                 </div>
               </div>
             </div>
           </div>
           <div class="text-center mt-7.5 m-lg-t0 wow fadeInUp" data-wow-delay="1.4s" data-wow-duration="0.8s">
-            <a href="javascript:void(0);" class="rounded-full btn-lg btn-icon btn-primary dz-load-more" rel="ajax/blog-grid.html"> Load More <i class="feather icon-refresh-ccw ms-2"></i> </a>
+            <router-link to="javascript:void(0);" class="rounded-full btn-lg btn-icon btn-primary dz-load-more" rel="ajax/blog-grid.html"> Load More <i class="feather icon-refresh-ccw ms-2"></i> </router-link>
           </div>
         </div>
         <div class="xl:w-1/3 lg:w-full">
@@ -223,10 +223,10 @@
                   <div class="relative ml-4">
                     <div class="mb-1">
                       <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><a href="blog-grid.html">03 August 2025</a></li>
+                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="blog-grid.html">03 August 2025</router-link></li>
                       </ul>
                     </div>
-                    <h6 class="font-medium text-base"><a href="/blog">The Art of Managing Business and Patient Care</a></h6>
+                    <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
                   </div>
                 </div>
                 <div class="flex items-center mb-6.25">
@@ -236,10 +236,10 @@
                   <div class="relative ml-4">
                     <div class="mb-1">
                       <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><a href="blog-grid.html">03 August 2025</a></li>
+                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="blog-grid.html">03 August 2025</router-link></li>
                       </ul>
                     </div>
-                    <h6 class="font-medium text-base"><a href="/blog">The Art of Managing Business and Patient Care</a></h6>
+                    <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
                   </div>
                 </div>
                 <div class="flex items-center mb-6.25">
@@ -249,10 +249,10 @@
                   <div class="relative ml-4">
                     <div class="mb-1">
                       <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><a href="blog-grid.html">03 August 2025</a></li>
+                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="blog-grid.html">03 August 2025</router-link></li>
                       </ul>
                     </div>
-                    <h6 class="font-medium text-base"><a href="/blog">The Art of Managing Business and Patient Care</a></h6>
+                    <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
                   </div>
                 </div>
               </div>

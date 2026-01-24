@@ -18,7 +18,7 @@ import Keunggulan from "./keunggulanAbout.vue";
                 <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Tentang Caya</h1>
                 <nav class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
                   <ul class="inline-block rounded-5xl lg:py-2.5 py-1.5 lg:px-7.5 px-5 bg-white shadow-breadcrumb">
-                    <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><a href="/" class="text-primary">Beranda</a></li>
+                    <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><router-link to="/" class="text-primary">Beranda</router-link></li>
                     <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading pl-2 relative before:content-['\f101'] before:float-left before:text-heading before:font-bold before:font-['Font_Awesome_5_Free'] before:text-sm before:pr-3 before:top-0.5 before:relative">Tentang Caya</li>
                   </ul>
                 </nav>
@@ -82,14 +82,14 @@ import Keunggulan from "./keunggulanAbout.vue";
                     <p class="xl:text-lg text-base font-light md:mb-12 mb-6 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">Puji syukur kehadirat Allah, Tuhan Yang Maha Esa, karena atas karunia-Nya, Caya Laboratorium Klinik telah hadir untuk mendukung dan memberikan pelayanan laboratorium kesehatan di Indonesia. Pengembangan usaha terus kami upayakan melalui penerapan sistem manajemen mutu serta teknologi pelayanan berkualitas terbaik. Terima kasih dan penghargaan setinggi-tingginya kami sampaikan kepada masyarakat, para dokter, mitra kerja, dan semua pihak atas dukungan, kepercayaan, dan kerja samanya selama ini. Kami berharap, Caya Laboratorium Klinik dapat menjadi mitra utama dalam pelayanan jasa kesehatan yang menebarkan kemanfaatan dan kesejahteraan bagi masyarakat Indonesia.</p>
                   </div>
                   <div class="flex flex-wrap items-center wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="0.8s">
-                    <a href="https://wa.me/081290094900" class="btn-primary px-4 py-3 rounded me-6 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
+                    <router-link to="https://wa.me/081290094900" class="btn-primary px-4 py-3 rounded me-6 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
                       Buat Janji
                       <i class="feather icon-arrow-right ms-2"></i>
-                    </a>
-                    <a href="https://wa.me/081290094900" class="btn-primary px-4 py-3 rounded me-6 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
+                    </router-link>
+                    <router-link to="https://wa.me/081290094900" class="btn-primary px-4 py-3 rounded me-6 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
                       Chat WA
                       <i class="feather icon-arrow-right ms-2"></i>
-                    </a>
+                    </router-link>
                   </div>
                 </div>
               </div>

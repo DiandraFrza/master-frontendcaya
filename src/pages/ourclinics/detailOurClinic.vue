@@ -9,7 +9,7 @@
           <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Klinik Kami</h1>
           <nav class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
             <ul class="inline-block rounded-5xl lg:py-2.5 py-1.5 lg:px-7.5 px-5 bg-white shadow-breadcrumb">
-              <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><a href="/" class="text-primary">Beranda</a></li>
+              <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><router-link to="/" class="text-primary">Beranda</router-link></li>
               <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading pl-2 relative before:content-['\f101'] before:float-left before:text-heading before:font-bold before:font-['Font_Awesome_5_Free'] before:text-sm before:pr-3 before:top-0.5 before:relative">Klinik Kami</li>
             </ul>
           </nav>
@@ -119,19 +119,19 @@
                 <!-- Action Buttons - Tetap di bawah -->
                 <div class="mt-auto pt-4">
                   <div class="flex gap-3">
-                    <a :href="branch.maps" target="_blank" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 text-center py-2.5 px-4 rounded-lg transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 min-h-[42px]">
+                    <router-link to="branch.maps" target="_blank" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 text-center py-2.5 px-4 rounded-lg transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 min-h-[42px]">
                       <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                       </svg>
                       <span class="truncate">Lihat Peta</span>
-                    </a>
-                    <a :href="waUrl(branch)" target="_blank" class="flex-1 bg-linear-to-r from-[#FF7D14] to-[#ff562c] text-white text-center py-2.5 px-4 rounded-lg hover:scale-[1.02] transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 min-h-[42px]">
+                    </router-link>
+                    <router-link to="waUrl(branch)" target="_blank" class="flex-1 bg-linear-to-r from-[#FF7D14] to-[#ff562c] text-white text-center py-2.5 px-4 rounded-lg hover:scale-[1.02] transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 min-h-[42px]">
                       <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19.05 4.91A9.816 9.816 0 0012.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 012.41 5.83c.02 4.54-3.68 8.23-8.22 8.23z" />
                       </svg>
                       <span class="truncate">WhatsApp</span>
-                    </a>
+                    </router-link>
                   </div>
                 </div>
               </div>

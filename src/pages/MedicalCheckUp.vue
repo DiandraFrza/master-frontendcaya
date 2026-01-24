@@ -83,13 +83,13 @@ const closeModal = () => {
         <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">Paket sesuai standar K3, hasil rapi untuk kebutuhan HR, dan opsi onsite untuk pemeriksaan massal.</p>
 
         <div class="mt-6 flex justify-center gap-3">
-          <a href="/mcu" class="inline-flex items-center gap-3 bg-linear-to-r from-[#FF7D14] to-[#F94327] text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg">
+          <router-link to="/mcu" class="inline-flex items-center gap-3 bg-linear-to-r from-[#FF7D14] to-[#F94327] text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg">
             Lihat Semua Layanan
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
-          </a>
-          <a href="https://wa.me/081290094900" class="inline-flex items-center gap-2 border border-gray-200 px-6 py-3 rounded-full"> Booking Sekarang </a>
+          </router-link>
+          <router-link to="https://wa.me/081290094900" class="inline-flex items-center gap-2 border border-gray-200 px-6 py-3 rounded-full"> Booking Sekarang </router-link>
         </div>
       </div>
 
@@ -162,7 +162,7 @@ const closeModal = () => {
             <div class="mt-auto pt-4">
               <div class="flex gap-3">
                 <button @click="openModal(service)" class="flex-1 bg-linear-to-r from-[#FF7D14] to-[#F94327] text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#e83a20] transition-colors min-h-[42px] flex items-center justify-center">Detail</button>
-                <a href="/mcu" class="flex-1 border border-gray-200 px-4 py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors min-h-[42px] flex items-center justify-center text-center"> Lihat Paket </a>
+                <router-link to="/mcu" class="flex-1 border border-gray-200 px-4 py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors min-h-[42px] flex items-center justify-center text-center"> Lihat Paket </router-link>
               </div>
             </div>
           </article>
@@ -173,7 +173,7 @@ const closeModal = () => {
         <div class="bg-linear-to-r from-[#FF7D14] to-[#F94327] rounded-3xl p-8 text-white shadow-xl">
           <h3 class="text-2xl md:text-3xl font-bold mb-3 text-white">Butuh Penawaran Khusus Perusahaan?</h3>
           <p class="text-amber-100 mb-4 text-lg">Kirim kebutuhanmu, tim kami buat paket custom & onsite.</p>
-          <a href="https://wa.me/081290094900" class="inline-flex items-center gap-3 bg-white text-amber-600 px-8 py-3 rounded-xl font-semibold hover:bg-amber-50 transition-colors"> Konsultasi Gratis via WhatsApp </a>
+          <router-link to="https://wa.me/081290094900" class="inline-flex items-center gap-3 bg-white text-amber-600 px-8 py-3 rounded-xl font-semibold hover:bg-amber-50 transition-colors"> Konsultasi Gratis via WhatsApp </router-link>
         </div>
       </div>
     </div>
@@ -218,7 +218,7 @@ const closeModal = () => {
 
         <div class="mt-6 flex gap-3">
           <a :href="'/appointment?service=' + encodeURIComponent(selectedService?.title || '')" class="flex-1 bg-linear-to-r from-[#FF7D14] to-[#F94327] text-white text-center py-3 px-4 rounded-xl font-semibold hover:shadow-lg transition-all"> Booking Sekarang </a>
-          <a href="https://wa.me/081290094900" class="flex-1 border border-[#F94327] text-amber-600 text-center py-3 px-4 rounded-xl font-semibold hover:bg-amber-50 transition-colors"> Tanya via WA </a>
+          <router-link to="https://wa.me/081290094900" class="flex-1 border border-[#F94327] text-amber-600 text-center py-3 px-4 rounded-xl font-semibold hover:bg-amber-50 transition-colors"> Tanya via WA </router-link>
         </div>
       </div>
     </div>
