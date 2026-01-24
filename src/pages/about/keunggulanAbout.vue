@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <section class="py-16 bg-gradient-to-br from-blue-50 to-white">
     <div class="container mx-auto px-4 max-w-6xl">
@@ -33,7 +35,7 @@
             </svg>
           </div>
           <h3 class="text-lg font-bold text-slate-800 mb-2">Hasil Cepat & Akurat</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Opsi standar 1-3 hari atau ekspres 24 jam dengan jaminan akurasi hasil pemeriksaan.</p>
+          <p class="text-slate-600 text-sm leading-relaxed">Opsi standar 1-3 hari atau ekspres 24 jam dengan jaminan akurasi Klink Kami.</p>
         </div>
 
         <!-- Tim Profesional -->
@@ -124,9 +126,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </summary>
-              <p class="mt-3 text-slate-600 text-sm">
-                Ya, kami menyediakan paket MCU khusus untuk perusahaan dengan opsi onsite/offsite dan laporan terstruktur yang mudah dipahami oleh divisi HR.
-              </p>
+              <p class="mt-3 text-slate-600 text-sm">Ya, kami menyediakan paket MCU khusus untuk perusahaan dengan opsi onsite/offsite dan laporan terstruktur yang mudah dipahami oleh divisi HR.</p>
             </details>
 
             <details class="bg-slate-50 p-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 group">
@@ -136,9 +136,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </summary>
-              <p class="mt-3 text-slate-600 text-sm">
-                Hasil standar tersedia dalam 1-3 hari kerja. Untuk kebutuhan mendesak, kami menyediakan layanan ekspres dengan hasil dalam 24 jam.
-              </p>
+              <p class="mt-3 text-slate-600 text-sm">Hasil standar tersedia dalam 1-3 hari kerja. Untuk kebutuhan mendesak, kami menyediakan layanan ekspres dengan hasil dalam 24 jam.</p>
             </details>
           </div>
 
@@ -151,9 +149,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </summary>
-              <p class="mt-3 text-slate-600 text-sm">
-                Absolutely. Kami menjamin kerahasiaan hasil pemeriksaan dan hanya memberikan akses kepada pihak yang berwenang sesuai persetujuan.
-              </p>
+              <p class="mt-3 text-slate-600 text-sm">Absolutely. Kami menjamin kerahasiaan Klink Kami dan hanya memberikan akses kepada pihak yang berwenang sesuai persetujuan.</p>
             </details>
 
             <details class="bg-slate-50 p-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 group">
@@ -163,9 +159,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </summary>
-              <p class="mt-3 text-slate-600 text-sm">
-                Ya, kami melayani MCU untuk berbagai keperluan termasuk pra-kerja, periodic check-up, dan persyaratan khusus industri.
-              </p>
+              <p class="mt-3 text-slate-600 text-sm">Ya, kami melayani MCU untuk berbagai keperluan termasuk pra-kerja, periodic check-up, dan persyaratan khusus industri.</p>
             </details>
           </div>
         </div>

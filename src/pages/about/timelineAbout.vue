@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <section class="py-16 bg-gradient-to-b from-white to-slate-50">
     <div class="container mx-auto px-4 max-w-5xl">
@@ -16,7 +18,7 @@
       <div class="relative">
         <!-- Vertical Line -->
         <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-200 to-orange-200 transform md:-translate-x-1/2"></div>
-        
+
         <!-- Timeline Items -->
         <div class="space-y-8 md:space-y-12">
           <!-- 2015 - Item 1 -->
@@ -24,15 +26,13 @@
             <!-- Date - Left Side -->
             <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
               <div class="md:mr-8">
-                <span class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full shadow-lg text-lg font-bold">
-                  2015
-                </span>
+                <span class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full shadow-lg text-lg font-bold"> 2015 </span>
               </div>
             </div>
-            
+
             <!-- Connector Dot -->
             <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-orange-500 rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 order-1 md:order-2"></div>
-            
+
             <!-- Content - Right Side -->
             <div class="md:w-1/2 md:pl-12 order-3">
               <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
@@ -62,19 +62,17 @@
                   </div>
                   <h3 class="text-xl font-bold text-slate-800">Ekspansi Layanan</h3>
                 </div>
-                <p class="text-slate-600 leading-relaxed">Melakukan perluasan dengan menambah layanan laboratorium dan radiologi, serta mulai melayani paket Medical Check Up untuk perusahaan.</p>
+                <p class="text-slate-600 leading-relaxed">Melakukan perluasan dengan menambah layanan laboratorium dan radiologi, serta mulai melayani paket Produk & Layanan untuk perusahaan.</p>
               </div>
             </div>
-            
+
             <!-- Connector Dot -->
             <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-orange-500 rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 order-1 md:order-2"></div>
-            
+
             <!-- Date - Right Side -->
             <div class="md:w-1/2 md:pl-12 order-3">
               <div class="md:ml-8">
-                <span class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full shadow-lg text-lg font-bold">
-                  2018
-                </span>
+                <span class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full shadow-lg text-lg font-bold"> 2018 </span>
               </div>
             </div>
           </div>
@@ -84,15 +82,13 @@
             <!-- Date - Left Side -->
             <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1">
               <div class="md:mr-8">
-                <span class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full shadow-lg text-lg font-bold">
-                  2022
-                </span>
+                <span class="inline-flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full shadow-lg text-lg font-bold"> 2022 </span>
               </div>
             </div>
-            
+
             <!-- Connector Dot -->
             <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-orange-500 rounded-full border-4 border-white shadow-lg transform md:-translate-x-1/2 order-1 md:order-2"></div>
-            
+
             <!-- Content - Right Side -->
             <div class="md:w-1/2 md:pl-12 order-3">
               <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
@@ -124,8 +120,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .transition-all {

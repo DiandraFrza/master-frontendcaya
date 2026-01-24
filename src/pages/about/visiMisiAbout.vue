@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
     <div class="container mx-auto px-4 max-w-4xl">
@@ -29,10 +31,10 @@
           </div>
           <div class="p-6">
             <p class="text-slate-600 leading-relaxed text-lg">
-              CAYA bercita-cita memberikan pelayanan pemeriksaan medis yang tersebar di seluruh nusantara. Masing-masing cabang CAYA memiliki standar mutu dan kualitas sama yang berdasar pada 
-              <span class="inline-block bg-orange-50 text-orange-700 px-2 py-1 rounded-md font-medium mx-1">core value (ceria, akurat, yakin, amanah)</span> 
-              dan 
-              <span class="inline-block bg-orange-50 text-orange-700 px-2 py-1 rounded-md font-medium mx-1">core believe</span> 
+              CAYA bercita-cita memberikan pelayanan pemeriksaan medis yang tersebar di seluruh nusantara. Masing-masing cabang CAYA memiliki standar mutu dan kualitas sama yang berdasar pada
+              <span class="inline-block bg-orange-50 text-orange-700 px-2 py-1 rounded-md font-medium mx-1">core value (ceria, akurat, yakin, amanah)</span>
+              dan
+              <span class="inline-block bg-orange-50 text-orange-700 px-2 py-1 rounded-md font-medium mx-1">core believe</span>
               adalah pembelajar yang jujur, terbuka, memelihara kedamaian dan menjaga kekeluargaan yang telah ditentukan.
             </p>
           </div>
@@ -89,14 +91,14 @@
                   <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-0.5 mr-4">
                     <span class="text-sm font-bold text-orange-600">5</span>
                   </div>
-                  <p class="text-slate-600">Konsisten menerapkan sistem manajemen mutu sebagai jaminan pelayanan dan hasil pemeriksaan berkualitas dan terpercaya.</p>
+                  <p class="text-slate-600">Konsisten menerapkan sistem manajemen mutu sebagai jaminan pelayanan dan Klink Kami berkualitas dan terpercaya.</p>
                 </div>
 
                 <div class="flex items-start p-4 bg-slate-50 rounded-lg hover:bg-orange-50 transition-colors duration-200">
                   <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-0.5 mr-4">
                     <span class="text-sm font-bold text-orange-600">6</span>
                   </div>
-                  <p class="text-slate-600">Berperan aktif dalam program peningkatan kesehatan tenaga kerja dengan mengembangkan Medical Check Up berbasis K3.</p>
+                  <p class="text-slate-600">Berperan aktif dalam program peningkatan kesehatan tenaga kerja dengan mengembangkan Produk & Layanan berbasis K3.</p>
                 </div>
               </div>
             </div>
@@ -112,8 +114,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .transition-all {
