@@ -61,7 +61,7 @@ const services = ref([
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <article v-for="item in services" :key="item.id" class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all flex flex-col h-full">
           <div class="flex items-start gap-4 flex-1">
-            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-white flex items-center justify-center">
+            <div class="w-14 h-14 rounded-xl bg-linear-to-br from-[#FF7D14] to-[#F94327] text-white flex items-center justify-center">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.icon" />
               </svg>

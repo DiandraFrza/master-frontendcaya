@@ -11,6 +11,7 @@ const DetailAbout = () => import("../pages/about/detailAbout.vue");
 const DetailMCU = () => import("../pages/mcu/listMCU.vue");
 const DetailOurClinic = () => import("../pages/ourclinics/detailOurClinic.vue");
 const DetailBlog = () => import("../pages/blog/Blog.vue");
+const HasilMCU = () => import("../pages/hasilMCU/HasilMCU.vue");
 
 const routes = [
   { path: "/", name: "Beranda", component: Beranda },
@@ -18,6 +19,7 @@ const routes = [
   { path: "/mcu", name: "DetailMCU", component: DetailMCU },
   { path: "/cabang", name: "DetailOurClinic", component: DetailOurClinic },
   { path: "/blog", name: "DetailBlog", component: DetailBlog },
+  { path: "/hasil-mcu", name: "HasilMCU", component: HasilMCU },
 
   { path: "/hasil-mcu", component: HasilMCU },
 
