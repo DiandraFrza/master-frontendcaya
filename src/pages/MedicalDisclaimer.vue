@@ -6,7 +6,7 @@
 
     <main class="page-content">
       <section class="py-16 bg-white">
-        <div class="container max-w-4xl mx-auto px-4 prose prose-slate max-w-none">
+        <div class="container max-w-4xl mx-auto px-4 prose prose-slate">
           <p>
             Informasi kesehatan yang tersedia di website ini disediakan
             <strong>hanya untuk tujuan informasi</strong>.

@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-  <section class="py-16 bg-gradient-to-b from-white to-slate-50">
+  <section class="py-16 bg-linear-to-b from-white to-slate-50">
     <div class="container mx-auto px-4 max-w-5xl">
       <!-- Header Section -->
       <div class="text-center mb-12">
@@ -17,7 +17,7 @@
       <!-- Timeline -->
       <div class="relative">
         <!-- Vertical Line -->
-        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-200 to-orange-200 transform md:-translate-x-1/2"></div>
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-orange-200 to-orange-200 transform md:-translate-x-1/2"></div>
 
         <!-- Timeline Items -->
         <div class="space-y-8 md:space-y-12">

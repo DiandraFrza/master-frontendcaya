@@ -2,58 +2,7 @@
 
 <template>
   <div>
-    <!-- Hero Section (tetap sama) -->
-    <div class="2xxl:min-h-125 lg:min-h-112.5 md:min-h-100 sm:min-h-87.5 min-h-75 bg-cover bg-center bg-light relative z-1 w-full overflow-hidden pb-7.5 before:absolute before:left-0 before:top-0 before:size-full before:bg-[#07121E] before:opacity-70 after:w-full after:h-[calc(100%_-_80px)] after:absolute after:bottom-0 after:right-0 after:z-0 after:bg-[url(../../src/images/banner/bg.webp)] after:bg-no-repeat after:bg-position-[right_-13px_top] max-lg:after:hidden" style="background-image: url(images/banner/bnr1.webp)">
-      <div class="container relative z-1 h-full table">
-        <div class="table-cell 2xxl:h-125 lg:h-112.5 md:h-100 sm:h-87.5 h-75 align-middle pt-22.5 pb-5 text-center">
-          <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Klinik Kami</h1>
-          <nav class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-            <ul class="inline-block rounded-5xl lg:py-2.5 py-1.5 lg:px-7.5 px-5 bg-white shadow-breadcrumb">
-              <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><router-link to="/" class="text-primary">Beranda</router-link></li>
-              <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading pl-2 relative before:content-['\f101'] before:float-left before:text-heading before:font-bold before:font-['Font_Awesome_5_Free'] before:text-sm before:pr-3 before:top-0.5 before:relative">Klinik Kami</li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="h-full w-20 min-w-20 absolute bottom-0 flex justify-center items-center flex-col py-18.75 px-3.75 left-0 border-r border-white/10 z-1 max-xl:hidden">
-        <ul class="flex gap-7.5 [writing-mode:tb-rl]">
-          <li><a class="text-sm uppercase text-white tracking-[1px]" href="https://www.instagram.com/">Instagram</a></li>
-          <li><a class="text-sm uppercase text-white tracking-[1px]" href="https://www.facebook.com/">Facebook</a></li>
-          <li><a class="text-sm uppercase text-white tracking-[1px]" href="https://x.com/">twitter</a></li>
-        </ul>
-      </div>
-      <div class="absolute bottom-0 right-0 bg-primary size-71.25 rounded-full blur-[120px] opacity-50 max-xl:hidden"></div>
-      <div class="absolute top-[25%] left-0 bg-yellow-400 size-71.25 rounded-full blur-[120px] opacity-40 max-xl:hidden"></div>
-      <div class="absolute z-0 top-[35%] right-[32%] max-md:hidden">
-        <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30.5 0L34.4251 26.5749L61 30.5L34.4251 34.4251L30.5 61L26.5749 34.4251L0 30.5L26.5749 26.5749L30.5 0Z" fill="var(--primary)" />
-        </svg>
-      </div>
-      <div class="absolute z-0 bottom-0 right-[38%] max-md:hidden">
-        <svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g filter="url(#filter0_d_102_123)">
-            <path d="M51 40L52.4156 49.5844L62 51L52.4156 52.4156L51 62L49.5844 52.4156L40 51L49.5844 49.5844L51 40Z" fill="var(--primary)" />
-          </g>
-          <defs>
-            <filter id="filter0_d_102_123" x="0" y="0" width="102" height="102" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-              <feOffset />
-              <feGaussianBlur stdDeviation="20" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_102_123" />
-              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_102_123" result="shape" />
-            </filter>
-          </defs>
-        </svg>
-      </div>
-      <div class="absolute z-0 bottom-[20%] right-[10%] max-md:hidden">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 0L16.9304 13.0696L30 15L16.9304 16.9304L15 30L13.0696 16.9304L0 15L13.0696 13.0696L15 0Z" fill="var(--primary)" />
-        </svg>
-      </div>
-    </div>
+    <LegalHero title="Klinik Kami" />
 
     <!-- Main Content -->
     <main class="page-content">
@@ -90,7 +39,7 @@
               <div class="p-6 flex-1 flex flex-col">
                 <!-- Jam Operasional -->
                 <div class="flex items-start gap-3 mb-4">
-                  <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
                     <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
@@ -103,7 +52,7 @@
 
                 <!-- Telepon -->
                 <div class="flex items-start gap-3 mb-6">
-                  <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center shrink-0">
                     <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                     </svg>
@@ -120,14 +69,14 @@
                 <div class="mt-auto pt-4">
                   <div class="flex gap-3">
                     <router-link to="branch.maps" target="_blank" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 text-center py-2.5 px-4 rounded-lg transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 min-h-[42px]">
-                      <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                       </svg>
                       <span class="truncate">Lihat Peta</span>
                     </router-link>
                     <router-link to="waUrl(branch)" target="_blank" class="flex-1 bg-linear-to-r from-[#FF7D14] to-[#ff562c] text-white text-center py-2.5 px-4 rounded-lg hover:scale-[1.02] transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2 min-h-[42px]">
-                      <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19.05 4.91A9.816 9.816 0 0012.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 012.41 5.83c.02 4.54-3.68 8.23-8.22 8.23z" />
                       </svg>
                       <span class="truncate">WhatsApp</span>

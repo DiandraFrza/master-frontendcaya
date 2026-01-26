@@ -3,7 +3,7 @@
 <template>
   <div class="min-h-screen bg-linear-to-br from-slate-50 to-blue-50">
     <!-- Hero Section (tetap sama) -->
-    <div class="2xxl:min-h-125 lg:min-h-112.5 md:min-h-100 sm:min-h-87.5 min-h-75 bg-cover bg-center bg-light relative z-1 w-full overflow-hidden pb-7.5 before:absolute before:left-0 before:top-0 before:size-full before:bg-[#07121E] before:opacity-70 after:w-full after:h-[calc(100%_-_80px)] after:absolute after:bottom-0 after:right-0 after:z-0 after:bg-[url(../../src/images/banner/bg.webp)] after:bg-no-repeat after:bg-position-[right_-13px_top] max-lg:after:hidden" style="background-image: url(images/banner/bnr1.webp)">
+    <div class="2xxl:min-h-125 lg:min-h-112.5 md:min-h-100 sm:min-h-87.5 min-h-75 bg-cover bg-center bg-light relative z-1 w-full overflow-hidden pb-7.5 before:absolute before:left-0 before:top-0 before:size-full before:bg-[#07121E] before:opacity-70 after:w-full after:h-[calc(100%-80px)] after:absolute after:bottom-0 after:right-0 after:z-0 after:bg-[url(../../src/images/banner/bg.webp)] after:bg-no-repeat after:bg-position-[right_-13px_top] max-lg:after:hidden" style="background-image: url(images/banner/bnr1.webp)">
       <div class="container relative z-1 h-full table">
         <div class="table-cell 2xxl:h-125 lg:h-112.5 md:h-100 sm:h-87.5 h-75 align-middle pt-22.5 pb-5 text-center">
           <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Produk & Layanan</h1>
@@ -116,7 +116,7 @@
 
                   <ul class="space-y-3 mb-6">
                     <li v-for="(t, i) in p.tests" :key="i" class="flex items-start gap-3">
-                      <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <svg class="w-4 h-4 text-green-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <span class="text-sm text-slate-700">{{ t }}</span>
@@ -157,7 +157,7 @@
 
               <div class="space-y-4 mb-8">
                 <div class="flex items-start gap-3">
-                  <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 shrink-0">
                     <svg class="w-3 h-3 text-[#F46700]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                     </svg>
@@ -165,7 +165,7 @@
                   <span class="text-slate-700">Pengambilan sampel darah dan urine di lokasi</span>
                 </div>
                 <div class="flex items-start gap-3">
-                  <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 shrink-0">
                     <svg class="w-3 h-3 text-[#F46700]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                     </svg>
@@ -173,7 +173,7 @@
                   <span class="text-slate-700">Pemeriksaan ECG dan X-ray portable (tersedia)</span>
                 </div>
                 <div class="flex items-start gap-3">
-                  <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 shrink-0">
                     <svg class="w-3 h-3 text-[#F46700]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                     </svg>
@@ -194,7 +194,7 @@
               <h4 class="text-lg font-semibold text-slate-800 mb-6">Keunggulan Layanan Onsite</h4>
               <div class="grid gap-4">
                 <div class="flex items-start gap-4 p-4 bg-white rounded-lg">
-                  <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
                     <svg class="w-5 h-5 text-[#F46700]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
@@ -206,7 +206,7 @@
                 </div>
 
                 <div class="flex items-start gap-4 p-4 bg-white rounded-lg">
-                  <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
                     <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -218,7 +218,7 @@
                 </div>
 
                 <div class="flex items-start gap-4 p-4 bg-white rounded-lg">
-                  <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center shrink-0">
                     <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>

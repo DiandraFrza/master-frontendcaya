@@ -10,23 +10,23 @@
         <div class="hidden md:flex items-center gap-12 font-medium tracking-[0.03em]">
           <router-link to="/" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/')">
             Beranda
-            <span v-if="currentRoute === '/'" class="absolute bottom-[-8px] left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
           </router-link>
           <router-link to="/about" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/about')">
             Tentang Caya
-            <span v-if="currentRoute === '/about'" class="absolute bottom-[-8px] left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/about'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
           </router-link>
           <router-link to="/mcu" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/mcu')">
             Produk & Layanan
-            <span v-if="currentRoute === '/mcu'" class="absolute bottom-[-8px] left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/mcu'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
           </router-link>
           <router-link to="/cabang" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/cabang')">
             Klinik Kami
-            <span v-if="currentRoute === '/cabang'" class="absolute bottom-[-8px] left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/cabang'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
           </router-link>
           <router-link to="/blog" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/cabang')">
             Berita & Edukasi
-            <span v-if="currentRoute === '/blog'" class="absolute bottom-[-8px] left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/blog'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
           </router-link>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <!-- right: actions -->
       <div class="flex-none flex items-center gap-3">
         <!-- Tombol Reservasi - Hanya tampil di desktop -->
-        <button @click="onReserve" class="hidden sm:flex group rounded-[4px] px-3 py-1 font-reguler text-[14px] bg-[#fd543a] shadow-lg hover:scale-[1.05] transition-all duration-300 items-center" :style="navBg ? { color: '#000000' } : { color: '#fff' }">
+        <button @click="onReserve" class="hidden sm:flex group rounded-sm px-3 py-1 font-reguler text-[14px] bg-[#fd543a] shadow-lg hover:scale-[1.05] transition-all duration-300 items-center" :style="navBg ? { color: '#000000' } : { color: '#fff' }">
           Hubungi Kami
           <div class="ml-1 group-hover:translate-x-0.5 inline-block transition-transform duration-300 -rotate-90">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" :style="navBg ? { color: '#000000' } : { color: '#fff' }">

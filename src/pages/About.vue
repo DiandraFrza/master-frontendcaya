@@ -15,7 +15,7 @@
 
         <div class="lg:w-1/2 w-full mb-7.5">
           <div class="sm:mb-7.5 mb-5">
-            <div class="text-sm font-medium italic text-[#F94327] inline-block font-sub-title">Kenapa Pilih Caya?</div>
+            <div class="text-sm font-medium italic text-[#F94327] inline-block font-sub-title">Tentang Caya</div>
 
             <h2 class="2xxl:text-4xxl lg:text-[38px] sm:text-[32px] text-2xxl capitalize sm:leading-tight leading-snug">Klinik Syariah, Profesional & Bersahabat</h2>
 

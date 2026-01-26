@@ -10,10 +10,7 @@
           <div class="row">
             <div class="xl:w-1/4 lg:w-1/2 w-full wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
               <div class="mb-7.5 me-2">
-                <h2 class="relative text-xl sm:mb-5 mb-3.75 font-medium text-[#000]">
-                  <!-- Dapatkan informasi terbaru seputar layanan kesehatan, promo MCU, dan update penting dari Caya Medical Center. Kami kirim langsung ke inbox kamu. -->
-                  Dapatkan Informasi <br />Terbaru untukmu.
-                </h2>
+                <h2 class="relative text-xl sm:mb-5 mb-3.75 font-medium text-black">Dapatkan Informasi <br />Terbaru untukmu.</h2>
                 <p class="text-2sm leading-[1.7] mb-5 text-[#424242]">seputar layanan kesehatan, promo MCU, dan update penting dari Caya Medical Center.</p>
                 <form class="dzSubscribe style-1" @submit.prevent="handleNewsletterSubmit">
                   <div class="dzSubscribeMsg" v-if="newsletterMessage">
@@ -34,10 +31,10 @@
               <div class="row">
                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                   <div class="mb-7.5 2xl:pl-7.5">
-                    <h2 class="text-xl mb-5 font-medium text-[#000]">Layanan Kami</h2>
+                    <h2 class="text-xl mb-5 font-medium text-black">Layanan Kami</h2>
                     <ul>
                       <li v-for="service in services" :key="service.name" class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-black">
-                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000] hover:text-[#000]/80" :href="service.link">
+                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-black hover:text-black/80" :href="service.link">
                           <span>{{ service.name }}</span>
                         </a>
                       </li>
@@ -46,10 +43,10 @@
                 </div>
                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                   <div class="mb-7.5 2xl:pl-7.5">
-                    <h2 class="text-xl mb-5 font-medium text-[#000]">Tautan Berguna</h2>
+                    <h2 class="text-xl mb-5 font-medium text-black">Tautan Berguna</h2>
                     <ul>
                       <li v-for="link in usefulLinks" :key="link.name" class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5">
-                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000]! hover:text-[#000]/80 svg-hitam" :href="link.href">
+                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-black! hover:text-black/80 svg-hitam" :href="link.href">
                           <span>{{ link.name }}</span>
                         </a>
                       </li>
@@ -58,10 +55,10 @@
                 </div>
                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                   <div class="mb-7.5 2xl:pl-7.5">
-                    <h2 class="text-xl mb-5 font-medium text-[#000]">Lokasi Kami</h2>
+                    <h2 class="text-xl mb-5 font-medium text-black">Lokasi Kami</h2>
                     <ul>
-                      <li v-for="location in locations" :key="location" class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-[#000]">
-                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000] hover:text-[#000]/80" href="#">
+                      <li v-for="location in locations" :key="location" class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-black">
+                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-black hover:text-black/80" href="#">
                           <span>{{ location }}</span>
                         </a>
                       </li>
@@ -70,10 +67,10 @@
                 </div>
                 <div class="lg:w-1/4 sm:w-1/2 w-full">
                   <div class="mb-7.5 2xl:pl-7.5">
-                    <h2 class="text-xl mb-5 font-medium text-[#000]">Tautan Cepat</h2>
+                    <h2 class="text-xl mb-5 font-medium text-black">Tautan Cepat</h2>
                     <ul>
-                      <li v-for="quickLink in quickLinks" :key="quickLink.name" class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-[#000]">
-                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-[#000] hover:text-[#000]/80" :href="quickLink.href">
+                      <li v-for="quickLink in quickLinks" :key="quickLink.name" class="relative pl-7 py-2 text-2sm font-medium duration-500 hover:pl-9.5 text-black">
+                        <a class="block relative after:absolute after:bg-arrow-right after:size-4.5 after:bg-contain after:-left-6.5 text-black hover:text-black/80" :href="quickLink.href">
                           <span>{{ quickLink.name }}</span>
                         </a>
                       </li>
@@ -90,52 +87,52 @@
       <!-- Footer Middle -->
       <div class="footer-middle">
         <div class="container">
-          <div class="py-6.25 px-10 bg-[#000]/5 rounded-2lg">
+          <div class="py-6.25 px-10 bg-black/5 rounded-2lg">
             <div class="row g-3 items-center">
               <div class="xl:w-1/4 md:w-full sm:w-1/2 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">
-                <h3 class="md:text-2xl text-[19px] mb-0.75 text-[#000]">Hubungi kami</h3>
-                <p class="mb-0 text-[#000]/80">Kami siap membantu Anda dan keluarga.</p>
+                <h3 class="md:text-2xl text-[19px] mb-0.75 text-black">Hubungi kami</h3>
+                <p class="mb-0 text-black/80">Kami siap membantu Anda dan keluarga.</p>
               </div>
               <div class="xl:w-1/4 md:w-1/3 sm:w-1/2 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
                 <div class="flex gap-3.75">
-                  <div class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-[#000]">
+                  <div class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-linear-to-br from-[#FF7D14] to-[#F94327] text-black">
                     <span class="icon-cell">
                       <i class="feather icon-phone flex text-white"></i>
                     </span>
                   </div>
                   <div class="overflow-hidden">
-                    <h5 class="lg:text-lg text-base font-medium text-[#000] mb-1.25">Hubungi Kami</h5>
+                    <h5 class="lg:text-lg text-base font-medium text-black mb-1.25">Hubungi Kami</h5>
                     <p class="text-2sm font-light mb-0">
-                      <a href="tel:+(021)77829190" class="text-[#000]/80 hover:text-[#000]">+(021) 77829190</a>
+                      <a href="tel:+(021)77829190" class="text-black/80 hover:text-black">+(021) 77829190</a>
                     </p>
                   </div>
                 </div>
               </div>
               <div class="xl:w-1/4 md:w-1/3 sm:w-1/2 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
                 <div class="flex gap-3.75">
-                  <div class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-[#000]">
+                  <div class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-linear-to-br from-[#FF7D14] to-[#F94327] text-black">
                     <span class="icon-cell">
-                      <i class="feather icon-mail flex text-white"></i>
+                      <i class="feather icon-phone flex text-white"></i>
                     </span>
                   </div>
                   <div class="overflow-hidden">
-                    <h5 class="lg:text-lg text-base font-medium text-[#000] mb-1.25">Kirimkan email kepada kami</h5>
+                    <h5 class="lg:text-lg text-base font-medium text-black mb-1.25">Kirimkan email kepada kami</h5>
                     <p class="text-2sm font-light mb-0">
-                      <a href="mailto:info@example.com" class="text-[#000]/80 hover:text-[#000]">info@example.com</a>
+                      <a href="mailto:info@example.com" class="text-black/80 hover:text-black">fo.cayadeopok@gmail.com</a>
                     </p>
                   </div>
                 </div>
               </div>
               <div class="xl:w-1/4 md:w-1/3 sm:w-1/2 wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="0.8s">
                 <div class="flex gap-3.75">
-                  <div class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-gradient-to-br from-[#FF7D14] to-[#F94327] text-[#000]">
+                  <div class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-linear-to-br from-[#FF7D14] to-[#F94327] text-black">
                     <span class="icon-cell">
                       <i class="feather icon-clock flex text-white"></i>
                     </span>
                   </div>
                   <div class="overflow-hidden">
-                    <h5 class="lg:text-lg text-base font-medium text-[#000] mb-1.25">Jam Buka</h5>
-                    <p class="text-2sm font-light mb-0 text-[#000]/80">Sen - Sab: 6:00 - 21:00</p>
+                    <h5 class="lg:text-lg text-base font-medium text-black mb-1.25">Jam Buka</h5>
+                    <p class="text-2sm font-light mb-0 text-black/80">Sen - Jum: 06:00 - 21:00<br />Sabtu: 06:00 - 20:00</p>
                   </div>
                 </div>
               </div>
@@ -150,9 +147,9 @@
           <div class="py-5 text-base">
             <div class="row">
               <div class="lg:w-1/2 w-full lg:text-start text-center">
-                <p class="copyright-text text-[#000]/80">
+                <p class="copyright-text text-black/80">
                   © {{ currentYear }}
-                  <a href="/" class="text-[#000] hover:text-[#000]/80">Caya Medical Center</a>
+                  <a href="/" class="text-black hover:text-black/80">Caya Medical Center</a>
                   . All Rights Reserved.
                 </p>
               </div>
@@ -189,7 +186,7 @@ export default {
       ],
       locations: ["Depok", "Buli", "Jakarta", "Surabaya", "Tanjung Pinang"],
       quickLinks: [
-        { name: "Beranda", href: "/Beranda" },
+        { name: "Beranda", href: "/beranda" },
         { name: "About", href: "/about" },
         { name: "Medical Check Up", href: "/mcu" },
         { name: "Our Clinics", href: "/cabang" },

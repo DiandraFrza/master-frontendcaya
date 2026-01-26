@@ -1,14 +1,20 @@
 <!-- @format -->
-
 <script setup>
-import About from "./About.vue";
-import MedicalCheckUp from "./MedicalCheckUp.vue";
-import InspirasiSehat from "./home/InspirasiSehat.vue";
-import Testimoni from "./home/Testimoni.vue";
-import BeritaEdukasi from "./home/BeritaEdukasi.vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const goToProduk = () => {
+  router.push("/mcu");
+};
+
+const goToHasilMCU = () => {
+  router.push("/hasil-mcu");
+};
 </script>
+
 <template>
-  <div>
+  <section class="hero-wrapper relative overflow-hidden">
     <div class="min-h-screen p-16px bg-cover bg-center relative overflow-hidden" style="background-image: url(/assets/images/background_1x.webp)">
       <div class="container h-full relative z-10 pt-30">
         <div class="h-full">
@@ -44,14 +50,36 @@ import BeritaEdukasi from "./home/BeritaEdukasi.vue";
         </div>
       </div>
     </div>
-    <About />
-    <MedicalCheckUp />
-    <InspirasiSehat />
-    <Testimoni />
-    <BeritaEdukasi />
-  </div>
-</template>
-<!-- oh wait, aku punya ide. bagaimana kalau kita tetap mempertahankan halaman beranda ini, tetapi untuk yang  -->
 
-<div>
-</div>
+    <section class="bg-white -mt-6 pb-8">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 py-6">
+          <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start">
+            <img src="@/assets/images/logo/logo1.png" alt="logo" class="h-6 sm:h-8 opacity-80" />
+            <img src="@/assets/images/logo/logo2.png" alt="logo" class="h-6 sm:h-8 opacity-80" />
+            <img src="@/assets/images/logo/logo2.png" alt="cert" class="h-6 sm:h-8" />
+          </div>
+          <div class="text-center md:text-right">
+            <div class="text-xs sm:text-sm text-gray-600 leading-tight">120+ Perusahaan • Laporan HR-ready (PDF) • Onsite capacity up to 500/orang</div>
+          </div>
+        </div>
+
+        <div class="bg-linear-to-r from-[#FF7D14] to-[#ff562c] rounded-2xl p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 shadow-lg">
+          <div class="text-center md:text-left">
+            <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight sm:leading-snug">Paket MCU K3 untuk Perusahaan — Sertifikat & Laporan HR-Ready</h3>
+            <p class="mt-1 sm:mt-2 opacity-90 text-white text-sm sm:text-base leading-relaxed">Penuhi kewajiban K3 dengan laporan terstruktur, interpretasi dokter, dan opsi onsite untuk pemeriksaan massal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <About />
+    <MedicalCheckUp /> -->
+  </section>
+</template>
+
+<style scoped>
+.hero-wrapper {
+  background: linear-gradient(to bottom, rgba(236, 245, 251, 0.8), #ffffff);
+}
+</style>
