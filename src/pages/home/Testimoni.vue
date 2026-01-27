@@ -8,21 +8,21 @@ const testimonials = ref([
     name: "Ibu Rina A.",
     role: "Pasien MCU Personal",
     quote: "Pelayanannya ramah dan proses pemeriksaannya cepat. Hasilnya juga dijelaskan dengan bahasa yang mudah dipahami.",
-    avatar: "/assets/images/testimoni/pasien-1.webp",
+    avatar: "/assets/avatar/middle/img1.webp",
   },
   {
     id: 2,
     name: "Bapak Andi S.",
     role: "HR Manager Perusahaan",
     quote: "Tim Caya sangat membantu dalam pelaksanaan MCU karyawan. Laporan rapi dan sesuai kebutuhan HR.",
-    avatar: "/assets/images/testimoni/hr-1.webp",
+    avatar: "/assets/avatar/middle/img1.webp",
   },
   {
     id: 3,
     name: "Ibu Siti M.",
     role: "Pasien Home Service",
     quote: "Home service sangat membantu. Petugas datang tepat waktu dan tetap profesional.",
-    avatar: "/assets/images/testimoni/pasien-2.webp",
+    avatar: "/assets/avatar/middle/img1.webp",
   },
 ]);
 </script>

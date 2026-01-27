@@ -11,7 +11,10 @@ const DetailAbout = () => import("../pages/about/detailAbout.vue");
 const DetailMCU = () => import("../pages/mcu/listMCU.vue");
 const DetailOurClinic = () => import("../pages/ourclinics/detailOurClinic.vue");
 const DetailBlog = () => import("../pages/blog/Blog.vue");
-const HasilMCU = () => import("../pages/hasilMCU/HasilMCU.vue");
+
+// Service pages
+const Laboratorium = () => import("../pages/services/Laboratorium.vue");
+const MedicalCheckUp = () => import("../pages/services/MedicalCheckUp.vue");
 
 const routes = [
   { path: "/", name: "Beranda", component: Beranda },
@@ -28,6 +31,13 @@ const routes = [
   { path: "/terms-conditions", component: TermsConditions },
   { path: "/medical-disclaimer", component: MedicalDisclaimer },
   { path: "/cookie-policy", component: CookiePolicy },
+
+  // Dynamic service detail page
+  { path: "/services/:slug", component: () => import("@/pages/services/ServiceDetail.vue") },
+
+  // Service pages
+  // { path: "/services/laboratorium", name: "Laboratorium", component: Laboratorium },
+  // { path: "/services/medical-check-up", name: "MedicalCheckUp", component: MedicalCheckUp },
 
   // 404 - HARUS TERAKHIR
   {

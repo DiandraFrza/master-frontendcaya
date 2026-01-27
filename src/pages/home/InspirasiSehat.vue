@@ -7,7 +7,7 @@ const articles = ref([
     id: 1,
     title: "Cek TSH Neonatus Sejak Dini",
     excerpt: "Pemeriksaan TSH penting untuk mendeteksi gangguan tiroid pada bayi baru lahir.",
-    image: "/assets/images/articles/tsh-neonatus.webp",
+    image: "/assets/blog/middle/img1.webp",
     tag: "Edukasi",
     link: "/blog/cek-tsh-neonatus",
   },
@@ -15,7 +15,7 @@ const articles = ref([
     id: 2,
     title: "Diet Alkali: Mitos atau Fakta?",
     excerpt: "Benarkah diet alkali bisa mencegah kanker? Ini penjelasan medisnya.",
-    image: "/assets/images/articles/diet-alkali.webp",
+    image: "/assets/blog/middle/img1.webp",
     tag: "Mitos & Fakta",
     link: "/blog/diet-alkali",
   },
@@ -23,7 +23,7 @@ const articles = ref([
     id: 3,
     title: "Kontrol Lapar Berlebih",
     excerpt: "Tips sederhana mengontrol rasa lapar agar tetap sehat dan seimbang.",
-    image: "/assets/images/articles/lapar-berlebih.webp",
+    image: "/assets/blog/middle/img1.webp",
     tag: "Tips Sehat",
     link: "/blog/kontrol-lapar",
   },
@@ -52,7 +52,7 @@ const articles = ref([
 
           <!-- Content -->
           <div class="p-6 flex flex-col flex-1">
-            <h4 class="font-semibold text-gray-900 text-lg mb-2 leading-snug">
+            <h4 class="xl:text-xl text-xl">
               {{ item.title }}
             </h4>
             <p class="text-gray-600 text-sm leading-relaxed flex-1">
