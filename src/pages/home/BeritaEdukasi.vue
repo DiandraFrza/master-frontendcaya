@@ -31,7 +31,7 @@ const news = ref([
 </script>
 
 <template>
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-[#ecf5fb]">
     <div class="container mx-auto px-4 max-w-7xl">
       <!-- Header -->
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">

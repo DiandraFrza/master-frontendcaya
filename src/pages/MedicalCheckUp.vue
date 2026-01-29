@@ -49,7 +49,7 @@ const services = ref([
     title: "Laboratorium",
     desc: "Pemeriksaan darah & urin lengkap, profil lemak, fungsi ginjal dan hati, hingga tes khusus.",
     highlights: ["Profil Lemak", "Fungsi Ginjal", "Darah Lengkap"],
-    link: "/services/laboratorium",
+    link: "services/lab",
     icon: "...",
   },
   {
@@ -95,7 +95,7 @@ const services = ref([
 ]);
 </script>
 <template>
-  <section class="py-20 bg-linear-to-br from-gray-50 to-white">
+  <section class="py-20 bg-[#fdfeff]">
     <div class="container mx-auto px-4 max-w-7xl">
       <!-- Header -->
       <div class="text-center mb-10">

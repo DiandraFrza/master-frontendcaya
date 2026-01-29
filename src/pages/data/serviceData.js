@@ -7,7 +7,23 @@ export const serviceData = {
     sections: [
       {
         title: "Pemeriksaan Radiologi",
-        items: ["Thorax", "Dental", "Panoramic", "Cephalometric", "Genu", "Lumbal", "Pedis", "Manus", "Shoulder", "Ankle", "Antebrachi", "Wrist", "Cruris", "Humerus", "Femur"],
+        items: [
+          { name: "Thorax", icon: "fa-lungs" },
+          { name: "Dental", icon: "fa-tooth" },
+          { name: "Panoramic", icon: "fa-image" },
+          { name: "Cephalometric", icon: "fa-head-side-virus" },
+          { name: "Genu", icon: "fa-person" },
+          { name: "Lumbal", icon: "fa-spine" },
+          { name: "Pedis", icon: "fa-shoe-prints" },
+          { name: "Manus", icon: "fa-hand" },
+          { name: "Shoulder", icon: "fa-user" },
+          { name: "Ankle", icon: "fa-person-hiking" },
+          { name: "Antebrachi", icon: "fa-hand" },
+          { name: "Wrist", icon: "fa-hand" },
+          { name: "Cruris", icon: "fa-person" },
+          { name: "Humerus", icon: "fa-bone" },
+          { name: "Femur", icon: "fa-bone" },
+        ],
       },
     ],
     faqs: [
@@ -32,25 +48,46 @@ export const serviceData = {
     sections: [
       {
         title: "Pemeriksaan Darah & Urin",
-        items: ["Darah Lengkap (Hematologi Lengkap)", "Urin Lengkap", "Gula Darah (Puasa / 2 Jam PP / Sewaktu)"],
+        items: [
+          { name: "Darah Lengkap (Hematologi Lengkap)", icon: "fa-droplet" },
+          { name: "Urin Lengkap", icon: "fa-flask" },
+          { name: "Gula Darah (Puasa / 2 Jam PP / Sewaktu)", icon: "fa-chart-line" },
+        ],
       },
       {
         title: "Profil Lemak",
         badge: "Paling Sering",
-        items: ["Kolesterol Total", "HDL", "LDL", "Trigliserida"],
+        items: [
+          { name: "Kolesterol Total", icon: "fa-heart" },
+          { name: "HDL", icon: "fa-check" },
+          { name: "LDL", icon: "fa-triangle-exclamation" },
+          { name: "Trigliserida", icon: "fa-arrow-up" },
+        ],
       },
       {
         title: "Fungsi Ginjal",
         badge: "Paling Sering",
-        items: ["Ureum", "Kreatinin", "Asam Urat"],
+        items: [
+          { name: "Ureum", icon: "fa-dna" },
+          { name: "Kreatinin", icon: "fa-microscope" },
+          { name: "Asam Urat", icon: "fa-flask-vial" },
+        ],
       },
       {
         title: "Fungsi Hati",
-        items: ["SGOT", "SGPT", "Gamma GT"],
+        items: [
+          { name: "SGOT", icon: "fa-liver" },
+          { name: "SGPT", icon: "fa-liver" },
+          { name: "Gamma GT", icon: "fa-liver" },
+        ],
       },
       {
         title: "Tes Khusus",
-        items: ["Widal", "Golongan Darah & Rhesus", "Tes Narkoba"],
+        items: [
+          { name: "Widal", icon: "fa-virus" },
+          { name: "Golongan Darah & Rhesus", icon: "fa-droplet" },
+          { name: "Tes Narkoba", icon: "fa-magnifying-glass" },
+        ],
       },
     ],
     faqs: [
@@ -75,12 +112,20 @@ export const serviceData = {
     sections: [
       {
         title: "Paket MCU Personal",
-        items: ["Silver", "Platinum", "Paket Haji & Umrah"],
+        items: [
+          { name: "Silver", icon: "fa-star" },
+          { name: "Platinum", icon: "fa-gem" },
+          { name: "Paket Haji & Umrah", icon: "fa-mosque" },
+        ],
       },
       {
         title: "Paket MCU Perusahaan & K3",
         badge: "Korporasi",
-        items: ["K3 Dasar", "K3 Standar", "K3 Lengkap"],
+        items: [
+          { name: "K3 Dasar", icon: "fa-building" },
+          { name: "K3 Standar", icon: "fa-clipboard" },
+          { name: "K3 Lengkap", icon: "fa-circle-check" },
+        ],
       },
     ],
     faqs: [

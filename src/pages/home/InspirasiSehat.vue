@@ -31,7 +31,7 @@ const articles = ref([
 </script>
 
 <template>
-  <section class="py-20 bg-[#fff5f2] relative overflow-hidden">
+  <section class="py-20 bg-[#fdfeff] relative overflow-hidden">
     <div class="container mx-auto px-4 max-w-7xl">
       <!-- Header -->
       <div class="text-center mb-12">

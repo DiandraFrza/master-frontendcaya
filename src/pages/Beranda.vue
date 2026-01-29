@@ -51,7 +51,6 @@ import BeritaEdukasi from "./home/BeritaEdukasi.vue";
     <BeritaEdukasi />
   </div>
 </template>
-<!-- oh wait, aku punya ide. bagaimana kalau kita tetap mempertahankan halaman beranda ini, tetapi untuk yang  -->
 
 <div>
 </div>

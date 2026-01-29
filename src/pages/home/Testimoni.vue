@@ -28,7 +28,7 @@ const testimonials = ref([
 </script>
 
 <template>
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-[#ecf5fb]">
     <div class="container mx-auto px-4 max-w-7xl">
       <!-- Header -->
       <div class="text-center mb-12">

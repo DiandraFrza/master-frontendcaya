@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-  <section class="2xl:pt-25 2xl:pb-17.5 md:pt-17.5 md:pb-10 sm:pt-12.5 sm:pb-5 pt-10 pb-5 bg-white">
+  <section class="2xl:pt-25 2xl:pb-17.5 md:pt-17.5 md:pb-10 sm:pt-12.5 sm:pb-5 pt-10 pb-5 bg-[#fff5f2]">
     <div class="container">
       <div class="row content-wrapper style-25 items-center">
         <div class="lg:w-1/2 w-full mb-3.75">

@@ -6,15 +6,18 @@ import MedicalDisclaimer from "@/pages/MedicalDisclaimer.vue";
 import TermsConditions from "@/pages/TermsConditions.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
-const Beranda = () => import("../pages/Beranda.vue");
-const DetailAbout = () => import("../pages/about/detailAbout.vue");
-const DetailMCU = () => import("../pages/mcu/listMCU.vue");
-const DetailOurClinic = () => import("../pages/ourclinics/detailOurClinic.vue");
-const DetailBlog = () => import("../pages/blog/Blog.vue");
+const Beranda = () => import("@/pages/Beranda.vue");
+const DetailAbout = () => import("@/pages/about/detailAbout.vue");
+const DetailMCU = () => import("@/pages/mcu/listMCU.vue");
+const DetailOurClinic = () => import("@/pages/ourclinics/detailOurClinic.vue");
+const DetailBlog = () => import("@/pages/blog/Blog.vue");
 
 // Service pages
-const Laboratorium = () => import("../pages/services/Laboratorium.vue");
-const MedicalCheckUp = () => import("../pages/services/MedicalCheckUp.vue");
+const Laboratorium = () => import("@/pages/services/Laboratorium.vue");
+const Radiologi = () => import("@/pages/services/Radiologi.vue");
+const Elektromedis = () => import("@/pages/services/Elektromedis.vue");
+const HomeService = () => import("@/pages/services/HomeService.vue");
+const Konsultasi = () => import("@/pages/services/Konsultasi.vue");
 
 const routes = [
   { path: "/", name: "Beranda", component: Beranda },
@@ -36,8 +39,11 @@ const routes = [
   { path: "/services/:slug", component: () => import("@/pages/services/ServiceDetail.vue") },
 
   // Service pages
-  // { path: "/services/laboratorium", name: "Laboratorium", component: Laboratorium },
-  // { path: "/services/medical-check-up", name: "MedicalCheckUp", component: MedicalCheckUp },
+  { path: "/services/lab", name: "Laboratorium", component: Laboratorium },
+  { path: "/services/radiologi", name: "Radiologi", component: Radiologi },
+  { path: "/services/elektromedis", name: "Elektromedis", component: Elektromedis },
+  { path: "/services/home-service", name: "HomeService", component: HomeService },
+  { path: "/services/konsultasi", name: "Konsultasi", component: Konsultasi },
 
   // 404 - HARUS TERAKHIR
   {

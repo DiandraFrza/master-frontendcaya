@@ -239,9 +239,7 @@
             <h3 class="text-2xl font-bold text-slate-800 mb-4">Butuh Penawaran Khusus Perusahaan?</h3>
             <p class="text-slate-600 mb-6 max-w-2xl mx-auto">Konsultasikan kebutuhan MCU perusahaan Anda dengan tim kami. Dapatkan penawaran terbaik untuk karyawan Anda.</p>
             <a :href="waLink" class="inline-flex items-center gap-3 bg-linear-to-r from-[#FF7D14] to-[#ff562c] text-white px-8 py-4 rounded-lg hover:scale-[1.05] transition-all duration-300 font-semibold text-lg shadow-sm hover:shadow-md">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.05 4.91A9.816 9.816 0 0012.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 012.41 5.83c.02 4.54-3.68 8.23-8.22 8.23z" />
-              </svg>
+              <i class="fa-brands fa-whatsapp text-lg md:text-xl"></i>
               Konsultasi Gratis untuk Korporat
             </a>
           </div>

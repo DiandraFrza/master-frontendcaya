@@ -111,9 +111,7 @@
               <div class="xl:w-1/4 md:w-1/3 sm:w-1/2 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
                 <div class="flex gap-3.75">
                   <div class="lg:min-w-15 lg:size-15 min-w-12.5 size-12.5 flex items-center lg:text-2xl text-lg justify-center rounded-full bg-linear-to-br from-[#FF7D14] to-[#F94327] text-black">
-                    <span class="icon-cell">
-                      <i class="feather icon-phone flex text-white"></i>
-                    </span>
+                    <i class="feather icon-mail flex text-white"></i>
                   </div>
                   <div class="overflow-hidden">
                     <h5 class="lg:text-lg text-base font-medium text-black mb-1.25">Kirimkan email kepada kami</h5>
