@@ -2,18 +2,29 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { laboratoryExams } from "../data/examinationData.js";
+import { screeningPenyakit } from "../data/examinationData.js";
 import ServiceSidebar from "@/pages/services/ServiceSidebar.vue";
 import ServiceFilter from "@/pages/services/ServiceFilter.vue";
+import { useHead } from "@vueuse/head";
 
-const selectedSubcategory = ref("kimiaDarah");
+const selectedSubcategory = ref("screeningKardiometabolik");
 const searchQuery = ref("");
 
-const currentSubcategory = computed(() => laboratoryExams.subcategories[selectedSubcategory.value]);
+const currentSubcategory = computed(() => screeningPenyakit.subcategories[selectedSubcategory.value]);
 
-const filteredExams = computed(() => {
+const filteredScreenings = computed(() => {
   if (!searchQuery.value) return currentSubcategory.value.items;
-  return currentSubcategory.value.items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  return currentSubcategory.value.items.filter((screening) => screening.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+});
+
+useHead({
+  title: "Screening Penyakit | Caya Klinik",
+  meta: [
+    {
+      name: "description",
+      content: "Layanan Screening Penyakit Caya Klinik untuk deteksi dini berbagai penyakit kronis dan menular dengan pemeriksaan yang komprehensif.",
+    },
+  ],
 });
 </script>
 
@@ -32,32 +43,32 @@ const filteredExams = computed(() => {
           <div class="max-w-3xl">
             <!-- Eyebrow -->
             <div class="inline-flex items-center gap-2 mb-4 text-sm font-medium bg-white/10 px-3 py-1.5 rounded-full backdrop-blur">
-              <i class="fa-solid fa-flask-vial"></i>
-              <span>Laboratorium Klinik</span>
+              <i class="fa-solid fa-stethoscope"></i>
+              <span>Screening Penyakit</span>
             </div>
 
             <!-- Title -->
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              Pemeriksaan Laboratorium<br />
-              <span class="text-orange-200">Akurat & Terpercaya</span>
+              Screening Penyakit<br />
+              <span class="text-orange-200">Deteksi Dini & Pencegahan</span>
             </h1>
 
             <!-- Description -->
-            <p class="text-orange-100 text-base md:text-lg leading-relaxed max-w-2xl">Pemeriksaan darah, urin, dan parameter klinis dengan standar mutu laboratorium terkini untuk hasil yang akurat dan dapat dipercaya.</p>
+            <p class="text-orange-100 text-base md:text-lg leading-relaxed max-w-2xl">Program screening penyakit komprehensif untuk deteksi dini berbagai penyakit kronis dan menular, membantu Anda menjaga kesehatan dengan lebih baik.</p>
 
             <!-- Meta info -->
             <div class="flex flex-wrap items-center gap-6 mt-6 text-sm text-orange-100">
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-clock"></i>
-                <span>Hasil cepat</span>
+                <i class="fa-solid fa-shield-heart"></i>
+                <span>Deteksi dini</span>
               </div>
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-user-doctor"></i>
-                <span>Analis profesional</span>
+                <span>Dokter berpengalaman</span>
               </div>
               <div class="flex items-center gap-2">
-                <i class="fa-solid fa-file-waveform"></i>
-                <span>Hasil digital</span>
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Laporan komprehensif</span>
               </div>
             </div>
           </div>
@@ -79,24 +90,24 @@ const filteredExams = computed(() => {
               <!-- Header -->
               <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
                 <!-- Filter button -->
-                <ServiceFilter v-model="selectedSubcategory" :options="laboratoryExams.subcategories" />
+                <ServiceFilter v-model="selectedSubcategory" :options="screeningPenyakit.subcategories" />
                 <!-- Search -->
                 <div class="relative mt-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan laboratorium..." class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
+                  <input v-model="searchQuery" type="text" placeholder="Cari screening penyakit..." class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
                   <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                 </div>
               </div>
 
-              <!-- Exams Grid -->
-              <div v-if="filteredExams.length > 0" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div v-for="exam in filteredExams" :key="exam.name" class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 p-4 transition-all duration-300 group">
+              <!-- Screenings Grid -->
+              <div v-if="filteredScreenings.length > 0" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div v-for="screening in filteredScreenings" :key="screening.name" class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 p-4 transition-all duration-300 group">
                   <div class="flex items-start gap-3 mb-3">
                     <div class="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center group-hover:scale-110 transition-transform group-hover:bg-orange-100">
-                      <i :class="`fa-solid ${exam.icon} text-orange-600`"></i>
+                      <i :class="`fa-solid ${screening.icon} text-orange-600`"></i>
                     </div>
                     <div class="flex-1">
-                      <h4 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">{{ exam.name }}</h4>
-                      <p class="text-xs text-gray-500 mt-1">{{ exam.result }}</p>
+                      <h4 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">{{ screening.name }}</h4>
+                      <p class="text-xs text-gray-500 mt-1">{{ screening.result }}</p>
                     </div>
                   </div>
                 </div>
@@ -106,20 +117,20 @@ const filteredExams = computed(() => {
               <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6">
                 <h3 class="font-bold text-orange-900 mb-3 flex items-center gap-2">
                   <i class="fa-solid fa-circle-info text-orange-600"></i>
-                  Keunggulan Laboratorium Caya
+                  Keunggulan Program Screening Kami
                 </h3>
                 <ul class="space-y-2 text-sm text-orange-800">
                   <li class="flex items-start gap-2">
                     <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Alat terkalibrasi dan modern</span>
+                    <span>Program screening komprehensif untuk berbagai penyakit</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Tenaga analis profesional dan berpengalaman</span>
+                    <span>Tim medis profesional dengan pengalaman deteksi dini</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Hasil digital berkualitas tinggi dengan interpretasi akurat</span>
+                    <span>Laporan hasil lengkap dengan rekomendasi tindak lanjut</span>
                   </li>
                 </ul>
               </div>

@@ -15,19 +15,6 @@ const filteredExams = computed(() => {
   if (!searchQuery.value) return currentSubcategory.value.items;
   return currentSubcategory.value.items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
 });
-
-function formatPrice(price) {
-  return new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    minimumFractionDigits: 0,
-  }).format(price);
-}
-
-function handleWhatsApp(exam) {
-  const message = encodeURIComponent(`Halo Caya, saya ingin melakukan pemeriksaan ${exam.name} (Rp ${formatPrice(exam.price)})`);
-  window.open(`https://wa.me/081290094900?text=${message}`, "_blank");
-}
 </script>
 
 <template>

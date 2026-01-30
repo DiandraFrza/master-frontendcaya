@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-  <section class="2xl:pt-25 2xl:pb-17.5 md:pt-17.5 md:pb-10 sm:pt-12.5 sm:pb-5 pt-10 pb-5 bg-[#fff5f2]">
+  <section class="2xl:pt-10 2xl:pb-17.5 md:pt-5 md:pb-10 sm:pt-12.5 sm:pb-5 pt-5 pb-5 bg-[#fff5f2]">
     <div class="container">
       <div class="row content-wrapper style-25 items-center">
         <div class="lg:w-1/2 w-full mb-3.75">
@@ -54,7 +54,7 @@
               <i class="feather icon-arrow-right ms-2"></i>
             </router-link>
 
-            <router-link to="/mcu" class="inline-flex items-center gap-2 btn-rounded1 font-semibold text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3">
+            <router-link to="/services/mcu" class="inline-flex items-center gap-2 btn-rounded1 font-semibold text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>

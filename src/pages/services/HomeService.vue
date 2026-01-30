@@ -6,20 +6,69 @@
 <script setup>
 import { ref } from "vue";
 import { homeServices } from "../data/examinationData.js";
-import LegalHero from "../LegalHero.vue";
+import ServiceSidebar from "@/pages/services/ServiceSidebar.vue";
+import ServiceFilter from "@/pages/services/ServiceFilter.vue";
 import ServiceCTA from "../../components/ServiceCTA.vue";
+
+const selectedCategory = ref("pengambilan");
+const searchQuery = ref("");
+
+const homeServiceCategories = {
+  pengambilan: {
+    name: "Pengambilan Sampel",
+    items: homeServices.items.filter((s) => s.name.includes("Pengambilan")),
+  },
+  konsultasi: {
+    name: "Layanan Tambahan",
+    items: homeServices.items.filter((s) => !s.name.includes("Pengambilan")),
+  },
+};
 </script>
 
 <template>
   <div>
-    <LegalHero title="Home Service" />
-
     <main class="page-content">
       <!-- Hero Section -->
-      <section class="bg-linear-to-r from-[#FF7D14] to-[#F94327] text-white py-12">
-        <div class="container mx-auto px-4 max-w-7xl">
-          <h1 class="text-3xl md:text-4xl font-bold mb-4">Layanan Pemeriksaan di Rumah</h1>
-          <p class="text-orange-100 text-lg">Kenyamanan pemeriksaan kesehatan langsung di rumah Anda dengan tenaga medis profesional</p>
+      <section class="relative overflow-hidden bg-linear-to-br from-orange-600 via-orange-500 to-orange-700 text-white">
+        <!-- Decorative background -->
+        <div class="absolute inset-0 opacity-15">
+          <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-1/3 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative container mx-auto px-4 max-w-7xl py-16">
+          <div class="max-w-3xl">
+            <!-- Eyebrow -->
+            <div class="inline-flex items-center gap-2 mb-4 text-sm font-medium bg-white/10 px-3 py-1.5 rounded-full backdrop-blur">
+              <i class="fa-solid fa-house-medical"></i>
+              <span>Home Service</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+              Layanan Pemeriksaan<br />
+              <span class="text-orange-200">di Rumah & Kantor Anda</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-orange-100 text-base md:text-lg leading-relaxed max-w-2xl">Kenyamanan pemeriksaan kesehatan langsung ke rumah atau kantor Anda dengan tenaga medis profesional dan peralatan modern.</p>
+
+            <!-- Meta info -->
+            <div class="flex flex-wrap items-center gap-6 mt-6 text-sm text-orange-100">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-clock"></i>
+                <span>Jadwal fleksibel</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-user-doctor"></i>
+                <span>Tenaga profesional</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-file-waveform"></i>
+                <span>Hasil digital</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -28,49 +77,26 @@ import ServiceCTA from "../../components/ServiceCTA.vue";
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid lg:grid-cols-4 gap-6">
             <!-- Sidebar -->
-            <aside class="lg:col-span-1">
-              <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 sticky top-28">
-                <h3 class="font-bold text-gray-900 mb-4">Menu</h3>
-
-                <!-- Quick Links -->
-                <div class="space-y-2">
-                  <router-link to="/services/lab" class="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors p-2 rounded hover:bg-gray-50">
-                    <i class="fa-solid fa-flask-vial"></i>
-                    <span>Laboratorium Klinik</span>
-                  </router-link>
-                  <router-link to="/services/radiologi" class="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors p-2 rounded hover:bg-gray-50">
-                    <i class="fa-solid fa-x-ray"></i>
-                    <span>Radiologi & Penunjang</span>
-                  </router-link>
-                  <router-link to="/services/elektromedis" class="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors p-2 rounded hover:bg-gray-50">
-                    <i class="fa-solid fa-heart-pulse"></i>
-                    <span>Elektromedis</span>
-                  </router-link>
-                  <router-link to="/mcu" class="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors p-2 rounded hover:bg-gray-50">
-                    <i class="fa-solid fa-stethoscope"></i>
-                    <span>Medical Check Up</span>
-                  </router-link>
-                  <router-link to="/services/konsultasi" class="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-colors p-2 rounded hover:bg-gray-50">
-                    <i class="fa-solid fa-stethoscope"></i>
-                    <span>Konsultasi Dokter</span>
-                  </router-link>
-                </div>
-
-                <!-- Info Card -->
-                <div class="mt-8 pt-6 border-t border-gray-200">
-                  <div class="bg-orange-50 rounded-lg p-4">
-                    <h4 class="font-semibold text-orange-900 mb-2 text-sm">Hubungi Kami</h4>
-                    <a href="https://wa.me/081290094900" class="w-full px-3 py-2 rounded-lg bg-orange-100 hover:bg-orange-200 text-orange-700 font-medium text-sm transition-colors flex items-center justify-center gap-2">
-                      <i class="fa-brands fa-whatsapp"></i>
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </aside>
+            <ServiceSidebar />
 
             <!-- Main Content -->
             <div class="lg:col-span-3">
+              <button @click="$router.back()" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 mb-6">
+                <i class="fa-solid fa-arrow-left"></i>
+                Kembali ke halaman sebelumnya
+              </button>
+
+              <!-- Header with Filter -->
+              <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+                <!-- Filter button -->
+                <ServiceFilter v-model="selectedCategory" :options="homeServiceCategories" />
+                <!-- Search -->
+                <div class="relative mt-4">
+                  <input v-model="searchQuery" type="text" placeholder="Cari layanan home service..." class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
+                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+              </div>
+
               <!-- Info Cards -->
               <div class="grid md:grid-cols-3 gap-6 mb-12">
                 <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -99,14 +125,21 @@ import ServiceCTA from "../../components/ServiceCTA.vue";
               </div>
 
               <!-- Services Grid -->
-              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div v-for="service in homeServices.items" :key="service.name" class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 p-4 transition-all duration-300 group">
-                  <div class="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform group-hover:bg-orange-100">
-                    <i :class="`fa-solid ${service.icon} text-orange-600 text-lg`"></i>
+                  <div class="flex items-start gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center group-hover:scale-110 transition-transform group-hover:bg-orange-100">
+                      <i :class="`fa-solid ${service.icon} text-orange-600`"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
+                        {{ service.name }}
+                      </h4>
+                      <p class="text-xs text-gray-600 mt-1">
+                        {{ service.desc }}
+                      </p>
+                    </div>
                   </div>
-
-                  <h3 class="font-bold text-gray-900 mb-2 text-lg">{{ service.name }}</h3>
-                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">{{ service.desc }}</p>
                 </div>
               </div>
 
@@ -149,7 +182,27 @@ import ServiceCTA from "../../components/ServiceCTA.vue";
                 </div>
               </div>
 
-              <!-- ...existing FAQ... -->
+              <!-- Info Box -->
+              <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6">
+                <h3 class="font-bold text-orange-900 mb-3 flex items-center gap-2">
+                  <i class="fa-solid fa-circle-info text-orange-600"></i>
+                  Keunggulan Home Service Caya
+                </h3>
+                <ul class="space-y-2 text-sm text-orange-800">
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-600 mt-0.5">✓</span>
+                    <span>Peralatan medis portable terkalibrasi</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-600 mt-0.5">✓</span>
+                    <span>Tenaga medis profesional dan terlatih</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-600 mt-0.5">✓</span>
+                    <span>Privasi dan kenyamanan terjamin di rumah Anda</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ const route = useRoute();
 const services = [
   { label: "Laboratorium Klinik", to: "/services/lab", icon: "fa-flask-vial" },
   { label: "Radiologi & Penunjang", to: "/services/radiologi", icon: "fa-x-ray" },
-  { label: "Medical Check Up", to: "/services/medical-check-up", icon: "fa-stethoscope" },
+  { label: "Medical Check Up", to: "/services/mcu", icon: "fa-stethoscope" },
   { label: "Screening Penyakit", to: "/services/screening", icon: "fa-heart-pulse" },
   { label: "Konsultasi Dokter", to: "/services/konsultasi", icon: "fa-user-doctor" },
   { label: "Elektromedis", to: "/services/elektromedis", icon: "fa-heartbeat" },

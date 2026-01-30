@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const goToProduk = () => {
-  router.push("/mcu");
+  router.push("/services/mcu");
 };
 
 const goToHasilMCU = () => {

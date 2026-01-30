@@ -6,19 +6,21 @@
         <img src="/assets/images/Logo-CMC.png" alt="Caya Text" class="h-9 sm:block object-contain nav-img" />
       </div>
       <div class="flex-1 flex justify-center">
+        <!-- Ganti bagian ini di template -->
         <div class="hidden md:flex items-center gap-12 font-medium tracking-[0.03em]">
-          <router-link to="/" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/')">
+          <router-link to="/" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/')" :style="navBg ? {} : { color: '#000' }">
             Beranda
-            <span v-if="currentRoute === '/'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
-          <router-link to="/about" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/about')">
+
+          <router-link to="/about" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/about')" :style="navBg ? {} : { color: '#000' }">
             Tentang Caya
-            <span v-if="currentRoute === '/about'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/about'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
 
           <!-- Produk & Layanan (modern dropdown) -->
           <div class="relative" ref="layananRef" @mouseenter="openLayanan" @mouseleave="startCloseLayanan">
-            <button @click="toggleLayanan" class="nav-link flex items-center gap-2 px-3 py-2 rounded-md transition" :class="getNavLinkClass('/services')" :aria-expanded="layananOpen.toString()">
+            <button @click="toggleLayanan" class="nav-link flex items-center gap-2 px-3 py-2 rounded-md transition" :class="getNavLinkClass('/services')" :style="navBg ? {} : { color: '#000' }" :aria-expanded="layananOpen.toString()">
               Produk & Layanan
               <svg class="w-4 h-4 transition-transform duration-200" :class="{ 'rotate-180': layananOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -29,13 +31,13 @@
               <div v-if="layananOpen" class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[420px] rounded-2xl bg-white shadow-lg border border-gray-100 p-4 grid grid-cols-2 gap-4 z-50" @mouseenter="clearCloseTimeout" @mouseleave="startCloseLayanan" role="menu" aria-label="Produk dan Layanan">
                 <div v-for="group in layananMenu" :key="group.title" class="space-y-2">
                   <h4 class="font-semibold text-gray-900 text-sm flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#FF7D14]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#fd543a]"></span>
                     {{ group.title }}
                   </h4>
 
                   <ul class="space-y-1">
                     <li v-for="item in group.items" :key="item.to">
-                      <router-link :to="item.to" class="flex items-center justify-between text-sm text-gray-600 hover:text-[#FF7D14] p-2 rounded-md hover:bg-gray-50 transition" role="menuitem" @click="layananOpen = false">
+                      <router-link :to="item.to" class="flex items-center justify-between text-sm text-gray-600 hover:text-[#fd543a] p-2 rounded-md hover:bg-gray-50 transition" role="menuitem" @click="layananOpen = false">
                         <span class="truncate">{{ item.label }}</span>
                         <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -48,13 +50,14 @@
             </transition>
           </div>
 
-          <router-link to="/cabang" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/cabang')">
+          <router-link to="/cabang" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/cabang')" :style="navBg ? {} : { color: '#000' }">
             Klinik Kami
-            <span v-if="currentRoute === '/cabang'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/cabang'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
-          <router-link to="/blog" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/cabang')">
+
+          <router-link to="/blog" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/blog')" :style="navBg ? {} : { color: '#000' }">
             Berita & Edukasi
-            <span v-if="currentRoute === '/blog'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#FF7D14] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/blog'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
         </div>
       </div>
@@ -89,11 +92,11 @@
         <div class="px-4 py-4 space-y-2">
           <router-link to="/" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/')">
             Beranda
-            <span v-if="currentRoute === '/'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#FF7D14] rounded-full"></span>
+            <span v-if="currentRoute === '/'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
           <router-link to="/about" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/about')">
             About
-            <span v-if="currentRoute === '/about'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#FF7D14] rounded-full"></span>
+            <span v-if="currentRoute === '/about'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
           <div>
             <button @click="mobileLayananOpen = !mobileLayananOpen" class="w-full flex items-center justify-between py-2 font-medium text-[#111]">
@@ -109,7 +112,7 @@
                   {{ group.title }}
                 </p>
 
-                <router-link v-for="item in group.items" :key="item.to" :to="item.to" @click="closeMobile" class="block py-1 text-sm text-gray-700 hover:text-[#FF7D14]">
+                <router-link v-for="item in group.items" :key="item.to" :to="item.to" @click="closeMobile" class="block py-1 text-sm text-gray-700 hover:text-[#fd543a]">
                   {{ item.label }}
                 </router-link>
               </div>
@@ -118,17 +121,17 @@
 
           <router-link to="/cabang" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/cabang')">
             Our Clinics
-            <span v-if="currentRoute === '/cabang'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#FF7D14] rounded-full"></span>
+            <span v-if="currentRoute === '/cabang'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
 
           <a @click="closeMobile" href="#blog" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('blog')">
             Blog
-            <span v-if="activeSection === 'blog'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#FF7D14] rounded-full"></span>
+            <span v-if="activeSection === 'blog'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </a>
 
           <!-- Tombol Reservasi di Mobile Menu -->
           <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
-            <button class="w-full px-4 py-2 bg-[#FF7D14] text-black rounded font-semibold hover:bg-[#e67931] transition-colors duration-300">Reservasi</button>
+            <button class="w-full px-4 py-2 bg-[#fd543a] text-black rounded font-semibold hover:bg-[#e67931] transition-colors duration-300">Reservasi</button>
           </div>
         </div>
       </div>
@@ -164,7 +167,7 @@ const layananMenu = [
     title: "Tes Non Laboratorium",
     icon: "nonlab",
     items: [
-      { label: "Medical Check Up", to: "/services/medical-check-up" },
+      { label: "Medical Check Up", to: "/services/mcu" },
       { label: "Radiologi & Penunjang", to: "/services/radiologi" },
     ],
   },
@@ -235,15 +238,15 @@ function closeMobile() {
 
 // Fungsi untuk mendapatkan class nav link berdasarkan route aktif
 function getNavLinkClass(targetRoute) {
-  const baseClass = navBg.value ? "text-[#374151] hover:text-[#FF7D14]" : "text-white hover:text-[#FF7D14]";
-  const activeClass = currentRoute.value === targetRoute ? "text-[#FF7D14] font-semibold" : "";
+  const baseClass = navBg.value ? "text-[#374151] hover:text-[#fd543a]" : "text-white hover:text-[#fd543a]";
+  const activeClass = currentRoute.value === targetRoute ? "text-[#fd543a] font-semibold" : "";
   return `${baseClass} ${activeClass}`;
 }
 
 // Fungsi untuk mobile nav link
 function getMobileNavLinkClass(targetRoute) {
   const isActive = currentRoute.value === targetRoute || activeSection.value === targetRoute;
-  return isActive ? "text-[#FF7D14] pl-3" : "text-[#111] hover:text-[#FF7D14] hover:pl-3";
+  return isActive ? "text-[#fd543a] pl-3" : "text-[#111] hover:text-[#fd543a] hover:pl-3";
 }
 
 onMounted(() => {
@@ -294,7 +297,7 @@ function onReserve() {
 }
 
 #app-navbar .nav-link:hover {
-  color: #ff7d14 !important;
+  color: #fd543a !important;
 }
 
 /* Animasi untuk mobile menu */

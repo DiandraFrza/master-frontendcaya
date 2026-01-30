@@ -15,6 +15,8 @@ const DetailBlog = () => import("@/pages/blog/Blog.vue");
 // Service pages
 const Laboratorium = () => import("@/pages/services/Laboratorium.vue");
 const Radiologi = () => import("@/pages/services/Radiologi.vue");
+const MCU = () => import("@/pages/services/ServiceMCU.vue");
+const ScreeningPenyakit = () => import("@/pages/services/ScreeningPenyakit.vue");
 const Elektromedis = () => import("@/pages/services/Elektromedis.vue");
 const HomeService = () => import("@/pages/services/HomeService.vue");
 const Konsultasi = () => import("@/pages/services/Konsultasi.vue");
@@ -35,12 +37,14 @@ const routes = [
   { path: "/medical-disclaimer", component: MedicalDisclaimer },
   { path: "/cookie-policy", component: CookiePolicy },
 
-  // Dynamic service detail page
-  { path: "/services/:slug", component: () => import("@/pages/services/ServiceDetail.vue") },
+  // // Dynamic service detail page
+  // { path: "/services/:slug", component: () => import("@/pages/services/ServiceDetail.vue") },
 
   // Service pages
   { path: "/services/lab", name: "Laboratorium", component: Laboratorium },
   { path: "/services/radiologi", name: "Radiologi", component: Radiologi },
+  { path: "/services/mcu", name: "MCU", component: MCU },
+  { path: "/services/screening", name: "ScreeningPenyakit", component: ScreeningPenyakit },
   { path: "/services/elektromedis", name: "Elektromedis", component: Elektromedis },
   { path: "/services/home-service", name: "HomeService", component: HomeService },
   { path: "/services/konsultasi", name: "Konsultasi", component: Konsultasi },

@@ -10,6 +10,9 @@ const news = ref([
     date: "12 Januari 2026",
     image: "/assets/blog/middle/img1.webp",
     link: "/berita/csr-pemeriksaan-kesehatan",
+    category: "CSR",
+    icon: "fa-heart-hands",
+    color: "bg-[#ff562c]",
   },
   {
     id: 2,
@@ -18,6 +21,9 @@ const news = ref([
     date: "5 Januari 2026",
     image: "/assets/blog/middle/img1.webp",
     link: "/berita/promo-mcu-k3",
+    category: "Promo",
+    icon: "fa-tag",
+    color: "bg-[#ff562c]",
   },
   {
     id: 3,
@@ -26,22 +32,30 @@ const news = ref([
     date: "20 Desember 2025",
     image: "/assets/blog/middle/img1.webp",
     link: "/berita/kegiatan-onsite",
+    category: "Kegiatan",
+    icon: "fa-briefcase",
+    color: "bg-[#ff562c]",
   },
 ]);
 </script>
 
 <template>
-  <section class="py-20 bg-[#ecf5fb]">
+  <section class="py-20 relative overflow-hidden">
     <div class="container mx-auto px-4 max-w-7xl">
       <!-- Header -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16">
         <div>
-          <h3 class="text-3xl font-bold text-gray-900 mb-2">Berita & Update Caya</h3>
-          <p class="text-gray-600 max-w-xl">Informasi terbaru seputar kegiatan, program, dan layanan Caya.</p>
+          <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full mb-4">
+            <!-- <i class="fa-solid fa-photofilm"></i> -->
+            <i class="fa-solid fa-photo-film"></i>
+            <span class="font-semibold text-sm">Update Terbaru</span>
+          </div>
+          <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Berita & Update Caya</h3>
+          <p class="text-gray-600 max-w-xl text-lg">Informasi terbaru seputar kegiatan, program, dan layanan Caya.</p>
         </div>
 
-        <router-link to="/berita" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-[#ff562c] font-semibold text-sm">
-          Lihat Semua Berita
+        <router-link to="/berita" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-[#ff562c] font-bold text-sm bg-[#ff562c]/10 px-4 py-2 rounded-full hover:bg-[#ff562c]/20 transition-colors">
+          <span>Lihat Semua</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
@@ -50,34 +64,39 @@ const news = ref([
 
       <!-- Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article v-for="item in news" :key="item.id" class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col h-full">
-          <!-- Image -->
-          <!-- <div class="relative overflow-hidden">
-            <img :src="item.image" :alt="item.title" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
-          </div> -->
+        <article v-for="item in news" :key="item.id" class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2 flex flex-col h-full">
+          <!-- Image Container with Category Badge -->
+          <div class="relative overflow-hidden h-56">
+            <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-          <div class="rounded-xxl h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-            <img :src="item.image" :alt="item.title" class="w-full h-48 object-cover" />
+            <!-- Category Badge with Icon -->
+            <div :class="`absolute top-4 right-4 bg-gradient-to-br ${item.color} text-white px-4 py-2 rounded-full flex items-center gap-2 font-semibold text-sm shadow-lg`">
+              <i :class="`fa-solid ${item.icon}`"></i>
+              {{ item.category }}
+            </div>
+
+            <!-- Date -->
+            <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur text-gray-900 px-3 py-1 rounded-full flex items-center gap-2 text-xs font-semibold">
+              <i class="fa-solid fa-calendar"></i>
+              {{ item.date }}
+            </div>
           </div>
 
           <!-- Content -->
           <div class="p-6 flex flex-col flex-1">
-            <span class="text-xs text-gray-500 mb-2">
-              <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">{{ item.date }}</li>
-            </span>
-
-            <h4 class="xl:text-2xl text-xl mb-2.5">
+            <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">
               {{ item.title }}
             </h4>
 
-            <p class="text-gray-600 text-sm leading-relaxed flex-1">
+            <p class="text-gray-600 text-sm leading-relaxed flex-1 line-clamp-2 mb-4">
               {{ item.excerpt }}
             </p>
 
-            <!-- CTA -->
-            <router-link :to="item.link" class="inline-flex items-center gap-2 text-[#ff562c] font-semibold text-sm mt-4">
+            <!-- Read More Link -->
+            <router-link :to="item.link" class="inline-flex items-center gap-2 text-[#ff562c] font-bold text-sm group/link">
               Baca Selengkapnya
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </router-link>
