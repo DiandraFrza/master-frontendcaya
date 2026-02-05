@@ -220,7 +220,7 @@ useHead({
       <!-- CTA Section -->
       <section class="bg-gradient-to-r from-orange-600 to-orange-700 text-white py-16">
         <div class="container mx-auto px-4 max-w-7xl text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Siap Berkonsultasi?</h2>
+          <h2 class="text-white text-3xl md:text-4xl font-bold mb-4">Siap Berkonsultasi?</h2>
           <p class="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">Hubungi tim kami sekarang untuk menjadwalkan konsultasi kesehatan Anda dengan dokter berpengalaman.</p>
           <div class="flex flex-wrap items-center justify-center gap-4">
             <a href="https://wa.me/081290094900" class="px-6 py-3 rounded-lg bg-white text-orange-600 font-bold hover:bg-gray-50 transition-colors flex items-center gap-2">

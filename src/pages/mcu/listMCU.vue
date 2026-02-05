@@ -234,7 +234,7 @@
         </div>
 
         <!-- CTA Section -->
-        <div class="text-center">
+        <!-- <div class="text-center">
           <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
             <h3 class="text-2xl font-bold text-slate-800 mb-4">Butuh Penawaran Khusus Perusahaan?</h3>
             <p class="text-slate-600 mb-6 max-w-2xl mx-auto">Konsultasikan kebutuhan MCU perusahaan Anda dengan tim kami. Dapatkan penawaran terbaik untuk karyawan Anda.</p>
@@ -243,7 +243,7 @@
               Konsultasi Gratis untuk Korporat
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>

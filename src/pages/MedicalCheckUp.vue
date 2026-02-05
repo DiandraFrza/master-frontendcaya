@@ -114,7 +114,7 @@ const openModal = (service) => {
       </div>
 
       <!-- Bottom CTA -->
-      <div class="text-center mt-16">
+      <!-- <div class="text-center mt-16">
         <div class="bg-gradient-to-r from-[#FF7D14] to-[#F94327] rounded-3xl p-8 text-white shadow-xl">
           <div class="flex items-center justify-center gap-3 mb-3">
             <i class="fa-solid fa-star text-2xl"></i>
@@ -127,7 +127,7 @@ const openModal = (service) => {
             Konsultasi Gratis via WhatsApp
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>

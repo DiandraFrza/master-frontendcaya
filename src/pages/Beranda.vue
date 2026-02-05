@@ -150,7 +150,7 @@ const searchQuery = ref("");
                   <i class="fa-solid fa-lightbulb text-white"></i>
                 </div>
                 <div class="text-sm">
-                  <p class="font-semibold text-orange-900 mb-1">Konsultasi Gratis?</p>
+                  <p class="font-semibold text-orange-900 mb-1">Ingin Konsultasi Gratis?</p>
                   <p class="text-orange-700">Chat dengan tim medis kami untuk rekomendasi pemeriksaan yang tepat</p>
                 </div>
               </div>
@@ -200,11 +200,8 @@ const searchQuery = ref("");
 
       <div class="container mx-auto px-4 max-w-7xl relative z-10">
         <div class="text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-            <i class="fa-solid fa-heart-pulse"></i>
-            Siap Mulai Perjalanan Kesehatan Anda?
-          </h2>
-          <p class="text-lg text-orange-100 mb-8 max-w-2xl mx-auto">Hubungi kami sekarang dan dapatkan konsultasi gratis untuk memilih layanan yang tepat.</p>
+          <h2 class="text-3xl text-white md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">Butuh Penawaran Khusus Perusahaan?</h2>
+          <p class="text-lg text-white mb-8 max-w-2xl mx-auto">Paket Pemeriksaan yang sesuai dengan Kebutuhan Anda</p>
 
           <div class="flex flex-wrap justify-center gap-4">
             <a href="https://wa.me/081290094900" class="inline-flex items-center gap-2 bg-white text-[#ff562c] px-8 py-3 rounded-full font-bold hover:bg-gray-50 transition-all hover:scale-105">
@@ -218,6 +215,13 @@ const searchQuery = ref("");
           </div>
         </div>
       </div>
+
+      <!-- <div class="bg-linear-to-r from-[#FF7D14] to-[#ff562c] rounded-2xl p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 shadow-lg">
+        <div class="text-center md:text-left">
+          <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight sm:leading-snug">Paket MCU K3 untuk Perusahaan — Sertifikat & Laporan HR-Ready</h3>
+          <p class="mt-1 sm:mt-2 opacity-90 text-white text-sm sm:text-base leading-relaxed">Penuhi kewajiban K3 dengan laporan terstruktur, interpretasi dokter, dan opsi onsite untuk pemeriksaan massal.</p>
+        </div>
+      </div> -->
     </section>
   </div>
 </template>

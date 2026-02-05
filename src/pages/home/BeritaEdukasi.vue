@@ -71,10 +71,10 @@ const news = ref([
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
             <!-- Category Badge with Icon -->
-            <div :class="`absolute top-4 right-4 bg-gradient-to-br ${item.color} text-white px-4 py-2 rounded-full flex items-center gap-2 font-semibold text-sm shadow-lg`">
+            <!-- <div :class="`absolute top-4 right-4 bg-gradient-to-br ${item.color} text-white px-4 py-2 rounded-full flex items-center gap-2 font-semibold text-sm shadow-lg`">
               <i :class="`fa-solid ${item.icon}`"></i>
               {{ item.category }}
-            </div>
+            </div> -->
 
             <!-- Date -->
             <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur text-gray-900 px-3 py-1 rounded-full flex items-center gap-2 text-xs font-semibold">

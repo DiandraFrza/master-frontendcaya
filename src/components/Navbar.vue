@@ -56,7 +56,7 @@
           </router-link>
 
           <router-link to="/blog" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/blog')" :style="navBg ? {} : { color: '#000' }">
-            Berita & Edukasi
+            Blog & Edukasi
             <span v-if="currentRoute === '/blog'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
         </div>
@@ -95,7 +95,7 @@
             <span v-if="currentRoute === '/'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
           <router-link to="/about" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/about')">
-            About
+            Tentang Caya
             <span v-if="currentRoute === '/about'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
           <div>
@@ -120,14 +120,14 @@
           </div>
 
           <router-link to="/cabang" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/cabang')">
-            Our Clinics
+            Cabang Kami
             <span v-if="currentRoute === '/cabang'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
 
-          <a @click="closeMobile" href="#blog" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('blog')">
-            Blog
-            <span v-if="activeSection === 'blog'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
-          </a>
+          <router-link to="/blog" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/blog')">
+            Berita & Edukasi
+            <span v-if="currentRoute === '/blog'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
+          </router-link>
 
           <!-- Tombol Reservasi di Mobile Menu -->
           <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
