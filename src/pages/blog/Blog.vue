@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-  <div class="2xxl:min-h-125 lg:min-h-112.5 md:min-h-100 sm:min-h-87.5 min-h-75 bg-cover bg-center bg-light relative z-1 w-full overflow-hidden pb-7.5 before:absolute before:left-0 before:top-0 before:size-full before:bg-[#07121E] before:opacity-70 after:w-full after:h-[calc(100%_-_80px)] after:absolute after:bottom-0 after:right-0 after:z-0 after:bg-[url(@/assets/images/banner/bnr1.webp)] after:bg-no-repeat after:bg-position-[right_-13px_top] max-lg:after:hidden" style="background-image: url(images/banner/bnr1.webp)">
+  <div class="2xxl:min-h-125 lg:min-h-112.5 md:min-h-100 sm:min-h-87.5 min-h-75 bg-cover bg-center bg-light relative z-1 w-full overflow-hidden pb-7.5 before:absolute before:left-0 before:top-0 before:size-full before:bg-[#07121E] before:opacity-70 after:w-full after:h-[calc(100%-80px)] after:absolute after:bottom-0 after:right-0 after:z-0 after:bg-[url(@/assets/images/banner/bnr1.webp)] after:bg-no-repeat after:bg-position-[right_-13px_top] max-lg:after:hidden" style="background-image: url(images/banner/bnr1.webp)">
     <div class="container relative z-1 h-full table">
       <div class="table-cell 2xxl:h-125 lg:h-112.5 md:h-100 sm:h-87.5 h-75 align-middle pt-22.5 pb-5 text-center">
         <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Berita & Edukasi</h1>
@@ -157,7 +157,7 @@
                   <div class="mb-2.5">
                     <ul class="flex flex-wrap items-center gap-1.25">
                       <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a to="javascript:void(0);">Nashid Martines</a></li>
+                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
                     </ul>
                   </div>
                   <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Brilliant skin blog your dermatology care resource</router-link></h3>
@@ -168,7 +168,7 @@
             </div>
           </div>
           <div class="text-center mt-7.5 m-lg-t0 wow fadeInUp" data-wow-delay="1.4s" data-wow-duration="0.8s">
-            <router-link to="javascript:void(0);" class="rounded-full btn-lg btn-icon btn-primary dz-load-more" rel="ajax/blog-grid.html"> Load More <i class="feather icon-refresh-ccw ms-2"></i> </router-link>
+            <router-link to="javascript:void(0);" class="rounded-full btn-lg btn-icon btn-primary dz-load-more" rel="ajax/feature-development"> Load More <i class="feather icon-refresh-ccw ms-2"></i> </router-link>
           </div>
         </div>
         <div class="xl:w-1/3 lg:w-full">
@@ -196,19 +196,19 @@
               </div>
               <ul>
                 <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25">
-                  <a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Acupressure</a>
+                  <router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Acupressure</router-link>
                   (10)
                 </li>
                 <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25">
-                  <a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Allgemein</a>
+                  <router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Allgemein</router-link>
                   (5)
                 </li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Blood</a> (17)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Food</a> (13)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Health</a> (06)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Mental Health</a> (17)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Therapy</a> (13)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><a class="float-left text-2sm text-bodycolor" href="blog-grid.html">Walking</a> (06)</li>
+                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Blood</router-link> (17)</li>
+                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Food</router-link> (13)</li>
+                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Health</router-link> (06)</li>
+                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Mental Health</router-link> (17)</li>
+                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Therapy</router-link> (13)</li>
+                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Walking</router-link> (06)</li>
               </ul>
             </div>
             <div class="p-7.5 sm:rounded-xxl rounded-lg bg-white sm:mb-11.25 mb-5 recent-posts-entry">
@@ -223,7 +223,7 @@
                   <div class="relative ml-4">
                     <div class="mb-1">
                       <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="blog-grid.html">03 August 2025</router-link></li>
+                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="/feature-development">03 August 2025</router-link></li>
                       </ul>
                     </div>
                     <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
@@ -236,7 +236,7 @@
                   <div class="relative ml-4">
                     <div class="mb-1">
                       <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="blog-grid.html">03 August 2025</router-link></li>
+                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="/feature-development">03 August 2025</router-link></li>
                       </ul>
                     </div>
                     <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
@@ -249,7 +249,7 @@
                   <div class="relative ml-4">
                     <div class="mb-1">
                       <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="blog-grid.html">03 August 2025</router-link></li>
+                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="/feature-development">03 August 2025</router-link></li>
                       </ul>
                     </div>
                     <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
@@ -262,14 +262,14 @@
                 <h4 class="text-xl">Tags</h4>
               </div>
               <div class="tagcloud">
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Acupressure</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Allgemein</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Blood</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Food</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Health</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Mental Health</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Therapy</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="blog-grid.html">Walking</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Acupressure</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Allgemein</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Blood</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Food</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Health</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Mental Health</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Therapy</a>
+                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Walking</a>
               </div>
             </div>
           </aside>

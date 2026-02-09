@@ -68,7 +68,7 @@
             </li>
 
             <li>
-              <RouterLink to="/karir" class="font-reguler text-slate-600 hover:text-orange-600"> Karir </RouterLink>
+              <RouterLink to="/feature-development" class="font-reguler text-slate-600 hover:text-orange-600"> Karir </RouterLink>
             </li>
 
             <li>
