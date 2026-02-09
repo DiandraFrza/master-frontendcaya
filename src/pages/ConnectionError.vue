@@ -5,12 +5,12 @@
     <div class="w-full max-w-2xl">
       <!-- Header Section -->
       <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-t-3xl px-8 py-16 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-white">404</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-white">Koneksi Tidak Stabil</h1>
       </div>
 
       <!-- Content Section -->
       <div class="bg-white rounded-b-3xl px-8 py-12 shadow-lg text-center">
-        <p class="text-gray-700 text-lg mb-8">Halaman tidak ditemukan.</p>
+        <p class="text-gray-700 text-lg mb-8">Silakan refresh halaman atau cek jaringan Anda.</p>
 
         <!-- Buttons -->
         <div class="space-y-3 md:space-y-0 md:flex md:gap-4 md:justify-center">

@@ -109,10 +109,10 @@ const searchQuery = ref("");
                   </div>
                 </div>
 
-                <button class="w-full mt-6 bg-linear-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all">
+                <RouterLink to="/belum-tersedia" class="block w-full mt-6 bg-linear-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all text-center">
                   <i class="fa-solid fa-arrow-right mr-2"></i>
                   Lihat Hasil Pencarian
-                </button>
+                </RouterLink>
               </div>
 
               <!-- CEK HASIL TAB -->
@@ -136,10 +136,10 @@ const searchQuery = ref("");
                   Data Anda aman dan terenkripsi
                 </div>
 
-                <button class="w-full bg-linear-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all">
+                <RouterLink to="/belum-tersedia" class="block w-full bg-linear-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all text-center">
                   <i class="fa-solid fa-check-circle mr-2"></i>
                   Cek Hasil Anda
-                </button>
+                </RouterLink>
               </div>
             </div>
 

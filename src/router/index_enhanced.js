@@ -1,5 +1,27 @@
 /** @format */
 
+/**
+ * SCROLL BEHAVIOR MANAGEMENT STRATEGY
+ *
+ * This implementation uses Vue Router's `scrollBehavior` hook combined with
+ * the browser's native history state API. No localStorage/cookies needed.
+ *
+ * APPROACH OVERVIEW:
+ * 1. When users navigate, Vue Router saves the current scroll position in history.state
+ * 2. When returning (back/forward), the browser provides savedPosition from history
+ * 3. Hash navigation (#section) scrolls directly to that element smoothly
+ * 4. New page navigation resets scroll to top with smooth animation
+ *
+ * KEY BENEFITS:
+ * - Works across browser tabs/windows (via history state)
+ * - No persistent storage needed
+ * - Automatic back/forward button support
+ * - Respects browser conventions
+ * - Performance optimized (no polling or excess listeners)
+ *
+ * BROWSER COMPATIBILITY: All modern browsers (IE11+ with polyfills)
+ */
+
 import HasilMCU from "@/pages/HasilMCU.vue";
 import MedicalDisclaimer from "@/pages/MedicalDisclaimer.vue";
 import TermsConditions from "@/pages/TermsConditions.vue";
@@ -85,9 +107,52 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) return savedPosition;
-    if (to.hash) return { el: to.hash, behavior: "smooth" };
-    return { top: 0, behavior: "smooth" };
+    /**
+     * SCENARIO 1: User clicked browser back/forward button
+     * savedPosition contains the previous scroll coordinates from history
+     * Return it to restore the exact position
+     *
+     * EXAMPLE:
+     * User scrolls down labaratory page → clicks a service link
+     * Later clicks back button → savedPosition = { left: 0, top: 1234 }
+     */
+    if (savedPosition) {
+      return {
+        ...savedPosition,
+        behavior: "smooth", // Smooth animation for better UX
+      };
+    }
+
+    /**
+     * SCENARIO 2: User navigated via hash (e.g., #about-section)
+     * Find the target element by ID and scroll to it smoothly
+     * Useful for anchor navigation and table of contents
+     *
+     * EXAMPLE:
+     * User clicks link to "/kebijakan-privasi#komitmen-data"
+     * Router finds element with id="komitmen-data" and scrolls to it
+     */
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth",
+        top: 80, // Offset for fixed header (adjust based on your navbar height)
+      };
+    }
+
+    /**
+     * SCENARIO 3: New navigation (different route, no hash)
+     * Scroll to top of page smoothly
+     * Most common case for regular navigation
+     *
+     * EXAMPLE:
+     * User navigates from services to about page
+     * Page scrolls to top with smooth animation
+     */
+    return {
+      top: 0,
+      behavior: "smooth",
+    };
   },
 });
 
