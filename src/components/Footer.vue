@@ -9,7 +9,7 @@
         <p class="text-slate-600 text-base">Menjaga kesehatan sebagai Amanah dengan Pelayanan sepenuh Hati.</p>
       </div> -->
 
-      <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 mb-12 px-4">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-16 mb-12 px-2">
         <div class="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-6">
           <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,8 +22,8 @@
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:text-right text-center">
-          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg absolute md:static">
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 md:text-left lg:text-left text-center">
+          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
