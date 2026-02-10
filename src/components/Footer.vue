@@ -10,29 +10,29 @@
       </div> -->
 
       <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 mb-12 px-4">
-        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-          <div>
-            <h3 class="text-lg text-right font-bold text-slate-900 mb-1">Salam CAYA</h3>
-            <p class="text-sm text-right text-slate-700">021-77829190 / +62812-9000-7336</p>
-          </div>
+        <div class="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-6">
           <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
           </div>
+          <div>
+            <h3 class="text-lg lg:text-right text-center font-bold text-slate-900 mb-1">Salam CAYA</h3>
+            <p class="text-sm lg:text-right text-slate-700">021-77829190 / +62812-9000-7336</p>
+          </div>
         </div>
 
-        <div class="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-6">
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:text-right text-center">
+          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
           <div>
             <h3 class="text-lg font-bold text-slate-900 mb-2">Jam Operasional</h3>
             <p class="text-sm text-slate-700 mb-1">Senin - Jum'at : 06:00 - 21:00</p>
             <p class="text-sm text-slate-700 mb-2">Sabtu : 06:00 - 20:00</p>
             <p class="text-xs text-slate-600 mt-2">Libur pada hari Minggu dan Peringatan Hari Besar Indonesia (PHBi)</p>
-          </div>
-          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
           </div>
         </div>
       </div>
