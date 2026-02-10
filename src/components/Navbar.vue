@@ -13,9 +13,9 @@
             <span v-if="currentRoute === '/'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
 
-          <router-link to="/about" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/about')" :style="navBg ? {} : { color: '#000' }">
+          <router-link to="/tentang-caya" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/tentang-caya')" :style="navBg ? {} : { color: '#000' }">
             Tentang Caya
-            <span v-if="currentRoute === '/about'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/tentang-caya'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
 
           <!-- Produk & Layanan (modern dropdown) -->
@@ -55,9 +55,9 @@
             <span v-if="currentRoute === '/cabang'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
 
-          <router-link to="/blog" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/blog')" :style="navBg ? {} : { color: '#000' }">
+          <router-link to="/blog-edukasi" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/blog-edukasi')" :style="navBg ? {} : { color: '#000' }">
             Blog & Edukasi
-            <span v-if="currentRoute === '/blog'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
+            <span v-if="currentRoute === '/blog-edukasi'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
         </div>
       </div>
@@ -94,9 +94,9 @@
             Beranda
             <span v-if="currentRoute === '/'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
-          <router-link to="/about" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/about')">
+          <router-link to="/tentang-caya" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/tentang-caya')">
             Tentang Caya
-            <span v-if="currentRoute === '/about'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
+            <span v-if="currentRoute === '/tentang-caya'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
           <div>
             <button @click="mobileLayananOpen = !mobileLayananOpen" class="w-full flex items-center justify-between py-2 font-medium text-[#111]">
@@ -124,9 +124,9 @@
             <span v-if="currentRoute === '/cabang'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
 
-          <router-link to="/blog" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/blog')">
+          <router-link to="/blog-edukasi" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/blog-edukasi')">
             Berita & Edukasi
-            <span v-if="currentRoute === '/blog'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
+            <span v-if="currentRoute === '/blog-edukasi'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
 
           <!-- Tombol Reservasi di Mobile Menu -->

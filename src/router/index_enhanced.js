@@ -61,7 +61,7 @@ import ConnectionError from "@/pages/ConnectionError.vue";
 
 const routes = [
   { path: "/", name: "Beranda", component: Beranda },
-  { path: "/about", name: "DetailAbout", component: DetailAbout },
+  { path: "/tentang-caya", name: "DetailAbout", component: DetailAbout },
   { path: "/mcu", name: "DetailMCU", component: DetailMCU },
   { path: "/cabang", name: "DetailOurClinic", component: DetailOurClinic },
   { path: "/blog", name: "DetailBlog", component: DetailBlog },

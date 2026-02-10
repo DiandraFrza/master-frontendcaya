@@ -23,7 +23,7 @@
         </div>
 
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:text-right text-center">
-          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg">
+          <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center shrink-0 shadow-lg absolute md:static">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
