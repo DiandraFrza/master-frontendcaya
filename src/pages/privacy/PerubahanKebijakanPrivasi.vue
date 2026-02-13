@@ -17,7 +17,7 @@
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100">
               <div class="prose prose-slate p-8 max-w-none">
                 <p>
-                  KCAYA berhak memperbarui Kebijakan Privasi ini dari waktu ke waktu. Versi terbaru akan dipublikasikan melalui website resmi CAYA.
+                  CAYA berhak memperbarui Kebijakan Privasi ini dari waktu ke waktu. Versi terbaru akan dipublikasikan melalui website resmi CAYA.
                   <br />
                   Penggunaan Layanan secara berkelanjutan dianggap sebagai persetujuan atas perubahan tersebut.
                 </p>
