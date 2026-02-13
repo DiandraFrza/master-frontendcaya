@@ -145,63 +145,45 @@ const homeServiceCategories = {
 
               <!-- Process Section -->
               <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Cara Kerja Home Service</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-12 text-center">Cara Kerja Home Service</h2>
 
-                <div class="grid md:grid-cols-4 gap-6">
-                  <div class="text-center">
-                    <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto">
-                      <span class="text-2xl font-bold text-orange-600">1</span>
-                    </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Hubungi Kami</h4>
-                    <p class="text-sm text-gray-600">Pilih layanan dan tentukan jadwal yang sesuai</p>
-                  </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 mb-12">
+                  <h2 class="text-2xl font-bold text-gray-900 mb-12 text-center">Cara Kerja Home Service</h2>
 
-                  <div class="text-center relative md:before:absolute md:before:top-8 md:before:left-0 md:before:w-full md:before:h-0.5 md:before:bg-orange-200 md:before:z-0">
-                    <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto relative z-1">
-                      <span class="text-2xl font-bold text-orange-600">2</span>
+                  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6">
+                    <div class="text-center relative md:before:absolute md:before:top-8 md:before:left-1/2 md:before:w-full md:before:h-0.5 md:before:bg-orange-200 md:before:z-0">
+                      <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto relative z-10 border-4 border-white">
+                        <span class="text-2xl font-bold text-orange-600">1</span>
+                      </div>
+                      <h4 class="font-bold text-gray-900 mb-2">Hubungi Kami</h4>
+                      <p class="text-sm text-gray-600">Pilih layanan dan tentukan jadwal yang sesuai</p>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Konfirmasi Booking</h4>
-                    <p class="text-sm text-gray-600">Kami akan mengkonfirmasi jadwal dan persiapan</p>
-                  </div>
 
-                  <div class="text-center relative md:before:absolute md:before:top-8 md:before:left-0 md:before:w-full md:before:h-0.5 md:before:bg-orange-200 md:before:z-0">
-                    <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto relative z-1">
-                      <span class="text-2xl font-bold text-orange-600">3</span>
+                    <div class="text-center relative md:before:absolute md:before:top-8 md:before:left-1/2 md:before:w-full md:before:h-0.5 md:before:bg-orange-200 md:before:z-0">
+                      <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto relative z-10 border-4 border-white">
+                        <span class="text-2xl font-bold text-orange-600">2</span>
+                      </div>
+                      <h4 class="font-bold text-gray-900 mb-2">Konfirmasi Booking</h4>
+                      <p class="text-sm text-gray-600">Kami akan mengkonfirmasi jadwal dan persiapan</p>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Pemeriksaan di Rumah</h4>
-                    <p class="text-sm text-gray-600">Tim medis datang dan melakukan pemeriksaan profesional</p>
-                  </div>
 
-                  <div class="text-center">
-                    <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto">
-                      <span class="text-2xl font-bold text-orange-600">4</span>
+                    <div class="text-center relative md:before:absolute md:before:top-8 md:before:left-1/2 md:before:w-full md:before:h-0.5 md:before:bg-orange-200 md:before:z-0">
+                      <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto relative z-10 border-4 border-white">
+                        <span class="text-2xl font-bold text-orange-600">3</span>
+                      </div>
+                      <h4 class="font-bold text-gray-900 mb-2">Pemeriksaan di Rumah</h4>
+                      <p class="text-sm text-gray-600">Tim medis datang dan melakukan pemeriksaan profesional</p>
                     </div>
-                    <h4 class="font-bold text-gray-900 mb-2">Hasil & Konsultasi</h4>
-                    <p class="text-sm text-gray-600">Hasil digital + konsultasi dengan dokter gratis</p>
+
+                    <div class="text-center relative">
+                      <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center mb-4 mx-auto relative z-10 border-4 border-white">
+                        <span class="text-2xl font-bold text-orange-600">4</span>
+                      </div>
+                      <h4 class="font-bold text-gray-900 mb-2">Hasil & Konsultasi</h4>
+                      <p class="text-sm text-gray-600">Hasil digital + konsultasi dengan dokter gratis</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <!-- Info Box -->
-              <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6">
-                <h3 class="font-bold text-orange-900 mb-3 flex items-center gap-2">
-                  <i class="fa-solid fa-circle-info text-orange-600"></i>
-                  Keunggulan Home Service Caya
-                </h3>
-                <ul class="space-y-2 text-sm text-orange-800">
-                  <li class="flex items-start gap-2">
-                    <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Peralatan medis portable terkalibrasi</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Tenaga medis profesional dan terlatih</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Privasi dan kenyamanan terjamin di rumah Anda</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>

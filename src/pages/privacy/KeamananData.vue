@@ -16,29 +16,16 @@
           <div class="lg:col-span-3">
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100">
               <div class="prose prose-slate p-8 max-w-none">
-                <p>Kebijakan Privasi ini mengatur seluruh aktivitas pemrosesan Data Pribadi, termasuk namun tidak terbatas pada:</p>
+                <p>CAYA melakukan upaya pengamanan teknis dan organisasi yang wajar untuk melindungi Data Pribadi dari:</p>
 
                 <ul class="list-disc pl-6 pb-2">
-                  <li>memperoleh dan mengumpulkan</li>
-                  <li>mengolah dan menganalisis</li>
-                  <li>menyimpan dan mengamankan</li>
-                  <li>menampilkan dan mengumumkan</li>
-                  <li>mengirim dan/atau menyebarluaskan</li>
-                  <li>membuka akses</li>
-                  <li>memusnahkan Data Pribadi</li>
+                  <li>Akses tidak sah</li>
+                  <li>Penyalahgunaan</li>
+                  <li>Kehilangan</li>
+                  <li>Kebocoran</li>
                 </ul>
 
-                <p class="">Pemrosesan Data Pribadi dilakukan sehubungan dengan penggunaan layanan CAYA, yang meliputi:</p>
-
-                <ol class="list-decimal pl-6">
-                  <li>Layanan Kesehatan CAYA</li>
-                  <li>Website resmi CAYA</li>
-                  <li>Layanan Contact Center CAYA</li>
-                </ol>
-
-                <p>(selanjutnya disebut “Layanan”)</p>
-
-                <p>Kebijakan Privasi ini berlaku bagi seluruh Subjek Data, yaitu setiap individu yang Data Pribadinya diproses oleh CAYA.</p>
+                <p class="">Namun, Anda memahami bahwa transmisi data melalui internet tidak sepenuhnya bebas risiko</p>
               </div>
             </div>
           </div>

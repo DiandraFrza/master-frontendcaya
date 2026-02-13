@@ -159,7 +159,7 @@ export const electromedicalExams = {
     { name: "EKG", price: 150000, icon: "fa-heart-pulse", result: "1 - 2 hari" },
     { name: "USG Upper/Lower Abdomen", price: 500000, icon: "fa-image", result: "1 - 2 hari" },
     { name: "Treadmill", price: 1000000, icon: "fa-person-running", result: "1 - 2 hari" },
-    { name: "Audiometri", price: 150000, icon: "fa-ear", result: "1 - 2 hari" },
+    { name: "Audiometri", price: 150000, icon: "fa-headphones", result: "1 - 2 hari" },
   ],
 };
 

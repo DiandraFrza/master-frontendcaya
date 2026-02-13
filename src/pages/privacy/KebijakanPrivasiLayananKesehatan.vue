@@ -16,29 +16,24 @@
           <div class="lg:col-span-3">
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100">
               <div class="prose prose-slate p-8 max-w-none">
-                <p>Kebijakan Privasi ini mengatur seluruh aktivitas pemrosesan Data Pribadi, termasuk namun tidak terbatas pada:</p>
+                <p>CAYA hanya menggunakan Data Pribadi Anda untuk keperluan:</p>
 
                 <ul class="list-disc pl-6 pb-2">
-                  <li>memperoleh dan mengumpulkan</li>
-                  <li>mengolah dan menganalisis</li>
-                  <li>menyimpan dan mengamankan</li>
-                  <li>menampilkan dan mengumumkan</li>
-                  <li>mengirim dan/atau menyebarluaskan</li>
-                  <li>membuka akses</li>
-                  <li>memusnahkan Data Pribadi</li>
+                  <li>Pelayanan kesehatan</li>
+                  <li>Pemeriksaan laboratorium dan Radiologi</li>
+                  <li>Pengelolaan rekam medis</li>
+                  <li>Administrasi layanan kesehatan</li>
+                  <li>Kewajiban hukum dan regulasi</li>
                 </ul>
 
-                <p class="">Pemrosesan Data Pribadi dilakukan sehubungan dengan penggunaan layanan CAYA, yang meliputi:</p>
+                <p class="">CAYA akan meminta persetujuan Anda sebelum melakukan pelayanan kesehatan atau penggunaan Data Pribadi untuk tujuan lain yang tidak berkaitan langsung dengan pelayanan medis.</p>
 
-                <ol class="list-decimal pl-6">
-                  <li>Layanan Kesehatan CAYA</li>
-                  <li>Website resmi CAYA</li>
-                  <li>Layanan Contact Center CAYA</li>
+                <ol class="list-disc pl-6">
+                  <li>Kerahasiaan Medis</li>
+                  <li>Etika profesi kesehatan</li>
+                  <li>Prinsip Syariah</li>
+                  <li>Ketentuan hukum yang berlaku</li>
                 </ol>
-
-                <p>(selanjutnya disebut “Layanan”)</p>
-
-                <p>Kebijakan Privasi ini berlaku bagi seluruh Subjek Data, yaitu setiap individu yang Data Pribadinya diproses oleh CAYA.</p>
               </div>
             </div>
           </div>

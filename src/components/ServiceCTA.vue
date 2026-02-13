@@ -25,7 +25,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="mt-12 md:mt-16 text-center">
+  <div class="m-12 md:m-16 text-center">
     <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg max-w-3xl mx-auto">
       <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">{{ title }}</h3>
       <p class="text-sm md:text-base text-gray-600 mb-6">{{ description }}</p>
@@ -36,7 +36,7 @@ defineProps({
           {{ primaryButtonText }}
         </a>
         <router-link :to="secondaryButtonTo" class="inline-flex items-center justify-center gap-2 border border-gray-200 px-6 md:px-8 py-2.5 md:py-3 rounded-xl font-semibold text-sm md:text-base hover:bg-gray-50 transition-colors">
-          <i class="fa-brands fa-arrow-right"></i>
+          <i class="fa-solid fa-angle-up"></i>
           {{ secondaryButtonText }}
         </router-link>
       </div>

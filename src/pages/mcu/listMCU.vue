@@ -295,7 +295,7 @@ const services = ref([
   { id: "thorax", title: "X-Ray Thorax", desc: "Deteksi kelainan paru & jantung.", icon: "xray" },
   { id: "cbc", title: "Darah Lengkap", desc: "Hemoglobin, leukosit, trombosit.", icon: "blood" },
   { id: "ecg", title: "Rekam Jantung", desc: "Screening listrik jantung.", icon: "ecg" },
-  { id: "audiometri", title: "Audiometri", desc: "Tes pendengaran lengkap.", icon: "ear" },
+  { id: "audiometri", title: "Audiometri", desc: "Tes pendengaran lengkap.", icon: "audio-lines" },
   { id: "urinalysis", title: "Urinalisis", desc: "Analisis fungsi ginjal & urine.", icon: "urine" },
   { id: "onsite", title: "Layanan Onsite", desc: "MCU di lokasi Anda.", icon: "truck" },
 ]);
