@@ -31,7 +31,7 @@
               </div>
               <div>
                 <div class="font-semibold sm:text-base text-sm">Pelayanan Bersertifikat</div>
-                <div class="text-sm text-gray-500 sm:text-xs text-xs">Sertifikat & laporan medis untuk kebutuhan formal.</div>
+                <div class="text-sm text-white sm:text-xs text-xs">Sertifikat & laporan medis untuk kebutuhan formal.</div>
               </div>
             </div>
 
@@ -43,7 +43,7 @@
               </div>
               <div>
                 <div class="font-semibold sm:text-base text-sm">Cepat & Terintegrasi</div>
-                <div class="text-sm text-gray-500 sm:text-xs text-xs">Hasil digital, PDF rapih ready-to-share ke HR / pasien.</div>
+                <div class="text-sm text-white sm:text-xs text-xs">Hasil digital, PDF rapih ready-to-share ke HR / pasien.</div>
               </div>
             </div>
           </div>

@@ -1,280 +1,343 @@
 <!-- @format -->
 
-<template>
-  <div class="2xxl:min-h-125 lg:min-h-112.5 md:min-h-100 sm:min-h-87.5 min-h-75 bg-cover bg-center bg-light relative z-1 w-full overflow-hidden pb-7.5 before:absolute before:left-0 before:top-0 before:size-full before:bg-[#07121E] before:opacity-70 after:w-full after:h-[calc(100%-80px)] after:absolute after:bottom-0 after:right-0 after:z-0 after:bg-[url(@/assets/images/banner/bnr1.webp)] after:bg-no-repeat after:bg-position-[right_-13px_top] max-lg:after:hidden" style="background-image: url(images/banner/bnr1.webp)">
-    <div class="container relative z-1 h-full table">
-      <div class="table-cell 2xxl:h-125 lg:h-112.5 md:h-100 sm:h-87.5 h-75 align-middle pt-22.5 pb-5 text-center">
-        <h1 class="2xxl:text-8xl xl:text-6xxl md:text-[48px] text-[32px] font-semibold mb-3.75 break-word text-white wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">Berita & Edukasi</h1>
-        <nav class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-          <ul class="inline-block rounded-5xl lg:py-2.5 py-1.5 lg:px-7.5 px-5 bg-white shadow-breadcrumb">
-            <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading"><router-link to="/" class="text-primary">Beranda</router-link></li>
-            <li class="inline-block lg:text-base text-sm font-normal capitalize text-heading pl-2 relative before:content-['\f101'] before:float-left before:text-heading before:font-bold before:font-['Font_Awesome_5_Free'] before:text-sm before:pr-3 before:top-0.5 before:relative">Berita & Edukasi</li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="h-full w-20 min-w-20 absolute bottom-0 flex justify-center items-center flex-col py-18.75 px-3.75 left-0 border-r border-white/10 z-1 max-xl:hidden">
-      <ul class="flex gap-7.5 [writing-mode:tb-rl]">
-        <li><a class="text-sm uppercase text-white tracking-[1px]" href="https://www.instagram.com/">Instagram</a></li>
-        <li><a class="text-sm uppercase text-white tracking-[1px]" href="https://www.facebook.com/">Facebook</a></li>
-        <li><a class="text-sm uppercase text-white tracking-[1px]" href="https://x.com/">twitter</a></li>
-      </ul>
-    </div>
-    <div class="absolute bottom-0 right-0 bg-primary size-71.25 rounded-full blur-[120px] opacity-50 max-xl:hidden"></div>
-    <div class="absolute top-[25%] left-0 bg-yellow-400 size-71.25 rounded-full blur-[120px] opacity-40 max-xl:hidden"></div>
-    <div class="absolute z-0 top-[35%] right-[32%] max-md:hidden">
-      <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30.5 0L34.4251 26.5749L61 30.5L34.4251 34.4251L30.5 61L26.5749 34.4251L0 30.5L26.5749 26.5749L30.5 0Z" fill="var(--primary)" />
-      </svg>
-    </div>
-    <div class="absolute z-0 bottom-0 right-[38%] max-md:hidden">
-      <svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_d_102_123)">
-          <path d="M51 40L52.4156 49.5844L62 51L52.4156 52.4156L51 62L49.5844 52.4156L40 51L49.5844 49.5844L51 40Z" fill="var(--primary)" />
-        </g>
-        <defs>
-          <filter id="filter0_d_102_123" x="0" y="0" width="102" height="102" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-            <feOffset />
-            <feGaussianBlur stdDeviation="20" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_102_123" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_102_123" result="shape" />
-          </filter>
-        </defs>
-      </svg>
-    </div>
-    <div class="absolute z-0 bottom-[20%] right-[10%] max-md:hidden">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 0L16.9304 13.0696L30 15L16.9304 16.9304L15 30L13.0696 16.9304L0 15L13.0696 13.0696L15 0Z" fill="var(--primary)" />
-      </svg>
-    </div>
-  </div>
+<script setup>
+import { ref, computed, watch, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { blogPosts, blogCategories, blogTags, getBlogsByCategory, getBlogsByTag, searchBlogs } from "@/data/blogData.js";
+import MainHero from "@/pages/MainHero.vue";
 
-  <section class="2xl:pt-25 2xl:pb-17.5 md:pt-17.5 md:pb-10 sm:pt-12.5 sm:pb-5 pt-10 pb-5 bg-[#fff5f2]">
-    <div class="container">
-      <div class="row">
-        <div class="xl:w-2/3 lg:w-full mb-7.5">
-          <div class="row loadmore-content">
-            <div class="md:w-1/2 mb-7.5 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">
-              <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
-                <div class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img src="@/assets/images/blog/middle/img1.webp" alt="" class="size-full object-cover" />
+const route = useRoute();
+const router = useRouter();
+
+// State
+const searchQuery = ref("");
+const selectedCategory = ref("all");
+const selectedTag = ref("");
+const displayedPosts = ref([]);
+const postsPerPage = 6;
+const currentPage = ref(1);
+
+// Initialize from URL query
+onMounted(() => {
+  const { search, category, tag } = route.query;
+  if (search) searchQuery.value = search;
+  if (category) selectedCategory.value = category;
+  if (tag) selectedTag.value = tag;
+  filterPosts();
+});
+
+// Watch for query changes
+watch(
+  () => route.query,
+  (newQuery) => {
+    const { search, category, tag } = newQuery;
+    searchQuery.value = search || "";
+    selectedCategory.value = category || "all";
+    selectedTag.value = tag || "";
+    filterPosts();
+  },
+);
+
+// Filter posts based on search, category, and tag
+const filterPosts = () => {
+  let filtered = [...blogPosts];
+
+  // Filter by category
+  if (selectedCategory.value && selectedCategory.value !== "all") {
+    filtered = getBlogsByCategory(selectedCategory.value);
+  }
+
+  // Filter by tag
+  if (selectedTag.value) {
+    filtered = getBlogsByTag(selectedTag.value);
+  }
+
+  // Filter by search
+  if (searchQuery.value) {
+    filtered = searchBlogs(searchQuery.value);
+  }
+
+  displayedPosts.value = filtered;
+  currentPage.value = 1;
+};
+
+// Computed
+const filteredPosts = computed(() => {
+  return displayedPosts.value;
+});
+
+const paginatedPosts = computed(() => {
+  const start = 0;
+  const end = currentPage.value * postsPerPage;
+  return filteredPosts.value.slice(start, end);
+});
+
+const hasMorePosts = computed(() => {
+  return paginatedPosts.value.length < filteredPosts.value.length;
+});
+
+const featuredPost = computed(() => {
+  return blogPosts.find((post) => post.featured) || blogPosts[0];
+});
+
+// Methods
+const handleSearch = () => {
+  updateQuery({ search: searchQuery.value || undefined });
+};
+
+const selectCategory = (categoryId) => {
+  selectedCategory.value = categoryId;
+  searchQuery.value = "";
+  selectedTag.value = "";
+  updateQuery({
+    category: categoryId === "all" ? undefined : categoryId,
+    search: undefined,
+    tag: undefined,
+  });
+};
+
+const selectTag = (tag) => {
+  selectedTag.value = tag;
+  selectedCategory.value = "all";
+  searchQuery.value = "";
+  updateQuery({
+    tag: tag,
+    category: undefined,
+    search: undefined,
+  });
+};
+
+const clearFilters = () => {
+  searchQuery.value = "";
+  selectedCategory.value = "all";
+  selectedTag.value = "";
+  updateQuery({});
+};
+
+const updateQuery = (newQuery) => {
+  router.replace({
+    path: "/blog",
+    query: Object.keys(newQuery).length > 0 ? newQuery : undefined,
+  });
+};
+
+const loadMore = () => {
+  currentPage.value++;
+};
+
+const formatDate = (dateString) => {
+  return dateString;
+};
+
+const getCategoryName = (categoryId) => {
+  const category = blogCategories.find((c) => c.id === categoryId);
+  return category ? category.name : categoryId;
+};
+</script>
+
+<template>
+  <div>
+    <!-- Hero -->
+    <MainHero variant="centered" title="Berita & Edukasi" subtitle="Informasi Terkini Seputar Kesehatan" :showBreadcrumb="true" :showSocialSidebar="true" :showTwitter="true" eyebrow="Konten" eyebrowIcon="fa-book-open" />
+
+    <!-- Main Content -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <!-- Featured Post -->
+        <div v-if="!searchQuery && selectedCategory === 'all' && !selectedTag" class="mb-12">
+          <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+            <div class="grid lg:grid-cols-2 gap-0">
+              <div class="relative h-64 lg:h-auto overflow-hidden">
+                <img :src="featuredPost.image" :alt="featuredPost.title" class="w-full h-full object-cover" @error="$event.target.src = '/images/blog/placeholder.webp'" />
+                <div class="absolute top-4 left-4">
+                  <span class="bg-orange-500 text-white text-xs font-medium px-3 py-1 rounded-full"> Unggulan </span>
                 </div>
-                <div class="relative">
-                  <div class="mb-2.5">
-                    <ul class="flex flex-wrap items-center gap-1.25">
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
-                    </ul>
+              </div>
+              <div class="p-6 lg:p-8 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-sm text-orange-500 font-medium">{{ getCategoryName(featuredPost.category) }}</span>
+                  <span class="text-gray-300">|</span>
+                  <span class="text-sm text-white">{{ featuredPost.date }}</span>
+                </div>
+                <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:text-orange-600 transition-colors">
+                  <router-link :to="`/blog/${featuredPost.id}`">{{ featuredPost.title }}</router-link>
+                </h2>
+                <p class="text-gray-600 mb-6 line-clamp-3">{{ featuredPost.excerpt }}</p>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                      <i class="fa-solid fa-user text-orange-500"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm font-medium text-gray-900">{{ featuredPost.author }}</p>
+                      <p class="text-xs text-white">{{ featuredPost.readTime }} baca</p>
+                    </div>
                   </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Radiant reflections expert dermatology and skin.</router-link></h3>
-                  <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
+                  <router-link :to="`/blog/${featuredPost.id}`" class="inline-flex items-center gap-2 text-orange-600 font-medium hover:text-orange-700 transition-colors">
+                    Baca Selengkapnya
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </router-link>
                 </div>
               </div>
             </div>
-            <div class="md:w-1/2 mb-7.5 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.8s">
-              <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
-                <div class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img src="@/assets/images/blog/middle/img2.webp" alt="" class="size-full object-cover" />
-                </div>
-                <div class="relative">
-                  <div class="mb-2.5">
-                    <ul class="flex flex-wrap items-center gap-1.25">
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
-                    </ul>
-                  </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Glow guide your path to perfect skin health</router-link></h3>
-                  <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
-                </div>
-              </div>
-            </div>
-            <div class="md:w-1/2 mb-7.5 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="0.8s">
-              <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
-                <div class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img src="@/assets/images/blog/middle/img3.webp" alt="" class="size-full object-cover" />
-                </div>
-                <div class="relative">
-                  <div class="mb-2.5">
-                    <ul class="flex flex-wrap items-center gap-1.25">
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
-                    </ul>
-                  </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Brilliant skin blog your dermatology care resource</router-link></h3>
-                  <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
-                </div>
-              </div>
-            </div>
-            <div class="md:w-1/2 mb-7.5 wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="0.8s">
-              <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
-                <div class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img src="@/assets/images/blog/middle/img1.webp" alt="" class="size-full object-cover" />
-                </div>
-                <div class="relative">
-                  <div class="mb-2.5">
-                    <ul class="flex flex-wrap items-center gap-1.25">
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
-                    </ul>
-                  </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Radiant reflections expert dermatology and skin.</router-link></h3>
-                  <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
-                </div>
-              </div>
-            </div>
-            <div class="md:w-1/2 mb-7.5 wow fadeInUp" data-wow-delay="1.0s" data-wow-duration="0.8s">
-              <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
-                <div class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img src="@/assets/images/blog/middle/img2.webp" alt="" class="size-full object-cover" />
-                </div>
-                <div class="relative">
-                  <div class="mb-2.5">
-                    <ul class="flex flex-wrap items-center gap-1.25">
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
-                    </ul>
-                  </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Glow guide your path to perfect skin health</router-link></h3>
-                  <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
-                </div>
-              </div>
-            </div>
-            <div class="md:w-1/2 mb-7.5 wow fadeInUp" data-wow-delay="1.2s" data-wow-duration="0.8s">
-              <div class="relative z-1 lg:p-7.5 p-5 h-full duration-200 bg-white rounded-3xl group">
-                <div class="rounded-xxl mb-6.25 sm:h-62.5 h-50 relative overflow-hidden before:absolute before:top-0 before:-left-[75%] before:z-0 before:block before:w-1/2 before:h-full before:skew-x-[-25deg] before:bg-linear-(--img-hover-gradient) group-hover:before:animate-dzShine">
-                  <img src="@/assets/images/blog/middle/img3.webp" alt="" class="size-full object-cover" />
-                </div>
-                <div class="relative">
-                  <div class="mb-2.5">
-                    <ul class="flex flex-wrap items-center gap-1.25">
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">17 May 2025</li>
-                      <li class="bg-amber-100 text-primary rounded-xxl font-medium text-2xs py-1.25 pr-3.75 pl-5.75 leading-[1.4] relative inline-flex mr-1.25 items-center gap-1 flex-wrap after:absolute after:size-1.5 after:rounded-full after:bg-primary after:left-2.5">By <a href="javascript:void(0);">Nashid Martines</a></li>
-                    </ul>
-                  </div>
-                  <h3 class="xl:text-2xl text-xl mb-2.5"><router-link to="/blog">Brilliant skin blog your dermatology care resource</router-link></h3>
-                  <p class="text-2sm">It is a long established fact that a reader will be distracted by the readable content.</p>
-                  <router-link to="/blog" class="text-2sm font-medium capitalize text-primary"> Read more <i class="feather icon-arrow-right"></i> </router-link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="text-center mt-7.5 m-lg-t0 wow fadeInUp" data-wow-delay="1.4s" data-wow-duration="0.8s">
-            <router-link to="javascript:void(0);" class="rounded-full btn-lg btn-icon btn-primary dz-load-more" rel="ajax/feature-development"> Load More <i class="feather icon-refresh-ccw ms-2"></i> </router-link>
           </div>
         </div>
-        <div class="xl:w-1/3 lg:w-full">
-          <aside class="my-sticky mb-7.5 space-top-0 right">
-            <div class="p-7.5 sm:rounded-xxl rounded-lg bg-white sm:mb-11.25 mb-5">
-              <div class="mb-6.25">
-                <h4 class="text-xl">Search</h4>
+
+        <div class="grid xl:grid-cols-3 gap-8">
+          <!-- Blog Grid -->
+          <div class="xl:col-span-2">
+            <!-- Filter Status -->
+            <div v-if="searchQuery || selectedCategory !== 'all' || selectedTag" class="mb-6 flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-600">Menampilkan hasil untuk:</span>
+                <span v-if="searchQuery" class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                  "{{ searchQuery }}"
+                  <button @click="clearFilters" class="hover:text-orange-900"><i class="fa-solid fa-times"></i></button>
+                </span>
+                <span v-if="selectedCategory !== 'all'" class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                  {{ getCategoryName(selectedCategory) }}
+                  <button @click="clearFilters" class="hover:text-blue-900"><i class="fa-solid fa-times"></i></button>
+                </span>
+                <span v-if="selectedTag" class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                  #{{ selectedTag }}
+                  <button @click="clearFilters" class="hover:text-green-900"><i class="fa-solid fa-times"></i></button>
+                </span>
               </div>
-              <div class="search-bx">
-                <form role="search" method="post">
-                  <div class="relative flex flex-wrap items-stretch w-full">
-                    <input name="text" class="w-full h-15 py-2.5 pl-5 pr-12.5 text-2sm sm:rounded-2lg rounded-md bg-primary-30 border-2 border-primary g-prim placeholder:text-bodycolor" placeholder="Search" type="text" />
-                    <div class="-ms-px">
-                      <button type="submit" class="absolute right-1.25 top-1/2 -translate-y-1/2 text-3xl z-99 size-12 bg-transparent">
-                        <i class="feather icon-search text-primary text-2xl cursor-pointer"></i>
-                      </button>
+              <button @click="clearFilters" class="text-sm text-white hover:text-orange-600">Hapus Filter</button>
+            </div>
+
+            <!-- Posts Grid -->
+            <div v-if="paginatedPosts.length > 0" class="grid md:grid-cols-2 gap-6">
+              <article v-for="post in paginatedPosts" :key="post.id" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow group">
+                <router-link :to="`/blog/${post.id}`" class="block">
+                  <div class="relative h-48 overflow-hidden">
+                    <img :src="post.image" :alt="post.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" @error="$event.target.src = '/images/blog/placeholder.webp'" />
+                    <div class="absolute top-3 left-3">
+                      <span class="bg-white/90 backdrop-blur text-orange-600 text-xs font-medium px-2 py-1 rounded-full">{{ getCategoryName(post.category) }}</span>
                     </div>
                   </div>
-                </form>
+                  <div class="p-5">
+                    <div class="flex items-center gap-3 mb-3 text-xs text-white">
+                      <span class="flex items-center gap-1"><i class="fa-regular fa-calendar"></i> {{ post.date }}</span>
+                      <span class="flex items-center gap-1"><i class="fa-regular fa-clock"></i> {{ post.readTime }}</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">{{ post.title }}</h3>
+                    <p class="text-sm text-gray-600 line-clamp-2 mb-4">{{ post.excerpt }}</p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs text-white flex items-center gap-1">
+                        <i class="fa-solid fa-user-circle"></i>
+                        {{ post.author }}
+                      </span>
+                      <span class="text-sm font-medium text-orange-600 group-hover:translate-x-1 transition-transform">Baca <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                    </div>
+                  </div>
+                </router-link>
+              </article>
+            </div>
+
+            <!-- Empty State -->
+            <div v-else class="text-center py-16 bg-white rounded-2xl">
+              <i class="fa-solid fa-search text-5xl text-gray-200 mb-4"></i>
+              <h3 class="text-xl font-semibold text-gray-700 mb-2">Tidak ada artikel ditemukan</h3>
+              <p class="text-white mb-6">Coba ubah kata kunci pencarian atau filter kategori</p>
+              <button @click="clearFilters" class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors">Lihat Semua Artikel</button>
+            </div>
+
+            <!-- Load More -->
+            <div v-if="hasMorePosts" class="text-center mt-8">
+              <button @click="loadMore" class="inline-flex items-center gap-2 bg-white text-gray-700 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-all">
+                <i class="fa-solid fa-rotate-right"></i>
+                Muat Lebih Banyak
+              </button>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="xl:col-span-1 space-y-6">
+            <!-- Search -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h4 class="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass text-orange-500"></i>
+                Cari Artikel
+              </h4>
+              <div class="relative">
+                <input v-model="searchQuery" @keyup.enter="handleSearch" type="text" placeholder="Kata kunci..." class="w-full px-4 py-3 pr-12 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
+                <button @click="handleSearch" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-orange-500 text-white rounded-md flex items-center justify-center hover:bg-orange-600 transition-colors">
+                  <i class="fa-solid fa-arrow-right text-sm"></i>
+                </button>
               </div>
             </div>
-            <div class="p-7.5 sm:rounded-xxl rounded-lg bg-white sm:mb-11.25 mb-5 widget_categories style-1">
-              <div class="mb-6.25">
-                <h4 class="text-xl">Category</h4>
-              </div>
-              <ul>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25">
-                  <router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Acupressure</router-link>
-                  (10)
+
+            <!-- Categories -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h4 class="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-folder-open text-orange-500"></i>
+                Kategori
+              </h4>
+              <ul class="space-y-1">
+                <li v-for="category in blogCategories" :key="category.id">
+                  <button @click="selectCategory(category.id)" :class="['w-full flex items-center justify-between py-2.5 px-3 rounded-lg transition-colors', selectedCategory === category.id ? 'bg-orange-50 text-orange-600' : 'text-gray-600 hover:bg-gray-50']">
+                    <span class="flex items-center gap-3">
+                      <i :class="['fa-solid text-sm', selectedCategory === category.id ? 'fa-folder-open' : 'fa-folder']"></i>
+                      {{ category.name }}
+                    </span>
+                    <span :class="['text-xs px-2 py-0.5 rounded-full', selectedCategory === category.id ? 'bg-orange-200 text-orange-700' : 'bg-gray-100 text-white']">{{ category.count }}</span>
+                  </button>
                 </li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25">
-                  <router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Allgemein</router-link>
-                  (5)
-                </li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Blood</router-link> (17)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Food</router-link> (13)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Health</router-link> (06)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Mental Health</router-link> (17)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Therapy</router-link> (13)</li>
-                <li class="relative py-2.5 pl-6.25 text-2xs text-primary text-right font-medium before:content-['\e829'] before:text-primary before:absolute before:left-0 before:font-['feather'] before:font-light before:text-lg before:top-2.25"><router-link class="float-left text-2sm text-bodycolor" to="/feature-development">Walking</router-link> (06)</li>
               </ul>
             </div>
-            <div class="p-7.5 sm:rounded-xxl rounded-lg bg-white sm:mb-11.25 mb-5 recent-posts-entry">
-              <div class="mb-6.25">
-                <h4 class="text-xl">Latest Post</h4>
-              </div>
-              <div class="widget-post-bx">
-                <div class="flex items-center mb-6.25">
-                  <div class="w-22.5 min-w-22.5 h-25 rounded-2xl relative overflow-hidden">
-                    <img loading="lazy" src="@/assets/images/blog/small/img1.webp" alt="img1" width="150" height="150" class="size-full object-cover" />
+
+            <!-- Recent Posts -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h4 class="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-clock-rotate-left text-orange-500"></i>
+                Terbaru
+              </h4>
+              <div class="space-y-4">
+                <router-link v-for="post in blogPosts.slice(0, 3)" :key="post.id" :to="`/blog/${post.id}`" class="flex gap-4 group">
+                  <div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+                    <img :src="post.image" :alt="post.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform" @error="$event.target.src = '/images/blog/placeholder.webp'" />
                   </div>
-                  <div class="relative ml-4">
-                    <div class="mb-1">
-                      <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="/feature-development">03 August 2025</router-link></li>
-                      </ul>
-                    </div>
-                    <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
+                  <div class="flex-1 min-w-0">
+                    <span class="text-xs text-orange-500 font-medium">{{ getCategoryName(post.category) }}</span>
+                    <h5 class="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-orange-600 transition-colors">{{ post.title }}</h5>
+                    <p class="text-xs text-white mt-1">{{ post.date }}</p>
                   </div>
-                </div>
-                <div class="flex items-center mb-6.25">
-                  <div class="w-22.5 min-w-22.5 h-25 rounded-2xl relative overflow-hidden">
-                    <img loading="lazy" src="@/assets/images/blog/small/img2.webp" alt="img2" width="150" height="150" class="size-full object-cover" />
-                  </div>
-                  <div class="relative ml-4">
-                    <div class="mb-1">
-                      <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="/feature-development">03 August 2025</router-link></li>
-                      </ul>
-                    </div>
-                    <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
-                  </div>
-                </div>
-                <div class="flex items-center mb-6.25">
-                  <div class="w-22.5 min-w-22.5 h-25 rounded-2xl relative overflow-hidden">
-                    <img loading="lazy" src="@/assets/images/blog/small/img3.webp" alt="img3" width="150" height="150" class="size-full object-cover" />
-                  </div>
-                  <div class="relative ml-4">
-                    <div class="mb-1">
-                      <ul>
-                        <li class="text-2xs text-primary font-medium uppercase"><router-link to="/feature-development">03 August 2025</router-link></li>
-                      </ul>
-                    </div>
-                    <h6 class="font-medium text-base"><router-link to="/blog">The Art of Managing Business and Patient Care</router-link></h6>
-                  </div>
-                </div>
+                </router-link>
               </div>
             </div>
-            <div class="p-7.5 sm:rounded-xxl rounded-lg bg-white sm:mb-11.25 mb-5">
-              <div class="mb-6.25">
-                <h4 class="text-xl">Tags</h4>
-              </div>
-              <div class="tagcloud">
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Acupressure</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Allgemein</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Blood</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Food</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Health</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Mental Health</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Therapy</a>
-                <a class="relative py-2.5 px-3.75 inline-block text-sm text-secondary leading-[1.4] sm:rounded-2lg rounded-md bg-light mr-2 mb-2.5 hover:bg-primary hover:text-white" href="/feature-development">Walking</a>
+
+            <!-- Tags -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+              <h4 class="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-tags text-orange-500"></i>
+                Tag Populer
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <button v-for="tag in blogTags" :key="tag" @click="selectTag(tag)" :class="['px-3 py-1.5 text-sm rounded-lg transition-colors', selectedTag === tag ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-orange-100 hover:text-orange-600']">
+                  {{ tag }}
+                </button>
               </div>
             </div>
           </aside>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
+
+<style scoped>
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>

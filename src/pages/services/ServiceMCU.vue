@@ -6,7 +6,7 @@ import { medicalCheckupPackages } from "../data/examinationData.js";
 import ServiceSidebar from "@/pages/services/ServiceSidebar.vue";
 import ServiceFilter from "@/pages/services/ServiceFilter.vue";
 import { useHead } from "@vueuse/head";
-
+import ServicesHero from "@/components/ServicesHero.vue";
 const selectedSubcategory = ref("paketPersonal");
 const searchQuery = ref("");
 
@@ -32,48 +32,19 @@ useHead({
   <div>
     <main class="page-content">
       <!-- Hero Section -->
-      <section class="relative overflow-hidden bg-linear-to-br from-orange-600 via-orange-500 to-orange-700 text-white">
-        <!-- Decorative background -->
-        <div class="absolute inset-0 opacity-15">
-          <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div class="absolute bottom-0 left-1/3 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="relative container mx-auto px-4 max-w-7xl py-16">
-          <div class="max-w-3xl">
-            <!-- Eyebrow -->
-            <div class="inline-flex items-center gap-2 mb-4 text-sm font-medium bg-white/10 px-3 py-1.5 rounded-full backdrop-blur">
-              <i class="fa-solid fa-heartbeat"></i>
-              <span>Medical Check Up</span>
-            </div>
-
-            <!-- Title -->
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              Medical Check Up<br />
-              <span class="text-orange-200">Komprehensif & Profesional</span>
-            </h1>
-
-            <!-- Description -->
-            <p class="text-orange-100 text-base md:text-lg leading-relaxed max-w-2xl">Medical Check Up di Caya dirancang untuk membantu memantau kondisi kesehatan individu maupun karyawan perusahaan melalui pemeriksaan yang terstandar dan profesional.</p>
-
-            <!-- Meta info -->
-            <div class="flex flex-wrap items-center gap-6 mt-6 text-sm text-orange-100">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-clock"></i>
-                <span>Pemeriksaan menyeluruh</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-user-doctor"></i>
-                <span>Dokter profesional</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-file-waveform"></i>
-                <span>Laporan lengkap</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicesHero
+        :eyebrow="{ icon: 'fa-flask-vial', text: '>Medical Check Up' }"
+        :title="{ main: 'Komprehensif & Profesional', highlight: 'Medical Check Up' }"
+        description="Medical Check Up di Caya dirancang untuk membantu memantau kondisi kesehatan individu maupun karyawan perusahaan melalui pemeriksaan yang terstandar dan profesional."
+        :metaItems="[
+          { icon: 'fa-clock', text: 'Pemeriksaan menyeluruh' },
+          { icon: 'fa-user-doctor', text: 'Dokter profesional' },
+          { icon: 'fa-file-waveform', text: 'Laporan lengkap' },
+        ]"
+        gradientFrom="from-orange-500"
+        gradientVia="via-orange-600"
+        gradientTo="to-orange-700"
+      />
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">
@@ -93,7 +64,7 @@ useHead({
                 <ServiceFilter v-model="selectedSubcategory" :options="medicalCheckupPackages.subcategories" />
                 <!-- Search -->
                 <div class="relative mt-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari paket medical check up..." class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
+                  <input v-model="searchQuery" type="text" placeholder="Cari paket medical check up..." class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:border-orange-900 focus:ring-2 focus:ring-orange-200 transition-all" />
                   <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                 </div>
               </div>

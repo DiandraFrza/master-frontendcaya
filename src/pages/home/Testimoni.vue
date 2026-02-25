@@ -73,7 +73,7 @@ const testimonials = ref([
               <p class="font-bold text-gray-900">
                 {{ item.name }}
               </p>
-              <p class="text-gray-500 text-xs">
+              <p class="text-white text-xs">
                 {{ item.role }}
               </p>
             </div>

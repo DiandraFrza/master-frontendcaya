@@ -36,7 +36,7 @@ const services = ref([
   },
   {
     id: 4,
-    title: "Radiologi & Penunjang",
+    title: "Radiologi",
     desc: "Pemeriksaan radiologi dada, gigi, tulang dan sendi dengan alat modern.",
     highlights: ["Thorax", "Dental", "Extremitas"],
     link: "/services/radiologi",
@@ -45,7 +45,7 @@ const services = ref([
   },
   {
     id: 5,
-    title: "Layanan Korporasi & K3",
+    title: "Layanan Korporat",
     desc: "MCU berkala karyawan, laporan kesehatan, dan layanan onsite perusahaan.",
     highlights: ["MCU Berkala", "Onsite", "Laporan HR"],
     link: "/services/korporasi",
@@ -84,7 +84,7 @@ const openModal = (service) => {
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <article v-for="item in services" :key="item.id" class="group bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col h-full">
           <!-- Icon Badge -->
-          <div :class="`w-16 h-16 rounded-xl bg-gradient-to-br ${item.color} text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`">
+          <div :class="`w-16 h-16 rounded-xl bg-linear-to-br ${item.color} text-white flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`">
             <i :class="`fa-solid ${item.icon} text-2xl`"></i>
           </div>
 
@@ -94,19 +94,19 @@ const openModal = (service) => {
           </h4>
 
           <!-- Highlights -->
-          <div class="flex flex-wrap gap-2 mb-3">
+          <!-- <div class="flex flex-wrap gap-2 mb-3">
             <span v-for="tag in item.highlights" :key="tag" class="text-xs bg-gray-100 text-gray-700 px-2.5 py-1 rounded-full font-medium">
               {{ tag }}
             </span>
-          </div>
+          </div> -->
 
           <!-- Description -->
-          <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
+          <!-- <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-4">
             {{ item.desc }}
-          </p>
+          </p> -->
 
           <!-- CTA Button -->
-          <button @click="openModal(item)" class="inline-flex items-center justify-center w-full border-2 border-[#ff562c] text-[#ff562c] px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-[#ff562c] hover:text-white transition-all duration-300 min-h-[44px]">
+          <button @click="openModal(item)" class="inline-flex items-center justify-center w-full border-2 border-[#ff562c] text-[#ff562c] px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-[#ff562c] hover:text-white transition-all duration-300 min-h-11">
             <i class="fa-solid fa-arrow-right mr-2"></i>
             Lihat Detail
           </button>

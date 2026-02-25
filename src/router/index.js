@@ -1,15 +1,16 @@
 /** @format */
 
-import HasilMCU from "@/pages/HasilMCU.vue";
-import MedicalDisclaimer from "@/pages/MedicalDisclaimer.vue";
-import TermsConditions from "@/pages/TermsConditions.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const Beranda = () => import("@/pages/Beranda.vue");
+const HasilMCU = () => import("@/pages/HasilMCU.vue");
+const MedicalDisclaimer = () => import("@/pages/MedicalDisclaimer.vue");
+const TermsConditions = () => import("@/pages/TermsConditions.vue");
 const DetailAbout = () => import("@/pages/about/detailAbout.vue");
 const DetailMCU = () => import("@/pages/mcu/listMCU.vue");
 const DetailOurClinic = () => import("@/pages/ourclinics/detailOurClinic.vue");
 const DetailBlog = () => import("@/pages/blog/Blog.vue");
+const BlogDetail = () => import("@/pages/blog/BlogDetail.vue");
 
 // Service pages
 const Laboratorium = () => import("@/pages/services/Laboratorium.vue");
@@ -19,33 +20,34 @@ const ScreeningPenyakit = () => import("@/pages/services/ScreeningPenyakit.vue")
 const Elektromedis = () => import("@/pages/services/Elektromedis.vue");
 const HomeService = () => import("@/pages/services/HomeService.vue");
 const Konsultasi = () => import("@/pages/services/Konsultasi.vue");
+const LayananKorporate = () => import("@/pages/services/LayananKorporate.vue");
 
-// Privacy pages
-import KebijakanPrivasi from "@/pages/privacy/KebijkanPrivacy.vue";
-import KomitmenPerlindunganData from "@/pages/privacy/KomitmenPelindunganData.vue";
-import DaftarHukum from "@/pages/privacy/DaftarHukum.vue";
-import TujuanRuangLingkup from "@/pages/privacy/TujuanRuangLingkup.vue";
-import KebijakanPrivasiLayananKesehatan from "@/pages/privacy/KebijakanPrivasiLayananKesehatan.vue";
-import KebijakanPrivasiWebsite from "@/pages/privacy/KebijakanPrivasiWebsite.vue";
-import KebijakanPrivasiContactCenter from "@/pages/privacy/KebijakanPrivasiContactCenter.vue";
-import KeamananData from "@/pages/privacy/KeamananData.vue";
-import PerubahanKebijakanPrivasi from "@/pages/privacy/PerubahanKebijakanPrivasi.vue";
-import HukumYangBerlaku from "@/pages/privacy/HukumYangBerlaku.vue";
-import Narahubung from "@/pages/privacy/Narahubung.vue";
+// Privacy pages - Lazy loaded
+const KebijakanPrivasi = () => import("@/pages/privacy/KebijkanPrivacy.vue");
+const KomitmenPerlindunganData = () => import("@/pages/privacy/KomitmenPelindunganData.vue");
+const DaftarHukum = () => import("@/pages/privacy/DaftarHukum.vue");
+const TujuanRuangLingkup = () => import("@/pages/privacy/TujuanRuangLingkup.vue");
+const KebijakanPrivasiLayananKesehatan = () => import("@/pages/privacy/KebijakanPrivasiLayananKesehatan.vue");
+const KebijakanPrivasiWebsite = () => import("@/pages/privacy/KebijakanPrivasiWebsite.vue");
+const KebijakanPrivasiContactCenter = () => import("@/pages/privacy/KebijakanPrivasiContactCenter.vue");
+const KeamananData = () => import("@/pages/privacy/KeamananData.vue");
+const PerubahanKebijakanPrivasi = () => import("@/pages/privacy/PerubahanKebijakanPrivasi.vue");
+const HukumYangBerlaku = () => import("@/pages/privacy/HukumYangBerlaku.vue");
+const Narahubung = () => import("@/pages/privacy/Narahubung.vue");
 
-// Error pages
-import FeatureDevelopment from "@/pages/FeatureDevelopment.vue";
-import ConnectionError from "@/pages/ConnectionError.vue";
+// Error pages - Lazy loaded
+const FeatureDevelopment = () => import("@/pages/FeatureDevelopment.vue");
+const ConnectionError = () => import("@/pages/ConnectionError.vue");
 
 const routes = [
   { path: "/", name: "Beranda", component: Beranda },
   { path: "/tentang-caya", name: "DetailAbout", component: DetailAbout },
   { path: "/mcu", name: "DetailMCU", component: DetailMCU },
   { path: "/cabang", name: "DetailOurClinic", component: DetailOurClinic },
-  { path: "/blog-edukasi", name: "DetailBlog", component: DetailBlog },
+  { path: "/blog", name: "DetailBlog", component: DetailBlog },
+  { path: "/blog-edukasi", redirect: "/blog" },
+  { path: "/blog/:id", name: "BlogDetail", component: BlogDetail },
   { path: "/hasil-mcu", name: "HasilMCU", component: HasilMCU },
-
-  { path: "/hasil-mcu", component: HasilMCU },
 
   // Service pages
   { path: "/services/lab", name: "Laboratorium", component: Laboratorium },
@@ -55,6 +57,7 @@ const routes = [
   { path: "/services/elektromedis", name: "Elektromedis", component: Elektromedis },
   { path: "/services/home-service", name: "HomeService", component: HomeService },
   { path: "/services/konsultasi", name: "Konsultasi", component: Konsultasi },
+  { path: "/services/korporat", name: "LayananKorporate", component: LayananKorporate },
 
   // Privacy pages
   { path: "/kebijakan-privasi", component: KebijakanPrivasi },

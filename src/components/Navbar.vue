@@ -18,33 +18,70 @@
             <span v-if="currentRoute === '/tentang-caya'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
 
-          <!-- Produk & Layanan (modern dropdown) -->
+          <!-- Produk & Layanan - Redesain Dropdown -->
           <div class="relative" ref="layananRef" @mouseenter="openLayanan" @mouseleave="startCloseLayanan">
-            <button @click="toggleLayanan" class="nav-link flex items-center gap-2 px-3 py-2 rounded-md transition" :class="getNavLinkClass('/services')" :style="navBg ? {} : { color: '#000' }" :aria-expanded="layananOpen.toString()">
+            <button @click="toggleLayanan" class="nav-link flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300" :class="[getNavLinkClass('/services'), isServicesActive ? 'text-[#fd543a]' : '']" :style="navBg ? {} : { color: '#000' }" :aria-expanded="layananOpen.toString()">
               Produk & Layanan
-              <svg class="w-4 h-4 transition-transform duration-200" :class="{ 'rotate-180': layananOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': layananOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
             <transition name="dropdown-fade">
-              <div v-if="layananOpen" class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[420px] rounded-2xl bg-white shadow-lg border border-gray-100 p-4 grid grid-cols-2 gap-4 z-50" @mouseenter="clearCloseTimeout" @mouseleave="startCloseLayanan" role="menu" aria-label="Produk dan Layanan">
-                <div v-for="group in layananMenu" :key="group.title" class="space-y-2">
-                  <h4 class="font-semibold text-gray-900 text-sm flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#fd543a]"></span>
-                    {{ group.title }}
-                  </h4>
+              <div v-if="layananOpen" class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[480px] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden z-50" @mouseenter="clearCloseTimeout" @mouseleave="startCloseLayanan" role="menu" aria-label="Produk dan Layanan">
+                <!-- Header dengan gradient -->
+                <div class="bg-gradient-to-r from-[#fd543a]/10 to-[#fd543a]/5 px-6 py-4 border-b border-gray-100">
+                  <h3 class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-[#fd543a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    Layanan Kami
+                  </h3>
+                  <p class="text-xs text-white mt-1">Pilih layanan sesuai kebutuhan kesehatan Anda</p>
+                </div>
 
-                  <ul class="space-y-1">
-                    <li v-for="item in group.items" :key="item.to">
-                      <router-link :to="item.to" class="flex items-center justify-between text-sm text-gray-600 hover:text-[#fd543a] p-2 rounded-md hover:bg-gray-50 transition" role="menuitem" @click="layananOpen = false">
-                        <span class="truncate">{{ item.label }}</span>
-                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                <!-- Menu Items -->
+                <div class="p-4 space-y-2">
+                  <div v-for="group in layananMenu" :key="group.title" class="group">
+                    <!-- Category Header -->
+                    <div class="flex items-center gap-3 px-3 py-2 mb-1">
+                      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#fd543a]/20 to-[#fd543a]/5 flex items-center justify-center group-hover:from-[#fd543a] group-hover:to-[#e67931] transition-all duration-300">
+                        <svg class="w-5 h-5 text-[#fd543a] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path v-if="group.icon === 'lab'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                          <path v-else-if="group.icon === 'nonlab'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          <path v-else-if="group.icon === 'corporate'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                      </router-link>
-                    </li>
-                  </ul>
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-gray-900 text-sm">{{ group.title }}</h4>
+                        <p class="text-xs text-gray-400">{{ group.items.length }} layanan</p>
+                      </div>
+                    </div>
+
+                    <!-- Sub Items -->
+                    <ul class="space-y-1 pl-4">
+                      <li v-for="item in group.items" :key="item.to">
+                        <router-link :to="item.to" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-gray-600 hover:text-[#fd543a] hover:bg-[#fd543a]/5 transition-all duration-200 group/item" role="menuitem" @click="layananOpen = false">
+                          <span class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover/item:bg-[#fd543a] transition-colors duration-200"></span>
+                          <span class="flex-1">{{ item.label }}</span>
+                          <svg class="w-4 h-4 text-gray-300 group-hover/item:text-[#fd543a] group-hover/item:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                          </svg>
+                        </router-link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Footer CTA -->
+                <div class="bg-gray-50 px-6 py-4 border-t border-gray-100">
+                  <router-link to="/services" @click="layananOpen = false" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#fd543a] text-white rounded-xl font-medium text-sm hover:bg-[#e67931] transition-all duration-300 hover:shadow-lg hover:shadow-[#fd543a]/30">
+                    <span>Lihat Semua Layanan</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </router-link>
                 </div>
               </div>
             </transition>
@@ -98,24 +135,45 @@
             Tentang Caya
             <span v-if="currentRoute === '/tentang-caya'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
-          <div>
-            <button @click="mobileLayananOpen = !mobileLayananOpen" class="w-full flex items-center justify-between py-2 font-medium text-[#111]">
-              Produk & Layanan
-              <svg class="w-4 h-4 transition-transform" :class="mobileLayananOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+          <!-- Mobile Layanan dengan redesain -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden bg-white/50">
+            <button @click="mobileLayananOpen = !mobileLayananOpen" class="w-full flex items-center justify-between px-4 py-3 font-medium text-[#111] hover:bg-white/80 transition-colors">
+              <span class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-[#fd543a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+                Produk & Layanan
+              </span>
+              <svg class="w-4 h-4 transition-transform duration-300" :class="mobileLayananOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
-            <div v-if="mobileLayananOpen" class="pl-4 mt-2 space-y-4">
-              <div v-for="group in layananMenu" :key="group.title">
-                <p class="text-xs font-semibold text-gray-500 mb-1">
-                  {{ group.title }}
-                </p>
+            <div v-if="mobileLayananOpen" class="border-t border-gray-100 bg-white">
+              <div v-for="group in layananMenu" :key="group.title" class="px-4 py-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-[#fd543a]/10 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-[#fd543a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path v-if="group.icon === 'lab'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <p class="text-sm font-semibold text-gray-900">{{ group.title }}</p>
+                </div>
 
-                <router-link v-for="item in group.items" :key="item.to" :to="item.to" @click="closeMobile" class="block py-1 text-sm text-gray-700 hover:text-[#fd543a]">
+                <router-link v-for="item in group.items" :key="item.to" :to="item.to" @click="closeMobile" class="flex items-center gap-2 py-2 pl-10 text-sm text-gray-600 hover:text-[#fd543a] transition-colors">
+                  <span class="w-1 h-1 rounded-full bg-gray-300"></span>
                   {{ item.label }}
                 </router-link>
               </div>
+
+              <router-link to="/services" @click="closeMobile" class="flex items-center justify-center gap-2 mx-4 mb-4 py-2.5 px-4 bg-[#fd543a] text-white rounded-lg font-medium text-sm">
+                Lihat Semua Layanan
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </router-link>
             </div>
           </div>
 
@@ -154,6 +212,7 @@ const layananOpen = ref(false);
 const layananRef = ref(null);
 let closeTimeout = null;
 
+// Tambah menu layanan
 const layananMenu = [
   {
     title: "Tes Laboratorium",
@@ -172,7 +231,13 @@ const layananMenu = [
     ],
   },
 ];
+
 const mobileLayananOpen = ref(false);
+
+// Check if any service route is active
+const isServicesActive = computed(() => {
+  return route.path.startsWith("/services");
+});
 
 function openLayanan() {
   if (closeTimeout) {
@@ -187,7 +252,7 @@ function startCloseLayanan() {
   closeTimeout = setTimeout(() => {
     layananOpen.value = false;
     closeTimeout = null;
-  }, 180);
+  }, 200);
 }
 
 function clearCloseTimeout() {
@@ -319,17 +384,20 @@ function onReserve() {
   opacity: 0;
 }
 
-/* modern dropdown transition */
-.dropdown-fade-enter-active,
-.dropdown-fade-leave-active {
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
+/* Modern dropdown transition dengan scale */
+.dropdown-fade-enter-active {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.dropdown-fade-enter-from,
+.dropdown-fade-leave-active {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dropdown-fade-enter-from {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-12px) scale(0.96);
+}
 .dropdown-fade-leave-to {
   opacity: 0;
-  transform: translateY(-6px) scale(0.995);
+  transform: translateX(-50%) translateY(-8px) scale(0.98);
 }
 
 /* dropdown item tweaks */

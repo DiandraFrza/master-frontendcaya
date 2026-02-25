@@ -5,6 +5,8 @@ import { ref, computed } from "vue";
 import { laboratoryExams } from "../data/examinationData.js";
 import ServiceSidebar from "@/pages/services/ServiceSidebar.vue";
 import ServiceFilter from "@/pages/services/ServiceFilter.vue";
+import ServicesHero from "@/components/ServicesHero.vue";
+import ExamCard from "@/components/ExamCard.vue";
 
 const selectedSubcategory = ref("kimiaDarah");
 const searchQuery = ref("");
@@ -12,57 +14,48 @@ const searchQuery = ref("");
 const currentSubcategory = computed(() => laboratoryExams.subcategories[selectedSubcategory.value]);
 
 const filteredExams = computed(() => {
-  if (!searchQuery.value) return currentSubcategory.value.items;
-  return currentSubcategory.value.items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  let items = currentSubcategory.value.items;
+  if (!searchQuery.value) return items;
+  return items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
 });
+
+const stats = [
+  { value: "100+", label: "Jenis Pemeriksaan" },
+  { value: "1-3 Jam", label: "Waktu Hasil" },
+  { value: "24/7", label: "Layanan" },
+  { value: "ISO", label: "Tersertifikasi" },
+];
 </script>
 
 <template>
   <div>
     <main class="page-content">
       <!-- Hero Section -->
-      <section class="relative overflow-hidden bg-linear-to-br from-orange-600 via-orange-500 to-orange-700 text-white">
-        <!-- Decorative background -->
-        <div class="absolute inset-0 opacity-15">
-          <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div class="absolute bottom-0 left-1/3 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-        </div>
+      <ServicesHero
+        :eyebrow="{ icon: 'fa-flask-vial', text: 'Laboratorium Klinik' }"
+        :title="{ main: 'Pemeriksaan Laboratorium', highlight: 'Akurat & Terpercaya' }"
+        description="Pemeriksaan darah, urine, dan parameter klinis dengan standar mutu laboratorium terkini untuk hasil yang akurat dan dapat dipercaya."
+        :metaItems="[
+          { icon: 'fa-clock', text: 'Hasil cepat' },
+          { icon: 'fa-user-doctor', text: 'Analis profesional' },
+          { icon: 'fa-file-waveform', text: 'Hasil digital' },
+        ]"
+        gradientFrom="from-orange-500"
+        gradientVia="via-orange-600"
+        gradientTo="to-orange-700"
+      />
 
-        <div class="relative container mx-auto px-4 max-w-7xl py-16">
-          <div class="max-w-3xl">
-            <!-- Eyebrow -->
-            <div class="inline-flex items-center gap-2 mb-4 text-sm font-medium bg-white/10 px-3 py-1.5 rounded-full backdrop-blur">
-              <i class="fa-solid fa-flask-vial"></i>
-              <span>Laboratorium Klinik</span>
-            </div>
-
-            <!-- Title -->
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              Pemeriksaan Laboratorium<br />
-              <span class="text-orange-200">Akurat & Terpercaya</span>
-            </h1>
-
-            <!-- Description -->
-            <p class="text-orange-100 text-base md:text-lg leading-relaxed max-w-2xl">Pemeriksaan darah, urin, dan parameter klinis dengan standar mutu laboratorium terkini untuk hasil yang akurat dan dapat dipercaya.</p>
-
-            <!-- Meta info -->
-            <div class="flex flex-wrap items-center gap-6 mt-6 text-sm text-orange-100">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-clock"></i>
-                <span>Hasil cepat</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-user-doctor"></i>
-                <span>Analis profesional</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-file-waveform"></i>
-                <span>Hasil digital</span>
-              </div>
+      <!-- Stats Bar -->
+      <div class="bg-white border-b border-gray-100 py-6">
+        <div class="container mx-auto px-4 max-w-7xl">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div v-for="(stat, index) in stats" :key="index" class="text-center">
+              <div class="text-2xl md:text-3xl font-bold text-orange-600">{{ stat.value }}</div>
+              <div class="text-xs md:text-sm text-gray-500">{{ stat.label }}</div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">
@@ -70,36 +63,54 @@ const filteredExams = computed(() => {
           <div class="grid lg:grid-cols-4 gap-6">
             <!-- Sidebar -->
             <ServiceSidebar />
+
             <!-- Main Content -->
             <div class="lg:col-span-3">
-              <button @click="$router.back()" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 mb-6">
+              <button @click="$router.back()" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-orange-600 mb-6 transition-colors">
                 <i class="fa-solid fa-arrow-left"></i>
                 Kembali ke halaman sebelumnya
               </button>
+
               <!-- Header -->
               <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+                <!-- Subcategory Description -->
+                <div class="mb-4 pb-4 border-b border-gray-100">
+                  <h2 class="text-lg font-bold text-gray-900">{{ currentSubcategory.name }}</h2>
+                  <p class="text-sm text-gray-500 mt-1">{{ currentSubcategory.description }}</p>
+                </div>
+
                 <!-- Filter button -->
                 <ServiceFilter v-model="selectedSubcategory" :options="laboratoryExams.subcategories" />
+
                 <!-- Search -->
                 <div class="relative mt-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan laboratorium..." class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
+                  <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan laboratorium..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
                   <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
+                    <i class="fa-solid fa-times-circle"></i>
+                  </button>
                 </div>
               </div>
 
+              <!-- Results Count -->
+              <div class="flex items-center justify-between mb-4">
+                <p class="text-sm text-gray-500">
+                  Menampilkan <span class="font-semibold text-gray-900">{{ filteredExams.length }}</span> pemeriksaan
+                </p>
+              </div>
+
               <!-- Exams Grid -->
-              <div v-if="filteredExams.length > 0" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div v-for="exam in filteredExams" :key="exam.name" class="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 p-4 transition-all duration-300 group">
-                  <div class="flex items-start gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center group-hover:scale-110 transition-transform group-hover:bg-orange-100">
-                      <i :class="`fa-solid ${exam.icon} text-orange-600`"></i>
-                    </div>
-                    <div class="flex-1">
-                      <h4 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">{{ exam.name }}</h4>
-                      <p class="text-xs text-gray-500 mt-1">{{ exam.result }}</p>
-                    </div>
-                  </div>
+              <div v-if="filteredExams.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                <ExamCard v-for="exam in filteredExams" :key="exam.name" v-bind="exam" color="orange" />
+              </div>
+
+              <!-- Empty State -->
+              <div v-else class="text-center py-12 bg-white rounded-2xl border border-gray-100">
+                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fa-solid fa-search text-orange-500 text-2xl"></i>
                 </div>
+                <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
+                <p class="text-sm text-gray-500">Coba kata kunci lain atau pilih kategori berbeda</p>
               </div>
 
               <!-- Info Box -->
@@ -111,7 +122,7 @@ const filteredExams = computed(() => {
                 <ul class="space-y-2 text-sm text-orange-800">
                   <li class="flex items-start gap-2">
                     <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Alat terkalibrasi dan modern</span>
+                    <span>Alat analyzer terkini dan terkalibrasi rutin</span>
                   </li>
                   <li class="flex items-start gap-2">
                     <span class="text-orange-600 mt-0.5">✓</span>
@@ -119,7 +130,11 @@ const filteredExams = computed(() => {
                   </li>
                   <li class="flex items-start gap-2">
                     <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>Hasil digital berkualitas tinggi dengan interpretasi akurat</span>
+                    <span>Hasil digital berkualitas dengan interpretasi akurat</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-600 mt-0.5">✓</span>
+                    <span>Kerja sama dengan laboratorium rujukan untuk tes khusus</span>
                   </li>
                 </ul>
               </div>
@@ -132,9 +147,7 @@ const filteredExams = computed(() => {
 </template>
 
 <style scoped>
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+.page-content {
+  min-height: 100vh;
 }
 </style>
