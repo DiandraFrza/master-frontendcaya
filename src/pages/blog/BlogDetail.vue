@@ -80,7 +80,7 @@ onMounted(() => {
               <!-- Article Content -->
               <div class="p-6 md:p-8">
                 <!-- Meta -->
-                <div class="flex flex-wrap items-center gap-4 mb-6 text-sm text-white">
+                <div class="flex flex-wrap items-center gap-4 mb-6 text-sm text-black">
                   <div class="flex items-center gap-2">
                     <i class="fa-solid fa-user text-orange-500"></i>
                     <span>{{ blog.author }}</span>
