@@ -13,15 +13,21 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "Solusi kesehatan terintegrasi untuk perusahaan dan institusi. MCU onsite, wellness program, dan kerja sama kesehatan.",
+      content: "Solusi kesehatan terintegrasi untuk perusahaan dan institusi. MCU onsite dengan layanan profesional.",
     },
   ],
 });
 
 const selectedCategory = ref("mcuOnsite");
+
+// Filter hanya MCU Onsite (hapus wellness program & kerja sama)
+const korporatSubcategories = computed(() => {
+  const { mcuOnsite } = layananKorporat.subcategories;
+  return { mcuOnsite };
+});
 const searchQuery = ref("");
 
-const currentCategory = computed(() => layananKorporat.subcategories[selectedCategory.value]);
+const currentCategory = computed(() => korporatSubcategories.value[selectedCategory.value]);
 
 const filteredItems = computed(() => {
   let items = currentCategory.value.items;
@@ -29,12 +35,12 @@ const filteredItems = computed(() => {
   return items.filter((item) => item.name.toLowerCase().includes(searchQuery.value.toLowerCase()) || item.description.toLowerCase().includes(searchQuery.value.toLowerCase()));
 });
 
-const stats = [
-  { value: "50+", label: "Perusahaan Partner" },
-  { value: "MCU", label: "Onsite" },
-  { value: "Custom", label: "Program" },
-  { value: "Dedicated", label: "Support" },
-];
+// const stats = [
+//   { value: "50+", label: "Perusahaan Partner" },
+//   { value: "MCU", label: "Onsite" },
+//   { value: "Custom", label: "Program" },
+//   { value: "Dedicated", label: "Support" },
+// ];
 
 const benefits = [
   {
@@ -79,7 +85,7 @@ const benefits = [
       />
 
       <!-- Stats Bar -->
-      <div class="bg-white border-b border-gray-100 py-6">
+      <!-- <div class="bg-white border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="(stat, index) in stats" :key="index" class="text-center">
@@ -88,7 +94,7 @@ const benefits = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">
@@ -112,17 +118,6 @@ const benefits = [
                   </div>
                   <h3 class="font-bold text-gray-900 mb-1">{{ benefit.title }}</h3>
                   <p class="text-sm text-gray-500">{{ benefit.desc }}</p>
-                </div>
-              </div>
-
-              <!-- Category Tabs -->
-              <div class="bg-white rounded-2xl p-2 shadow-sm border border-gray-100 mb-6">
-                <div class="grid grid-cols-3 gap-2">
-                  <button v-for="(cat, key) in layananKorporat.subcategories" :key="key" @click="selectedCategory = key" class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300" :class="selectedCategory === key ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-md' : 'text-gray-600 hover:bg-orange-50'">
-                    <i :class="`fa-solid ${cat.icon}`"></i>
-                    <span class="hidden sm:inline">{{ cat.name }}</span>
-                    <span class="sm:hidden">{{ cat.name.split(" ")[0] }}</span>
-                  </button>
                 </div>
               </div>
 
@@ -168,12 +163,12 @@ const benefits = [
                       </div>
 
                       <!-- Min Participants Badge -->
-                      <div v-if="item.minParticipants" class="mt-3">
+                      <!-- <div v-if="item.minParticipants" class="mt-3">
                         <span class="inline-flex items-center gap-1 px-3 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full">
                           <i class="fa-solid fa-users"></i>
                           Minimal {{ item.minParticipants }} peserta
                         </span>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>

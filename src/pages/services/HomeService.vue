@@ -41,12 +41,12 @@ const processSteps = [
   },
 ];
 
-const stats = [
-  { value: "100%", label: "Perlu Reservasi" },
-  { value: "H-1", label: "Minimal Booking" },
-  { value: "Jabodetabek", label: "Area Layanan" },
-  { value: "Sama", label: "Kualitas Hasil" },
-];
+// const stats = [
+//   { value: "100%", label: "Perlu Reservasi" },
+//   { value: "H-1", label: "Minimal Booking" },
+//   { value: "Jabodetabek", label: "Area Layanan" },
+//   { value: "Sama", label: "Kualitas Hasil" },
+// ];
 </script>
 
 <template>
@@ -68,7 +68,7 @@ const stats = [
       />
 
       <!-- Stats Bar -->
-      <div class="bg-white border-b border-gray-100 py-6">
+      <!-- <div class="bg-white border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="(stat, index) in stats" :key="index" class="text-center">
@@ -77,7 +77,7 @@ const stats = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">

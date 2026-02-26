@@ -14,12 +14,12 @@ const filteorangeExams = computed(() => {
   return electromedicalExams.items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
 });
 
-const stats = [
-  { value: "100%", label: "Perlu Reservasi" },
-  { value: "Non-Invasif", label: "Aman" },
-  { value: "15-30 min", label: "Durasi" },
-  { value: "Dokter", label: "Interpretasi" },
-];
+// const stats = [
+//   { value: "100%", label: "Perlu Reservasi" },
+//   { value: "Non-Invasif", label: "Aman" },
+//   { value: "15-30 min", label: "Durasi" },
+//   { value: "Dokter", label: "Interpretasi" },
+// ];
 </script>
 
 <template>
@@ -41,16 +41,16 @@ const stats = [
       />
 
       <!-- Stats Bar -->
-      <div class="bg-white border-b border-gray-100 py-6">
+      <!-- <div class="bg-white border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="(stat, index) in stats" :key="index" class="text-center">
               <div class="text-2xl md:text-3xl font-bold text-orange-600">{{ stat.value }}</div>
-              <div class="text-xs md:text-sm text-white">{{ stat.label }}</div>
+              <div class="text-xs md:text-sm text-black">{{ stat.label }}</div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">
@@ -61,7 +61,7 @@ const stats = [
 
             <!-- Main Content -->
             <div class="lg:col-span-3">
-              <button @click="$router.back()" class="inline-flex items-center gap-2 text-sm text-white hover:text-orange-600 mb-6 transition-colors">
+              <button @click="$router.back()" class="inline-flex items-center gap-2 text-sm text-black hover:text-orange-600 mb-6 transition-colors">
                 <i class="fa-solid fa-arrow-left"></i>
                 Kembali ke halaman sebelumnya
               </button>
@@ -97,7 +97,7 @@ const stats = [
 
               <!-- Results Count -->
               <div class="flex items-center justify-between mb-4">
-                <p class="text-sm text-white">
+                <p class="text-sm text-black">
                   Menampilkan <span class="font-semibold text-gray-900">{{ filteorangeExams.length }}</span> pemeriksaan
                 </p>
               </div>
@@ -113,7 +113,7 @@ const stats = [
                   <i class="fa-solid fa-search text-orange-500 text-2xl"></i>
                 </div>
                 <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
-                <p class="text-sm text-white">Coba kata kunci lain</p>
+                <p class="text-sm text-black">Coba kata kunci lain</p>
               </div>
 
               <!-- Info Cards -->
@@ -124,7 +124,7 @@ const stats = [
                     <i class="fa-solid fa-heart-pulse text-orange-500 text-xl"></i>
                   </div>
                   <h4 class="font-bold text-gray-900 mb-2">EKG</h4>
-                  <p class="text-xs text-white mb-3">Rekam aktivitas listrik jantung untuk mendeteksi gangguan irama dan fungsi jantung.</p>
+                  <p class="text-xs text-black mb-3">Rekam aktivitas listrik jantung untuk mendeteksi gangguan irama dan fungsi jantung.</p>
                   <div class="flex items-center gap-2 text-xs text-gray-400">
                     <i class="fa-regular fa-clock"></i>
                     <span>10-15 menit</span>
@@ -137,7 +137,7 @@ const stats = [
                     <i class="fa-solid fa-lungs text-orange-500 text-xl"></i>
                   </div>
                   <h4 class="font-bold text-gray-900 mb-2">Spirometri</h4>
-                  <p class="text-xs text-white mb-3">Ukur volume dan kecepatan udara yang dihirup dan dihembuskan untuk evaluasi fungsi paru.</p>
+                  <p class="text-xs text-black mb-3">Ukur volume dan kecepatan udara yang dihirup dan dihembuskan untuk evaluasi fungsi paru.</p>
                   <div class="flex items-center gap-2 text-xs text-gray-400">
                     <i class="fa-regular fa-clock"></i>
                     <span>15-20 menit</span>
@@ -150,7 +150,7 @@ const stats = [
                     <i class="fa-solid fa-headphones text-orange-500 text-xl"></i>
                   </div>
                   <h4 class="font-bold text-gray-900 mb-2">Audiometri</h4>
-                  <p class="text-xs text-white mb-3">Tes pendengaran untuk mengukur ketajaman pendengaran dan identifikasi gangguan telinga.</p>
+                  <p class="text-xs text-black mb-3">Tes pendengaran untuk mengukur ketajaman pendengaran dan identifikasi gangguan telinga.</p>
                   <div class="flex items-center gap-2 text-xs text-gray-400">
                     <i class="fa-regular fa-clock"></i>
                     <span>20-30 menit</span>

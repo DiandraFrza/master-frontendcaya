@@ -26,12 +26,12 @@ const reservationRequiredCount = computed(() => {
   }, 0);
 });
 
-const stats = [
-  { value: "15+", label: "Jenis Pemeriksaan" },
-  { value: "Digital", label: "Teknologi" },
-  { value: reservationRequiredCount.value + "+", label: "Perlu Reservasi" },
-  { value: "1-2 Hari", label: "Waktu Hasil" },
-];
+// const stats = [
+//   { value: "15+", label: "Jenis Pemeriksaan" },
+//   { value: "Digital", label: "Teknologi" },
+//   { value: reservationRequiredCount.value + "+", label: "Perlu Reservasi" },
+//   { value: "1-2 Hari", label: "Waktu Hasil" },
+// ];
 </script>
 
 <template>
@@ -53,7 +53,7 @@ const stats = [
       />
 
       <!-- Stats Bar -->
-      <div class="bg-white border-b border-gray-100 py-6">
+      <!-- <div class="bg-white border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="(stat, index) in stats" :key="index" class="text-center">
@@ -62,7 +62,7 @@ const stats = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">
@@ -98,7 +98,7 @@ const stats = [
                 </div>
 
                 <!-- Filter button -->
-                <ServiceFilter v-model="selectedSubcategory" :options="radiologyExams.subcategories" class="[&_button]:bg-orange-50 [&_button]:text-orange-700 [&_button:hover]:bg-orange-100 [&_.bg-orange-600]:!bg-orange-600" />
+                <ServiceFilter v-model="selectedSubcategory" :options="radiologyExams.subcategories" />
 
                 <!-- Search -->
                 <div class="relative mt-4">

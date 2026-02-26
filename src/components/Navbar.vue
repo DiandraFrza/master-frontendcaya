@@ -6,7 +6,6 @@
         <img src="/assets/images/Logo-CMC.png" alt="Caya Text" class="h-9 sm:block object-contain nav-img" />
       </div>
       <div class="flex-1 flex justify-center">
-        <!-- Ganti bagian ini di template -->
         <div class="hidden md:flex items-center gap-12 font-medium tracking-[0.03em]">
           <router-link to="/" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/')" :style="navBg ? {} : { color: '#000' }">
             Beranda
@@ -37,7 +36,7 @@
                     </svg>
                     Layanan Kami
                   </h3>
-                  <p class="text-xs text-white mt-1">Pilih layanan sesuai kebutuhan kesehatan Anda</p>
+                  <p class="text-xs text-black mt-1">Pilih layanan sesuai kebutuhan kesehatan Anda</p>
                 </div>
 
                 <!-- Menu Items -->
@@ -45,7 +44,7 @@
                   <div v-for="group in layananMenu" :key="group.title" class="group">
                     <!-- Category Header -->
                     <div class="flex items-center gap-3 px-3 py-2 mb-1">
-                      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#fd543a]/20 to-[#fd543a]/5 flex items-center justify-center group-hover:from-[#fd543a] group-hover:to-[#e67931] transition-all duration-300">
+                      <div class="w-10 h-10 rounded-xl bg-linear-to-br from-[#fd543a]/20 to-[#fd543a]/5 flex items-center justify-center group-hover:from-[#fd543a] group-hover:to-[#e67931] transition-all duration-300">
                         <svg class="w-5 h-5 text-[#fd543a] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path v-if="group.icon === 'lab'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                           <path v-else-if="group.icon === 'nonlab'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -76,7 +75,7 @@
 
                 <!-- Footer CTA -->
                 <div class="bg-gray-50 px-6 py-4 border-t border-gray-100">
-                  <router-link to="/services" @click="layananOpen = false" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#fd543a] text-white rounded-xl font-medium text-sm hover:bg-[#e67931] transition-all duration-300 hover:shadow-lg hover:shadow-[#fd543a]/30">
+                  <router-link to="/services/lab" @click="layananOpen = false" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#fd543a] text-white rounded-xl font-medium text-sm hover:bg-[#e67931] transition-all duration-300 hover:shadow-lg hover:shadow-[#fd543a]/30">
                     <span>Lihat Semua Layanan</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

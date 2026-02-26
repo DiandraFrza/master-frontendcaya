@@ -239,8 +239,8 @@ watch(searchQuery, () => {
 
                     <!-- Suggestion Items -->
                     <div v-for="(item, index) in suggestions" :key="index" @click="selectSuggestion(item)" :class="['px-4 py-3 cursor-pointer flex items-center gap-3 transition-colors border-b border-gray-50 last:border-0', selectedIndex === index ? 'bg-orange-50' : 'hover:bg-gray-50']">
-                      <div :class="['w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0', item.type === 'popular' ? 'bg-orange-100' : 'bg-blue-50']">
-                        <i :class="`fa-solid ${item.icon} ${item.type === 'popular' ? 'text-orange-600' : 'text-blue-600'}`"></i>
+                      <div :class="['w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0', item.type === 'popular' ? 'bg-orange-100' : 'bg-orange-50']">
+                        <i :class="`fa-solid ${item.icon} ${item.type === 'popular' ? 'text-orange-600' : 'text-orange-600'}`"></i>
                       </div>
                       <div class="flex-1 min-w-0">
                         <div class="font-medium text-gray-900 truncate">{{ item.name }}</div>
@@ -286,23 +286,23 @@ watch(searchQuery, () => {
                       </div>
                       <span class="text-xs font-medium text-gray-700 group-hover:text-orange-700">Laboratorium</span>
                     </router-link>
-                    <router-link to="/services/radiologi" class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors group">
-                      <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-x-ray text-blue-600 text-sm"></i>
+                    <router-link to="/services/radiologi" class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 hover:bg-orange-50 transition-colors group">
+                      <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-x-ray text-orange-600 text-sm"></i>
                       </div>
-                      <span class="text-xs font-medium text-gray-700 group-hover:text-blue-700">Radiologi</span>
+                      <span class="text-xs font-medium text-gray-700 group-hover:text-orange-700">Radiologi</span>
                     </router-link>
-                    <router-link to="/services/elektromedis" class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 hover:bg-cyan-50 transition-colors group">
-                      <div class="w-8 h-8 rounded-lg bg-cyan-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-heart-pulse text-cyan-600 text-sm"></i>
+                    <router-link to="/services/elektromedis" class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 hover:bg-orange-50 transition-colors group">
+                      <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart-pulse text-orange-600 text-sm"></i>
                       </div>
-                      <span class="text-xs font-medium text-gray-700 group-hover:text-cyan-700">Elektromedis</span>
+                      <span class="text-xs font-medium text-gray-700 group-hover:text-orange-700">Elektromedis</span>
                     </router-link>
-                    <router-link to="/services/mcu" class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 hover:bg-green-50 transition-colors group">
-                      <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-heartbeat text-green-600 text-sm"></i>
+                    <router-link to="/services/mcu" class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 hover:bg-orange-50 transition-colors group">
+                      <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heartbeat text-orange-600 text-sm"></i>
                       </div>
-                      <span class="text-xs font-medium text-gray-700 group-hover:text-green-700">MCU</span>
+                      <span class="text-xs font-medium text-gray-700 group-hover:text-orange-700">MCU</span>
                     </router-link>
                   </div>
                 </div>
@@ -370,13 +370,13 @@ watch(searchQuery, () => {
     </section>
 
     <!-- Health Inspiration Section -->
-    <section class="py-20 bg-linear-to-br from-blue-50 via-white to-orange-50">
+    <section class="py-20 bg-linear-to-br from-orange-50 via-white to-orange-50">
       <InspirasiSehat />
     </section>
 
     <!-- Testimonials Section -->
     <section class="py-20 bg-white relative overflow-hidden">
-      <div class="absolute top-0 left-0 w-96 h-96 bg-linear-to-br from-green-100/20 to-blue-100/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 left-0 w-96 h-96 bg-linear-to-br from-orange-100/20 to-orange-100/10 rounded-full blur-3xl"></div>
 
       <Testimoni />
     </section>

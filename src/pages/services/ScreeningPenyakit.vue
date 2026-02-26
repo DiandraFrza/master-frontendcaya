@@ -14,7 +14,7 @@ const searchQuery = ref("");
 
 const currentSubcategory = computed(() => screeningPenyakit.subcategories[selectedSubcategory.value]);
 
-const filteredScreenings = computed(() => {
+const filteorangeScreenings = computed(() => {
   if (!searchQuery.value) return currentSubcategory.value.items;
   return currentSubcategory.value.items.filter((screening) => screening.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
 });
@@ -29,12 +29,12 @@ useHead({
   ],
 });
 
-const stats = [
-  { value: "6+", label: "Kategori Penyakit" },
-  { value: "25+", label: "Jenis Screening" },
-  { value: "Dokter", label: "Interpretasi" },
-  { value: "Early", label: "Detection" },
-];
+// const stats = [
+//   { value: "6+", label: "Kategori Penyakit" },
+//   { value: "25+", label: "Jenis Screening" },
+//   { value: "Dokter", label: "Interpretasi" },
+//   { value: "Early", label: "Detection" },
+// ];
 </script>
 
 <template>
@@ -56,7 +56,7 @@ const stats = [
       />
 
       <!-- Stats Bar -->
-      <div class="bg-white border-b border-gray-100 py-6">
+      <!-- <div class="bg-white border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="(stat, index) in stats" :key="index" class="text-center">
@@ -65,7 +65,7 @@ const stats = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">
@@ -103,7 +103,7 @@ const stats = [
                 </div>
 
                 <!-- Filter -->
-                <ServiceFilter v-model="selectedSubcategory" :options="screeningPenyakit.subcategories" class="[&_button]:bg-orange-50 [&_button]:text-orange-700 [&_button:hover]:bg-orange-100 [&_.bg-orange-600]:!bg-orange-600" />
+                <ServiceFilter v-model="selectedSubcategory" :options="screeningPenyakit.subcategories" />
 
                 <!-- Search -->
                 <div class="relative mt-4">
@@ -118,13 +118,13 @@ const stats = [
               <!-- Results Count -->
               <div class="flex items-center justify-between mb-4">
                 <p class="text-sm text-gray-500">
-                  Menampilkan <span class="font-semibold text-gray-900">{{ filteredScreenings.length }}</span> screening
+                  Menampilkan <span class="font-semibold text-gray-900">{{ filteorangeScreenings.length }}</span> screening
                 </p>
               </div>
 
               <!-- Screenings Grid -->
-              <div v-if="filteredScreenings.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                <ExamCard v-for="screening in filteredScreenings" :key="screening.name" v-bind="screening" color="orange" />
+              <div v-if="filteorangeScreenings.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                <ExamCard v-for="screening in filteorangeScreenings" :key="screening.name" v-bind="screening" color="orange" />
               </div>
 
               <!-- Empty State -->
@@ -140,8 +140,8 @@ const stats = [
               <div class="grid md:grid-cols-2 gap-4 mb-8">
                 <div class="bg-white rounded-xl p-5 border border-gray-100">
                   <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
-                      <i class="fa-solid fa-heart-pulse text-red-600"></i>
+                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+                      <i class="fa-solid fa-heart-pulse text-orange-600"></i>
                     </div>
                     <h4 class="font-bold text-gray-900">Screening Kardiometabolik</h4>
                   </div>
@@ -150,8 +150,8 @@ const stats = [
 
                 <div class="bg-white rounded-xl p-5 border border-gray-100">
                   <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                      <i class="fa-solid fa-lungs text-blue-600"></i>
+                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+                      <i class="fa-solid fa-lungs text-orange-600"></i>
                     </div>
                     <h4 class="font-bold text-gray-900">Screening Respirator</h4>
                   </div>
@@ -170,8 +170,8 @@ const stats = [
 
                 <div class="bg-white rounded-xl p-5 border border-gray-100">
                   <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                      <i class="fa-solid fa-virus text-green-600"></i>
+                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+                      <i class="fa-solid fa-virus text-orange-600"></i>
                     </div>
                     <h4 class="font-bold text-gray-900">Screening Infeksi</h4>
                   </div>

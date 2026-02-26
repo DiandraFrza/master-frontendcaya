@@ -19,12 +19,12 @@ const filteredExams = computed(() => {
   return items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
 });
 
-const stats = [
-  { value: "100+", label: "Jenis Pemeriksaan" },
-  { value: "1-3 Jam", label: "Waktu Hasil" },
-  { value: "24/7", label: "Layanan" },
-  { value: "ISO", label: "Tersertifikasi" },
-];
+// const stats = [
+//   { value: "100+", label: "Jenis Pemeriksaan" },
+//   { value: "1-3 Jam", label: "Waktu Hasil" },
+//   { value: "24/7", label: "Layanan" },
+//   { value: "ISO", label: "Tersertifikasi" },
+// ];
 </script>
 
 <template>
@@ -46,7 +46,7 @@ const stats = [
       />
 
       <!-- Stats Bar -->
-      <div class="bg-white border-b border-gray-100 py-6">
+      <!-- <div class="bg-white border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="(stat, index) in stats" :key="index" class="text-center">
@@ -55,7 +55,7 @@ const stats = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">

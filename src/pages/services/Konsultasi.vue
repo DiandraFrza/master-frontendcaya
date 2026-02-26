@@ -25,12 +25,12 @@ useHead({
   ],
 });
 
-const stats = [
-  { value: "Umum & Spesialis", label: "Jenis Dokter" },
-  { value: "Online", label: "Tersedia" },
-  { value: "Home", label: "Visit" },
-  { value: "Resep", label: "Digital" },
-];
+// const stats = [
+//   { value: "Umum & Spesialis", label: "Jenis Dokter" },
+//   { value: "Online", label: "Tersedia" },
+//   { value: "Home", label: "Visit" },
+//   { value: "Resep", label: "Digital" },
+// ];
 </script>
 
 <template>
@@ -52,7 +52,7 @@ const stats = [
       />
 
       <!-- Stats Bar -->
-      <div class="bg-white border-b border-gray-100 py-6">
+      <!-- <div class="bg-white border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 max-w-7xl">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="(stat, index) in stats" :key="index" class="text-center">
@@ -61,7 +61,7 @@ const stats = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Main Content -->
       <section class="py-12 bg-gray-50">
