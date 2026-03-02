@@ -179,7 +179,7 @@ const benefits = [
                     <!-- Additional Services -->
                     <div v-if="item.additionalServices && item.additionalServices.length > 0" class="border-t border-gray-100 pt-4">
                       <h5 class="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-plus-circle text-blue-500"></i>
+                        <i class="fa-solid fa-plus-circle text-orange-500"></i>
                         Layanan Tambahan Tersedia
                       </h5>
                       <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
