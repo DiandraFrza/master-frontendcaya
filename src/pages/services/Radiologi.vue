@@ -9,15 +9,10 @@ import ServicesHero from "@/components/ServicesHero.vue";
 import ExamCard from "@/components/ExamCard.vue";
 
 const selectedSubcategory = ref("dental");
-const searchQuery = ref("");
 
 const currentSubcategory = computed(() => radiologyExams.subcategories[selectedSubcategory.value]);
 
-const filteredExams = computed(() => {
-  let items = currentSubcategory.value.items;
-  if (!searchQuery.value) return items;
-  return items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
-});
+const filteredExams = computed(() => currentSubcategory.value.items);
 
 // Hitung total pemeriksaan yang perlu reservasi
 const reservationRequiredCount = computed(() => {
@@ -100,14 +95,7 @@ const reservationRequiredCount = computed(() => {
                 <!-- Filter button -->
                 <ServiceFilter v-model="selectedSubcategory" :options="radiologyExams.subcategories" />
 
-                <!-- Search -->
-                <div class="relative mt-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan radiologi..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
-                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                  <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
-                    <i class="fa-solid fa-times-circle"></i>
-                  </button>
-                </div>
+
               </div>
 
               <!-- Results Count -->
@@ -122,14 +110,7 @@ const reservationRequiredCount = computed(() => {
                 <ExamCard v-for="exam in filteredExams" :key="exam.name" v-bind="exam" color="orange" />
               </div>
 
-              <!-- Empty State -->
-              <div v-else class="text-center py-12 bg-white rounded-2xl border border-gray-100">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i class="fa-solid fa-search text-orange-500 text-2xl"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
-                <p class="text-sm text-gray-500">Coba kata kunci lain atau pilih kategori berbeda</p>
-              </div>
+
 
               <!-- Info Box -->
               <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6">

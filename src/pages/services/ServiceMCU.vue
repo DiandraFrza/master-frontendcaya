@@ -9,7 +9,7 @@ import { useHead } from "@vueuse/head";
 import ServicesHero from "@/components/ServicesHero.vue";
 
 const selectedSubcategory = ref("paketPersonal");
-const searchQuery = ref("");
+
 
 // Expand state untuk dropdown
 const expandedPackages = ref({});
@@ -24,10 +24,7 @@ const isExpanded = (packageKey) => {
 
 const currentSubcategory = computed(() => medicalCheckupPackages.subcategories[selectedSubcategory.value]);
 
-const filteredPackages = computed(() => {
-  if (!searchQuery.value) return currentSubcategory.value.items;
-  return currentSubcategory.value.items.filter((pkg) => pkg.name.toLowerCase().includes(searchQuery.value.toLowerCase()) || (pkg.details && pkg.details.some((d) => d.toLowerCase().includes(searchQuery.value.toLowerCase()))));
-});
+const filteredPackages = computed(() => currentSubcategory.value.items);
 
 const waLink = "https://wa.me/081290094900?text=Halo%20Caya,%20saya%20mau%20tanya%20paket%20MCU";
 
@@ -91,11 +88,7 @@ const getDisplayName = (pkg) => {
                 </div>
                 <!-- Filter button -->
                 <ServiceFilter v-model="selectedSubcategory" :options="medicalCheckupPackages.subcategories" />
-                <!-- Search -->
-                <div class="relative mt-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari paket medical check up..." class="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:border-orange-900 focus:ring-2 focus:ring-orange-200 transition-all duration-300" />
-                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                </div>
+
               </div>
 
               <!-- Results Count -->
@@ -174,14 +167,7 @@ const getDisplayName = (pkg) => {
                 </div>
               </div>
 
-              <!-- Empty State -->
-              <div v-else class="text-center py-12 bg-white rounded-2xl border border-gray-100">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i class="fa-solid fa-search text-orange-500 text-2xl"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
-                <p class="text-sm text-gray-500">Coba kata kunci lain</p>
-              </div>
+
 
               <!-- Info Box -->
               <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6">

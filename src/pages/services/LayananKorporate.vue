@@ -25,15 +25,9 @@ const korporatSubcategories = computed(() => {
   const { mcuOnsite } = layananKorporat.subcategories;
   return { mcuOnsite };
 });
-const searchQuery = ref("");
-
 const currentCategory = computed(() => korporatSubcategories.value[selectedCategory.value]);
 
-const filteredItems = computed(() => {
-  let items = currentCategory.value.items;
-  if (!searchQuery.value) return items;
-  return items.filter((item) => item.name.toLowerCase().includes(searchQuery.value.toLowerCase()) || item.description.toLowerCase().includes(searchQuery.value.toLowerCase()));
-});
+const filteredItems = computed(() => currentCategory.value.items);
 
 // const stats = [
 //   { value: "50+", label: "Perusahaan Partner" },
@@ -121,19 +115,11 @@ const benefits = [
                 </div>
               </div>
 
-              <!-- Search -->
+              <!-- Category Header -->
               <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
-                <div class="mb-4 pb-4 border-b border-gray-100">
+                <div>
                   <h2 class="text-lg font-bold text-gray-900">{{ currentCategory.name }}</h2>
                   <p class="text-sm text-gray-500 mt-1">{{ currentCategory.description }}</p>
-                </div>
-
-                <div class="relative">
-                  <input v-model="searchQuery" type="text" placeholder="Cari layanan korporat..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
-                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                  <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
-                    <i class="fa-solid fa-times-circle"></i>
-                  </button>
                 </div>
               </div>
 
@@ -174,14 +160,7 @@ const benefits = [
                 </div>
               </div>
 
-              <!-- Empty State -->
-              <div v-else class="text-center py-12 bg-white rounded-2xl border border-gray-100">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i class="fa-solid fa-search text-orange-500 text-2xl"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
-                <p class="text-sm text-gray-500">Coba kata kunci lain</p>
-              </div>
+
 
               <!-- CTA Box -->
               <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-6 text-white">

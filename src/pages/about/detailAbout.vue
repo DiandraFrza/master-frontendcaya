@@ -22,8 +22,8 @@ import Keunggulan from "./keunggulanAbout.vue";
                 <div class="lg:w-1/2 w-full mb-3.75">
                   <div class="2xxl:-ml-20 2xxl:pr-48.75 xl:pr-33.75 lg:pr-18.75 max-lg:mb-5">
                     <div class="flex items-center relative max-lg:h-130 max-sm:h-87.5!">
-                      <img src="@/assets/images/about/img1.webp" alt="" class="size-full object-cover rounded-2xl" />
-                      <img src="@/assets/images/about/img2.webp" alt="" class="xl:-ml-32.5 -ml-25 xl:w-55 w-37.5 xl:h-65 h-45 object-cover rounded-2xl" />
+                      <img src="@/assets/images/team/pabambang.png" alt="" class="size-full object-cover rounded-2xl" />
+                      <!-- <img src="@/assets/images/about/img2.webp" alt="" class="xl:-ml-32.5 -ml-25 xl:w-55 w-37.5 xl:h-65 h-45 object-cover rounded-2xl" /> -->
                     </div>
                   </div>
                 </div>

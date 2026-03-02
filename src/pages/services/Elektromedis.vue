@@ -1,18 +1,13 @@
 <!-- @format -->
 
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { electromedicalExams } from "../data/examinationData.js";
 import ServiceSidebar from "@/pages/services/ServiceSidebar.vue";
 import ServicesHero from "@/components/ServicesHero.vue";
 import ExamCard from "@/components/ExamCard.vue";
 
-const searchQuery = ref("");
-
-const filteorangeExams = computed(() => {
-  if (!searchQuery.value) return electromedicalExams.items;
-  return electromedicalExams.items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
-});
+const filteorangeExams = computed(() => electromedicalExams.items);
 
 // const stats = [
 //   { value: "100%", label: "Perlu Reservasi" },
@@ -84,16 +79,7 @@ const filteorangeExams = computed(() => {
                 </div>
               </div>
 
-              <!-- Search -->
-              <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
-                <div class="relative">
-                  <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan elektromedis..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
-                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                  <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
-                    <i class="fa-solid fa-times-circle"></i>
-                  </button>
-                </div>
-              </div>
+
 
               <!-- Results Count -->
               <div class="flex items-center justify-between mb-4">
@@ -107,14 +93,7 @@ const filteorangeExams = computed(() => {
                 <ExamCard v-for="exam in filteorangeExams" :key="exam.name" v-bind="exam" color="orange" />
               </div>
 
-              <!-- Empty State -->
-              <div v-else class="text-center py-12 bg-white rounded-2xl border border-gray-100">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i class="fa-solid fa-search text-orange-500 text-2xl"></i>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
-                <p class="text-sm text-black">Coba kata kunci lain</p>
-              </div>
+
 
               <!-- Info Cards -->
               <div class="grid md:grid-cols-3 gap-4">

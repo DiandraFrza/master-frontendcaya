@@ -59,7 +59,7 @@ export const blogPosts = [
   },
   {
     id: 2,
-    title: "Panduan Lengkap Persiapan Medical Check Up untuk Hasil Optimal",
+    title: "Medical Check Up Buli 18 Agustus 2022",
     excerpt: "Medical Check Up (MCU) adalah investasi kesehatan penting. Pelajari tips persiapan MCU agar hasil pemeriksaan Anda akurat dan maksimal.",
     content: `
       <p>Medical Check Up (MCU) merupakan langkah proaktif dalam menjaga kesehatan. Namun, banyak orang yang tidak menyadari bahwa persiapan yang tepat sangat berpengaruh terhadap akurasi hasil pemeriksaan.</p>
@@ -88,8 +88,8 @@ export const blogPosts = [
 
       <p>Dengan persiapan yang tepat, hasil MCU Anda akan lebih akurat dan berguna untuk evaluasi kesehatan jangka panjang.</p>
     `,
-    image: "/assets/blog/large/img2.webp",
-    thumbnail: "/assets/blog/small/img2.webp",
+    image: "/assets/berita/MCU/buli/Agustus 2022/MCU Buli 18 Agustus 2022 - 3.jpeg",
+    thumbnail: "/assets/berita/MCU/buli/Agustus 2022/MCU Buli 18 Agustus 2022 - 3.jpeg",
     category: "edukasi",
     tags: ["Medical Check Up", "Tips Sehat", "Laboratorium"],
     author: "Dr. Sarah Amalia",
@@ -131,8 +131,8 @@ export const blogPosts = [
 
       <p>Setiap rupiah donasi akan tersalurkan 100% untuk program kesehatan masyarakat. Laporan penggunaan dana dapat diakses secara transparan di website kami.</p>
     `,
-    image: "/assets/blog/large/img3.webp",
-    thumbnail: "/assets/blog/small/img3.webp",
+    image: "/assets/berita/mcu/buli/Agustus 2022/MCU Buli 18 Agustus 2022 - 1.jpeg",
+    thumbnail: "/assets/berita/mcu/buli/Agustus 2022/MCU Buli 18 Agustus 2022 - 1.jpeg",
     category: "keberlanjutan",
     tags: ["ZIS", "Keberlanjutan", "CSR", "Kesehatan"],
     author: "Tim CSR Caya",

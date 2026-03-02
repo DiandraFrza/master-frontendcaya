@@ -279,7 +279,7 @@ export const laboratoryExams = {
 // ============================================================
 
 export const radiologyExams = {
-  category: "Radiologi & Penunjang",
+  category: "Radiologi",
   icon: "fa-x-ray",
   color: "from-blue-500 to-blue-600",
   description: "Pemeriksaan pencitraan medis dengan teknologi digital terkini",
@@ -511,7 +511,7 @@ export const consultationServices = {
   category: "Konsultasi Dokter",
   icon: "fa-user-doctor",
   color: "from-indigo-500 to-indigo-600",
-  description: "Konsultasi medis dengan dokter umum dan spesialis berpengalaman",
+  description: "Konsultasi medis dengan dokter umum berpengalaman",
   features: ["Dokter bersertifikat STR & SIP", "Jadwal fleksibel sesuai kebutuhan", "Resep digital yang sah", "Tersedia online & home visit"],
   items: [
     {
@@ -520,13 +520,13 @@ export const consultationServices = {
       result: "Langsung",
       desc: "Pemeriksaan dan konsultasi kesehatan umum",
     },
-    {
-      name: "Konsultasi Spesialis",
-      icon: "fa-user-md",
-      result: "By Appointment",
-      desc: "Konsultasi dengan dokter spesialis (Jantung, Paru, dll)",
-      requiresReservation: true,
-    },
+    // {
+    //   name: "Konsultasi Spesialis",
+    //   icon: "fa-user-md",
+    //   result: "By Appointment",
+    //   desc: "Konsultasi dengan dokter spesialis (Jantung, Paru, dll)",
+    //   requiresReservation: true,
+    // },
     {
       name: "Konsultasi Online",
       icon: "fa-video",
@@ -534,13 +534,13 @@ export const consultationServices = {
       desc: "Konsultasi via video call dari mana saja",
       requiresReservation: true,
     },
-    {
-      name: "Home Visit Dokter",
-      icon: "fa-house-medical",
-      result: "By Appointment",
-      desc: "Dokter datang ke rumah/kantor Anda",
-      requiresReservation: true,
-    },
+    // {
+    //   name: "Home Visit Dokter",
+    //   icon: "fa-house-medical",
+    //   result: "By Appointment",
+    //   desc: "Dokter datang ke rumah/kantor Anda",
+    //   requiresReservation: true,
+    // },
   ],
 };
 
