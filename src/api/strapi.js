@@ -1,6 +1,6 @@
 // @format
 
-const STRAPI_URL = "http://localhost:1337";
+const STRAPI_URL = "https://promising-gem-a8c60e1f18.strapiapp.com";
 const API_URL = `${STRAPI_URL}/api`;
 
 /**
