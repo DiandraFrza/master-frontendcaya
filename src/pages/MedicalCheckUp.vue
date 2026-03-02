@@ -48,7 +48,7 @@ const services = ref([
     title: "Layanan Korporat",
     desc: "MCU berkala karyawan, laporan kesehatan, dan layanan onsite perusahaan.",
     highlights: ["MCU Berkala", "Onsite", "Laporan HR"],
-    link: "/services/korporasi",
+    link: "/services/korporat",
     icon: "fa-building",
     color: "from-orange-500 to-orange-600",
   },
