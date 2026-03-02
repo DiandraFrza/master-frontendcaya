@@ -1,4 +1,5 @@
 import Logo from "./Logo-CMC.png";
+import Favicon from "./logo-caya.svg";
 
 const config = {
   // Bahasa Indonesia
@@ -23,7 +24,7 @@ const config = {
     logo: Logo,
   },
   head: {
-    favicon: Logo,
+    favicon: Favicon,
   },
 
   // Custom theme - Caya orange brand colors
