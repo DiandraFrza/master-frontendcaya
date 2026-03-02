@@ -7,11 +7,8 @@ import ServiceSidebar from "@/pages/services/ServiceSidebar.vue";
 import ServicesHero from "@/components/ServicesHero.vue";
 import ExamCard from "@/components/ExamCard.vue";
 
-const searchQuery = ref("");
-
 const filteorangeExams = computed(() => {
-  if (!searchQuery.value) return electromedicalExams.items;
-  return electromedicalExams.items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  return electromedicalExams.items;
 });
 
 // const stats = [
@@ -85,7 +82,7 @@ const filteorangeExams = computed(() => {
               </div>
 
               <!-- Search -->
-              <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+              <!-- <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
                 <div class="relative">
                   <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan elektromedis..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
                   <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
@@ -93,28 +90,28 @@ const filteorangeExams = computed(() => {
                     <i class="fa-solid fa-times-circle"></i>
                   </button>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Results Count -->
-              <div class="flex items-center justify-between mb-4">
+              <!-- <div class="flex items-center justify-between mb-4">
                 <p class="text-sm text-black">
                   Menampilkan <span class="font-semibold text-gray-900">{{ filteorangeExams.length }}</span> pemeriksaan
                 </p>
-              </div>
+              </div> -->
 
               <!-- Exams Grid -->
-              <div v-if="filteorangeExams.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              <!-- <div v-if="filteorangeExams.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 <ExamCard v-for="exam in filteorangeExams" :key="exam.name" v-bind="exam" color="orange" />
-              </div>
+              </div> -->
 
               <!-- Empty State -->
-              <div v-else class="text-center py-12 bg-white rounded-2xl border border-gray-100">
+              <!-- <div v-else class="text-center py-12 bg-white rounded-2xl border border-gray-100">
                 <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i class="fa-solid fa-search text-orange-500 text-2xl"></i>
                 </div>
                 <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
                 <p class="text-sm text-black">Coba kata kunci lain</p>
-              </div>
+              </div> -->
 
               <!-- Info Cards -->
               <div class="grid md:grid-cols-3 gap-4">
@@ -124,7 +121,6 @@ const filteorangeExams = computed(() => {
                     <i class="fa-solid fa-heart-pulse text-orange-500 text-xl"></i>
                   </div>
                   <h4 class="font-bold text-gray-900 mb-2">EKG</h4>
-                  <p class="text-xs text-black mb-3">Rekam aktivitas listrik jantung untuk mendeteksi gangguan irama dan fungsi jantung.</p>
                   <div class="flex items-center gap-2 text-xs text-gray-400">
                     <i class="fa-regular fa-clock"></i>
                     <span>10-15 menit</span>
@@ -137,7 +133,6 @@ const filteorangeExams = computed(() => {
                     <i class="fa-solid fa-lungs text-orange-500 text-xl"></i>
                   </div>
                   <h4 class="font-bold text-gray-900 mb-2">Spirometri</h4>
-                  <p class="text-xs text-black mb-3">Ukur volume dan kecepatan udara yang dihirup dan dihembuskan untuk evaluasi fungsi paru.</p>
                   <div class="flex items-center gap-2 text-xs text-gray-400">
                     <i class="fa-regular fa-clock"></i>
                     <span>15-20 menit</span>
@@ -150,7 +145,6 @@ const filteorangeExams = computed(() => {
                     <i class="fa-solid fa-headphones text-orange-500 text-xl"></i>
                   </div>
                   <h4 class="font-bold text-gray-900 mb-2">Audiometri</h4>
-                  <p class="text-xs text-black mb-3">Tes pendengaran untuk mengukur ketajaman pendengaran dan identifikasi gangguan telinga.</p>
                   <div class="flex items-center gap-2 text-xs text-gray-400">
                     <i class="fa-regular fa-clock"></i>
                     <span>20-30 menit</span>

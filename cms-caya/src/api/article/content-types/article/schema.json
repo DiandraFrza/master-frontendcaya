@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Artikel",
+    "description": "Konten artikel dan berita untuk blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "judul": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "judul"
+    },
+    "ringkasan": {
+      "type": "text",
+      "required": false
+    },
+    "konten": {
+      "type": "blocks"
+    },
+    "gambar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "penulis": {
+      "type": "string",
+      "default": "Tim Caya Medical"
+    },
+    "unggulan": {
+      "type": "boolean",
+      "default": false
+    },
+    "kategori": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::kategori.kategori",
+      "inversedBy": "artikels"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "artikels"
+    }
+  }
+}

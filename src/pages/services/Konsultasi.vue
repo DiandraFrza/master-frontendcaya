@@ -8,11 +8,8 @@ import ServiceSidebar from "@/pages/services/ServiceSidebar.vue";
 import ServicesHero from "@/components/ServicesHero.vue";
 import ExamCard from "@/components/ExamCard.vue";
 
-const searchQuery = ref("");
-
 const filteredServices = computed(() => {
-  if (!searchQuery.value) return consultationServices.items;
-  return consultationServices.items.filter((service) => service.name.toLowerCase().includes(searchQuery.value.toLowerCase()) || service.desc.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  return consultationServices.items;
 });
 
 useHead({
@@ -78,15 +75,6 @@ useHead({
               </button>
 
               <!-- Search -->
-              <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
-                <div class="relative">
-                  <input v-model="searchQuery" type="text" placeholder="Cari jenis konsultasi..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
-                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                  <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
-                    <i class="fa-solid fa-times-circle"></i>
-                  </button>
-                </div>
-              </div>
 
               <!-- Services Grid -->
               <div v-if="filteredServices.length > 0" class="grid md:grid-cols-2 gap-4 mb-8">

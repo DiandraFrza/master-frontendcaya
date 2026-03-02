@@ -122,7 +122,7 @@ const benefits = [
               </div>
 
               <!-- Search -->
-              <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
+              <!-- <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-6">
                 <div class="mb-4 pb-4 border-b border-gray-100">
                   <h2 class="text-lg font-bold text-gray-900">{{ currentCategory.name }}</h2>
                   <p class="text-sm text-gray-500 mt-1">{{ currentCategory.description }}</p>
@@ -135,7 +135,7 @@ const benefits = [
                     <i class="fa-solid fa-times-circle"></i>
                   </button>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Results Count -->
               <div class="flex items-center justify-between mb-4">
@@ -145,30 +145,48 @@ const benefits = [
               </div>
 
               <!-- Items Grid -->
-              <div v-if="filteredItems.length > 0" class="space-y-4 mb-8">
+              <div v-if="filteredItems.length > 0" class="space-y-6 mb-8">
                 <div v-for="item in filteredItems" :key="item.name" class="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-gray-100 p-6 transition-all duration-300 group hover:-translate-y-0.5">
-                  <div class="flex flex-col md:flex-row md:items-center gap-4">
-                    <!-- Icon -->
-                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <i :class="`fa-solid ${item.icon} text-orange-600 text-xl`"></i>
-                    </div>
-
-                    <!-- Content -->
-                    <div class="flex-1">
-                      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                        <div>
-                          <h4 class="font-bold text-gray-900 text-lg">{{ item.name }}</h4>
-                          <p class="text-sm text-gray-500 mt-1">{{ item.description }}</p>
-                        </div>
+                  <div class="flex flex-col gap-4">
+                    <!-- Header -->
+                    <div class="flex flex-col md:flex-row md:items-center gap-4">
+                      <!-- Icon -->
+                      <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <i :class="`fa-solid ${item.icon} text-orange-600 text-xl`"></i>
                       </div>
 
-                      <!-- Min Participants Badge -->
-                      <!-- <div v-if="item.minParticipants" class="mt-3">
-                        <span class="inline-flex items-center gap-1 px-3 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full">
-                          <i class="fa-solid fa-users"></i>
-                          Minimal {{ item.minParticipants }} peserta
-                        </span>
-                      </div> -->
+                      <!-- Title & Description -->
+                      <div class="flex-1">
+                        <h4 class="font-bold text-gray-900 text-lg">{{ item.name }}</h4>
+                        <p class="text-sm text-gray-500 mt-1">{{ item.description }}</p>
+                      </div>
+                    </div>
+
+                    <!-- Details / Includes -->
+                    <div v-if="item.details && item.details.length > 0" class="border-t border-gray-100 pt-4">
+                      <h5 class="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle text-orange-500"></i>
+                        Pemeriksaan Termasuk
+                      </h5>
+                      <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <li v-for="(detail, index) in item.details" :key="index" class="flex items-center gap-2 text-sm text-gray-600">
+                          <span class="w-1.5 h-1.5 bg-orange-500 rounded-full mt-0.5 flex-shrink-0"></span>
+                          {{ detail }}
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Additional Services -->
+                    <div v-if="item.additionalServices && item.additionalServices.length > 0" class="border-t border-gray-100 pt-4">
+                      <h5 class="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-plus-circle text-blue-500"></i>
+                        Layanan Tambahan Tersedia
+                      </h5>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div v-for="service in item.additionalServices" :key="service.name" class="flex items-center justify-between px-3 py-2 bg-gray-50 rounded-lg">
+                          <span class="text-sm text-gray-700">{{ service.name }}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

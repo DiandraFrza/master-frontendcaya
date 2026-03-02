@@ -20,7 +20,7 @@
           </div>
 
           <!-- Title -->
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-white">Temukan Klinik <span class="text-orange-100">Terdekat</span></h1>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-white">Lokasi Kami</h1>
 
           <!-- Description -->
           <p class="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">Cari dan temukan lokasi klinik Caya di seluruh Indonesia. Pelayanan kesehatan berkualitas dengan fasilitas modern untuk kebutuhan Anda.</p>
@@ -218,7 +218,7 @@ const siteWA = "081290007336";
 const branches = ref([
   {
     id: "depok",
-    name: "Caya — Depok",
+    name: "Depok",
     isMain: true,
     isPartner: false,
     address: "Jl. KH. M. Yusuf Raya No.13, Mekar Jaya, Sukmajaya, Depok",
@@ -229,7 +229,7 @@ const branches = ref([
   },
   {
     id: "bintaro",
-    name: "Caya — Bintaro",
+    name: "Bintaro",
     isMain: false,
     isPartner: true,
     address: "Jl. Bintaro Utama 3A No.25, Sektor 3, Bintaro, Tangerang Selatan",
@@ -240,7 +240,7 @@ const branches = ref([
   },
   {
     id: "kelapagading",
-    name: "Caya — Kelapa Gading",
+    name: "Kelapa Gading",
     isMain: false,
     isPartner: true,
     address: "Jl. Boulevard Raya No.88, Kelapa Gading, Jakarta Utara",
@@ -251,7 +251,7 @@ const branches = ref([
   },
   {
     id: "cibubur",
-    name: "Caya — Cibubur",
+    name: "Cibubur",
     isMain: false,
     isPartner: false,
     address: "Jl. Raya Cibubur No.12, Ciracas, Jakarta Timur",
@@ -262,7 +262,7 @@ const branches = ref([
   },
   {
     id: "tangerang",
-    name: "Caya — Tangerang",
+    name: "Tangerang",
     isMain: false,
     isPartner: true,
     address: "Jl. Jenderal Sudirman No.45, Tangerang",
@@ -273,7 +273,7 @@ const branches = ref([
   },
   {
     id: "bekasi",
-    name: "Caya — Bekasi",
+    name: "Bekasi",
     isMain: false,
     isPartner: false,
     address: "Jl. Ahmad Yani No.88, Bekasi Selatan",

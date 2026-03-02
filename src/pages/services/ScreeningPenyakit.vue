@@ -10,13 +10,11 @@ import ExamCard from "@/components/ExamCard.vue";
 import { useHead } from "@vueuse/head";
 
 const selectedSubcategory = ref("screeningKardiometabolik");
-const searchQuery = ref("");
 
 const currentSubcategory = computed(() => screeningPenyakit.subcategories[selectedSubcategory.value]);
 
 const filteorangeScreenings = computed(() => {
-  if (!searchQuery.value) return currentSubcategory.value.items;
-  return currentSubcategory.value.items.filter((screening) => screening.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  return currentSubcategory.value.items;
 });
 
 useHead({
@@ -104,15 +102,6 @@ useHead({
 
                 <!-- Filter -->
                 <ServiceFilter v-model="selectedSubcategory" :options="screeningPenyakit.subcategories" />
-
-                <!-- Search -->
-                <div class="relative mt-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari screening penyakit..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
-                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                  <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
-                    <i class="fa-solid fa-times-circle"></i>
-                  </button>
-                </div>
               </div>
 
               <!-- Results Count -->

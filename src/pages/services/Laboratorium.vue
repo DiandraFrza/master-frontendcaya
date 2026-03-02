@@ -9,14 +9,11 @@ import ServicesHero from "@/components/ServicesHero.vue";
 import ExamCard from "@/components/ExamCard.vue";
 
 const selectedSubcategory = ref("kimiaDarah");
-const searchQuery = ref("");
 
 const currentSubcategory = computed(() => laboratoryExams.subcategories[selectedSubcategory.value]);
 
 const filteredExams = computed(() => {
-  let items = currentSubcategory.value.items;
-  if (!searchQuery.value) return items;
-  return items.filter((exam) => exam.name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+  return currentSubcategory.value.items;
 });
 
 // const stats = [
@@ -81,15 +78,6 @@ const filteredExams = computed(() => {
 
                 <!-- Filter button -->
                 <ServiceFilter v-model="selectedSubcategory" :options="laboratoryExams.subcategories" />
-
-                <!-- Search -->
-                <div class="relative mt-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan laboratorium..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" />
-                  <i class="fa-solid fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                  <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
-                    <i class="fa-solid fa-times-circle"></i>
-                  </button>
-                </div>
               </div>
 
               <!-- Results Count -->

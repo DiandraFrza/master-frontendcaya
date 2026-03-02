@@ -1,25 +1,44 @@
 <!-- @format -->
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { getBlogById, getRelatedPosts, blogCategories, blogTags } from "@/data/blogData.js";
+import { useBlog, useBlogDetail } from "@/composables/useBlog.js";
 import MainHero from "@/pages/MainHero.vue";
 
 const route = useRoute();
 const router = useRouter();
 
-const blog = computed(() => {
-  const id = route.params.id;
-  return getBlogById(id);
-});
-
-const relatedPosts = computed(() => {
-  if (!blog.value) return [];
-  return getRelatedPosts(blog.value.id, blog.value.category, 3);
-});
+// Fetch blog detail + categories/tags for sidebar
+const { post: blog, relatedPosts, loading, loadPost } = useBlogDetail();
+const { categories: blogCategories, tags: blogTags, loadPosts } = useBlog();
 
 const searchQuery = ref("");
+
+// Load post on mount and when route changes
+onMounted(async () => {
+  // Load categories/tags for sidebar
+  loadPosts();
+
+  await loadPost(route.params.id);
+  if (!blog.value) {
+    router.push("/blog");
+  }
+  window.scrollTo(0, 0);
+});
+
+watch(
+  () => route.params.id,
+  async (newId) => {
+    if (newId) {
+      await loadPost(newId);
+      if (!blog.value) {
+        router.push("/blog");
+      }
+      window.scrollTo(0, 0);
+    }
+  },
+);
 
 const handleSearch = () => {
   if (searchQuery.value.trim()) {
@@ -47,13 +66,6 @@ const navigateToTag = (tag) => {
 const formatDate = (dateString) => {
   return dateString;
 };
-
-onMounted(() => {
-  if (!blog.value) {
-    router.push("/blog");
-  }
-  window.scrollTo(0, 0);
-});
 </script>
 
 <template>
@@ -72,7 +84,7 @@ onMounted(() => {
                 <img :src="blog.image" :alt="blog.title" class="w-full h-full object-cover" @error="$event.target.src = '/images/blog/placeholder.webp'" />
                 <div class="absolute top-4 left-4">
                   <span class="bg-orange-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-                    {{ blogCategories.find((c) => c.id === blog.category)?.name || blog.category }}
+                    {{ blog.categoryName || blog.category }}
                   </span>
                 </div>
               </div>
@@ -142,7 +154,7 @@ onMounted(() => {
                       <img :src="post.image" :alt="post.title" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" @error="$event.target.src = '/images/blog/placeholder.webp'" />
                     </div>
                     <div class="p-4">
-                      <span class="text-xs text-orange-500 font-medium">{{ blogCategories.find((c) => c.id === post.category)?.name }}</span>
+                      <span class="text-xs text-orange-500 font-medium">{{ post.categoryName || post.category }}</span>
                       <h4 class="font-semibold text-gray-900 mt-1 line-clamp-2 hover:text-orange-600 transition-colors">{{ post.title }}</h4>
                       <p class="text-sm text-white mt-2">{{ post.date }}</p>
                     </div>

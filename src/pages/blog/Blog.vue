@@ -3,11 +3,15 @@
 <script setup>
 import { ref, computed, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { blogPosts, blogCategories, blogTags, getBlogsByCategory, getBlogsByTag, searchBlogs } from "@/data/blogData.js";
+import { useBlog, useBlogSearch } from "@/composables/useBlog.js";
 import MainHero from "@/pages/MainHero.vue";
 
 const route = useRoute();
 const router = useRouter();
+
+// Strapi composables — categories & tags are now fetched dynamically
+const { posts: allPosts, categories: blogCategories, tags: blogTags, loading, loadPosts } = useBlog();
+const { results: searchResults, search: doSearch } = useBlogSearch();
 
 // State
 const searchQuery = ref("");
@@ -17,8 +21,10 @@ const displayedPosts = ref([]);
 const postsPerPage = 6;
 const currentPage = ref(1);
 
-// Initialize from URL query
-onMounted(() => {
+// Initialize - fetch from Strapi first
+onMounted(async () => {
+  await loadPosts();
+
   const { search, category, tag } = route.query;
   if (search) searchQuery.value = search;
   if (category) selectedCategory.value = category;
@@ -40,21 +46,29 @@ watch(
 
 // Filter posts based on search, category, and tag
 const filterPosts = () => {
-  let filtered = [...blogPosts];
+  let filtered = [...allPosts.value];
 
   // Filter by category
   if (selectedCategory.value && selectedCategory.value !== "all") {
-    filtered = getBlogsByCategory(selectedCategory.value);
+    filtered = filtered.filter((post) => post.category === selectedCategory.value);
   }
 
   // Filter by tag
   if (selectedTag.value) {
-    filtered = getBlogsByTag(selectedTag.value);
+    filtered = filtered.filter((post) =>
+      post.tags && post.tags.some((t) => t.toLowerCase() === selectedTag.value.toLowerCase())
+    );
   }
 
   // Filter by search
   if (searchQuery.value) {
-    filtered = searchBlogs(searchQuery.value);
+    const query = searchQuery.value.toLowerCase();
+    filtered = filtered.filter(
+      (post) =>
+        post.title.toLowerCase().includes(query) ||
+        (post.excerpt && post.excerpt.toLowerCase().includes(query)) ||
+        (post.tags && post.tags.some((tag) => tag.toLowerCase().includes(query)))
+    );
   }
 
   displayedPosts.value = filtered;
@@ -77,7 +91,7 @@ const hasMorePosts = computed(() => {
 });
 
 const featuredPost = computed(() => {
-  return blogPosts.find((post) => post.featured) || blogPosts[0];
+  return allPosts.value.find((post) => post.featured) || allPosts.value[0];
 });
 
 // Methods
@@ -130,7 +144,7 @@ const formatDate = (dateString) => {
 };
 
 const getCategoryName = (categoryId) => {
-  const category = blogCategories.find((c) => c.id === categoryId);
+  const category = blogCategories.value.find((c) => c.id === categoryId);
   return category ? category.name : categoryId;
 };
 </script>
@@ -144,45 +158,6 @@ const getCategoryName = (categoryId) => {
     <section class="py-12 bg-gray-50">
       <div class="container mx-auto px-4 max-w-7xl">
         <!-- Featured Post -->
-        <div v-if="!searchQuery && selectedCategory === 'all' && !selectedTag" class="mb-12">
-          <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-            <div class="grid lg:grid-cols-2 gap-0">
-              <div class="relative h-64 lg:h-auto overflow-hidden">
-                <img :src="featuredPost.image" :alt="featuredPost.title" class="w-full h-full object-cover" @error="$event.target.src = '/images/blog/placeholder.webp'" />
-                <div class="absolute top-4 left-4">
-                  <span class="bg-orange-500 text-white text-xs font-medium px-3 py-1 rounded-full"> Unggulan </span>
-                </div>
-              </div>
-              <div class="p-6 lg:p-8 flex flex-col justify-center">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="text-sm text-orange-500 font-medium">{{ getCategoryName(featuredPost.category) }}</span>
-                  <span class="text-gray-300">|</span>
-                  <span class="text-sm text-white">{{ featuredPost.date }}</span>
-                </div>
-                <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:text-orange-600 transition-colors">
-                  <router-link :to="`/blog/${featuredPost.id}`">{{ featuredPost.title }}</router-link>
-                </h2>
-                <p class="text-gray-600 mb-6 line-clamp-3">{{ featuredPost.excerpt }}</p>
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                      <i class="fa-solid fa-user text-orange-500"></i>
-                    </div>
-                    <div>
-                      <p class="text-sm font-medium text-gray-900">{{ featuredPost.author }}</p>
-                      <p class="text-xs text-white">{{ featuredPost.readTime }} baca</p>
-                    </div>
-                  </div>
-                  <router-link :to="`/blog/${featuredPost.id}`" class="inline-flex items-center gap-2 text-orange-600 font-medium hover:text-orange-700 transition-colors">
-                    Baca Selengkapnya
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="grid xl:grid-cols-3 gap-8">
           <!-- Blog Grid -->
           <div class="xl:col-span-2">
@@ -294,7 +269,7 @@ const getCategoryName = (categoryId) => {
                 Terbaru
               </h4>
               <div class="space-y-4">
-                <router-link v-for="post in blogPosts.slice(0, 3)" :key="post.id" :to="`/blog/${post.id}`" class="flex gap-4 group">
+                <router-link v-for="post in allPosts.slice(0, 3)" :key="post.id" :to="`/blog/${post.id}`" class="flex gap-4 group">
                   <div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
                     <img :src="post.image" :alt="post.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform" @error="$event.target.src = '/images/blog/placeholder.webp'" />
                   </div>

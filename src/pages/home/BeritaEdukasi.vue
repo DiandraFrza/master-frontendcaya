@@ -1,8 +1,14 @@
 <!-- @format -->
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { useBlog } from "@/composables/useBlog.js";
 
-const news = ref([
+// Use Strapi data with fallback
+const { posts, loading, loadPosts } = useBlog();
+const displayNews = ref([]);
+
+// Static fallback data
+const staticNews = [
   {
     id: 1,
     title: "Program CSR Pemeriksaan Kesehatan Gratis",
@@ -11,8 +17,6 @@ const news = ref([
     image: "/assets/blog/middle/img1.webp",
     link: "/berita/csr-pemeriksaan-kesehatan",
     category: "CSR",
-    icon: "fa-heart-hands",
-    color: "bg-[#ff562c]",
   },
   {
     id: 2,
@@ -22,8 +26,6 @@ const news = ref([
     image: "/assets/blog/middle/img1.webp",
     link: "/berita/promo-mcu-k3",
     category: "Promo",
-    icon: "fa-tag",
-    color: "bg-[#ff562c]",
   },
   {
     id: 3,
@@ -33,10 +35,26 @@ const news = ref([
     image: "/assets/blog/middle/img1.webp",
     link: "/berita/kegiatan-onsite",
     category: "Kegiatan",
-    icon: "fa-briefcase",
-    color: "bg-[#ff562c]",
   },
-]);
+];
+
+onMounted(async () => {
+  await loadPosts({ pageSize: 3 });
+  if (posts.value.length > 0) {
+    // Map Strapi articles to the card format
+    displayNews.value = posts.value.slice(0, 3).map((post) => ({
+      id: post.id,
+      title: post.title,
+      excerpt: post.excerpt || "",
+      date: post.date,
+      image: post.image,
+      link: `/blog/${post.id}`,
+      category: post.categoryName || post.category || "",
+    }));
+  } else {
+    displayNews.value = staticNews;
+  }
+});
 </script>
 
 <template>
@@ -46,7 +64,6 @@ const news = ref([
       <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16">
         <div>
           <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full mb-4">
-            <!-- <i class="fa-solid fa-photofilm"></i> -->
             <i class="fa-solid fa-photo-film"></i>
             <span class="font-semibold text-sm">Update Terbaru</span>
           </div>
@@ -54,7 +71,7 @@ const news = ref([
           <p class="text-gray-600 max-w-xl text-lg">Informasi terbaru seputar kegiatan, program, dan layanan Caya.</p>
         </div>
 
-        <router-link to="/berita" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-[#ff562c] font-bold text-sm bg-[#ff562c]/10 px-4 py-2 rounded-full hover:bg-[#ff562c]/20 transition-colors">
+        <router-link to="/blog" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-[#ff562c] font-bold text-sm bg-[#ff562c]/10 px-4 py-2 rounded-full hover:bg-[#ff562c]/20 transition-colors">
           <span>Lihat Semua</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -62,19 +79,25 @@ const news = ref([
         </router-link>
       </div>
 
-      <!-- Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article v-for="item in news" :key="item.id" class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2 flex flex-col h-full">
-          <!-- Image Container with Category Badge -->
-          <div class="relative overflow-hidden h-56">
-            <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+      <!-- Loading State -->
+      <div v-if="loading" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-for="n in 3" :key="n" class="bg-white rounded-2xl overflow-hidden shadow-md animate-pulse">
+          <div class="h-56 bg-gray-200"></div>
+          <div class="p-6">
+            <div class="h-5 bg-gray-200 rounded w-3/4 mb-3"></div>
+            <div class="h-4 bg-gray-200 rounded w-full mb-2"></div>
+            <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+          </div>
+        </div>
+      </div>
 
-            <!-- Category Badge with Icon -->
-            <!-- <div :class="`absolute top-4 right-4 bg-gradient-to-br ${item.color} text-white px-4 py-2 rounded-full flex items-center gap-2 font-semibold text-sm shadow-lg`">
-              <i :class="`fa-solid ${item.icon}`"></i>
-              {{ item.category }}
-            </div> -->
+      <!-- Grid -->
+      <div v-else class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article v-for="item in displayNews" :key="item.id" class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2 flex flex-col h-full">
+          <!-- Image Container -->
+          <div class="relative overflow-hidden h-56">
+            <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" @error="$event.target.src = '/images/blog/placeholder.webp'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
             <!-- Date -->
             <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur text-gray-900 px-3 py-1 rounded-full flex items-center gap-2 text-xs font-semibold">

@@ -1,16 +1,20 @@
 <!-- @format -->
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { useBlog } from "@/composables/useBlog.js";
 
-const articles = ref([
+// Use Strapi data with fallback
+const { posts, loading, loadPosts } = useBlog();
+const displayArticles = ref([]);
+
+// Static fallback data
+const staticArticles = [
   {
     id: 1,
     title: "Cek TSH Neonatus Sejak Dini",
     excerpt: "Pemeriksaan TSH penting untuk mendeteksi gangguan tiroid pada bayi baru lahir.",
     image: "/assets/blog/middle/img1.webp",
     tag: "Edukasi",
-    // icon: "fa-baby",
-    color: "from-orange-500 to-orange-600",
     link: "/blog/cek-tsh-neonatus",
   },
   {
@@ -19,8 +23,6 @@ const articles = ref([
     excerpt: "Benarkah diet alkali bisa mencegah kanker? Ini penjelasan medisnya.",
     image: "/assets/blog/middle/img1.webp",
     tag: "Mitos & Fakta",
-    // icon: "fa-flask",
-    color: "from-orange-500 to-orange-600",
     link: "/blog/diet-alkali",
   },
   {
@@ -29,11 +31,26 @@ const articles = ref([
     excerpt: "Tips sederhana mengontrol rasa lapar agar tetap sehat dan seimbang.",
     image: "/assets/blog/middle/img1.webp",
     tag: "Tips Sehat",
-    // icon: "fa-apple",
-    color: "from-orange-500 to-orange-600",
     link: "/blog/kontrol-lapar",
   },
-]);
+];
+
+onMounted(async () => {
+  await loadPosts({ pageSize: 6 });
+  if (posts.value.length > 0) {
+    // Map Strapi articles to the card format
+    displayArticles.value = posts.value.slice(0, 3).map((post) => ({
+      id: post.id,
+      title: post.title,
+      excerpt: post.excerpt || "",
+      image: post.image,
+      tag: post.categoryName || post.category || "Edukasi",
+      link: `/blog/${post.id}`,
+    }));
+  } else {
+    displayArticles.value = staticArticles;
+  }
+});
 </script>
 
 <template>
@@ -49,18 +66,25 @@ const articles = ref([
         <p class="text-gray-600 max-w-2xl mx-auto text-lg">Temukan berbagai artikel kesehatan sebagai sumber inspirasi Anda dan keluarga untuk hidup lebih sehat.</p>
       </div>
 
-      <!-- Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <article v-for="item in articles" :key="item.id" class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
-          <!-- Image Container with Icon Badge -->
-          <div class="relative overflow-hidden h-56">
-            <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      <!-- Loading State -->
+      <div v-if="loading" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div v-for="n in 3" :key="n" class="bg-white rounded-2xl overflow-hidden shadow-md animate-pulse">
+          <div class="h-56 bg-gray-200"></div>
+          <div class="p-6">
+            <div class="h-5 bg-gray-200 rounded w-3/4 mb-3"></div>
+            <div class="h-4 bg-gray-200 rounded w-full mb-2"></div>
+            <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+          </div>
+        </div>
+      </div>
 
-            <!-- Icon Badge -->
-            <!-- <div :class="`absolute top-4 right-4 w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} text-white flex items-center justify-center shadow-lg`">
-              <i :class="`fa-solid ${item.icon} text-2xl`"></i>
-            </div> -->
+      <!-- Grid -->
+      <div v-else class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <article v-for="item in displayArticles" :key="item.id" class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
+          <!-- Image Container -->
+          <div class="relative overflow-hidden h-56">
+            <img :src="item.image" :alt="item.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" @error="$event.target.src = '/images/blog/placeholder.webp'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
             <!-- Tag -->
             <span class="absolute bottom-4 left-4 bg-white text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
