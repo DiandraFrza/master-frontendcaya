@@ -1,5 +1,5 @@
-import Logo from "./Logo-CMC.png";
-import Favicon from "./Logo-CMC.png";
+import Logo from "./extension/logo-caya.svg";
+import Favicon from "./extension/logo-caya.svg";
 // Import file CSS kustom untuk menyembunyikan elemen tertentu
 import './custom.css'; 
 
