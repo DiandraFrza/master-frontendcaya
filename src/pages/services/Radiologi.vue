@@ -16,11 +16,6 @@ const filteredExams = computed(() => {
   return currentSubcategory.value.items;
 });
 
-const stats = [
-  { value: "15+", label: "Jenis Pemeriksaan" },
-  { value: "Digital", label: "Teknologi" },
-  { value: "1-2 Hari", label: "Waktu Hasil" },
-];
 </script>
 
 <template>
@@ -39,17 +34,6 @@ const stats = [
         gradientVia="via-orange-600"
         gradientTo="to-orange-700"
       />
-
-      <div class="bg-white border-b border-gray-100 py-6">
-        <div class="container mx-auto px-4 max-w-7xl">
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div v-for="(stat, index) in stats" :key="index" class="text-center">
-              <div class="text-2xl md:text-3xl font-bold text-orange-600">{{ stat.value }}</div>
-              <div class="text-xs md:text-sm text-gray-500">{{ stat.label }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <section class="py-12 bg-gray-50">
         <div class="container mx-auto px-4 max-w-7xl">

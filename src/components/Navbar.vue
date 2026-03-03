@@ -226,7 +226,7 @@ const layananMenu = [
     icon: "nonlab",
     items: [
       { label: "Medical Check Up", to: "/services/mcu" },
-      { label: "Radiologi & Penunjang", to: "/services/radiologi" },
+      { label: "Radiologi", to: "/services/radiologi" },
     ],
   },
 ];

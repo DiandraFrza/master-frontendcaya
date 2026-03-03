@@ -124,50 +124,6 @@ useHead({
                 <h3 class="font-semibold text-gray-900 mb-2">Tidak ditemukan</h3>
                 <p class="text-sm text-gray-500">Coba kata kunci lain atau pilih kategori berbeda</p>
               </div>
-
-              <!-- Category Info Cards -->
-              <div class="grid md:grid-cols-2 gap-4 mb-8">
-                <div class="bg-white rounded-xl p-5 border border-gray-100">
-                  <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
-                      <i class="fa-solid fa-heart-pulse text-orange-600"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900">Screening Kardiometabolik</h4>
-                  </div>
-                  <p class="text-sm text-gray-500">Deteksi dini penyakit jantung, diabetes, hipertensi, dan gangguan metabolik.</p>
-                </div>
-
-                <div class="bg-white rounded-xl p-5 border border-gray-100">
-                  <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
-                      <i class="fa-solid fa-lungs text-orange-600"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900">Screening Respirator</h4>
-                  </div>
-                  <p class="text-sm text-gray-500">Pemeriksaan fungsi paru untuk deteksi PPOK, asma, dan TB.</p>
-                </div>
-
-                <div class="bg-white rounded-xl p-5 border border-gray-100">
-                  <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
-                      <i class="fa-solid fa-shield-virus text-orange-600"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900">Screening Kanker</h4>
-                  </div>
-                  <p class="text-sm text-gray-500">Skrining awal untuk deteksi dini berbagai jenis kanker.</p>
-                </div>
-
-                <div class="bg-white rounded-xl p-5 border border-gray-100">
-                  <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
-                      <i class="fa-solid fa-virus text-orange-600"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-900">Screening Infeksi</h4>
-                  </div>
-                  <p class="text-sm text-gray-500">Deteksi infeksi menular seperti HIV, hepatitis, dan COVID-19.</p>
-                </div>
-              </div>
-
               <!-- Info Box -->
               <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6">
                 <h3 class="font-bold text-orange-900 mb-3 flex items-center gap-2">
