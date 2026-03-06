@@ -22,7 +22,7 @@ const goToHasilMCU = () => {
             <div class="md:w-1/2 w-full pe-12">
               <div class="2xxl:ml-0 xl:ml-10 max-md:mb-7.5">
                 <div class="inline-block mt-2 mb-5">
-                  <span class="md:px-4.5 md:py-2 md:-[22px] px-4 py-2 sm:text-[22px] font-bold text-[#ffffff] bg-[#ff562c] rounded-[1.5vw] backdrop-blur-md font-sans"> Klinik Syariah Pertama di Indonesia </span>
+                  <span class="md:px-4.5 md:py-2 md:-[22px] px-4 py-2 sm:text-[22px] font-bold text-[#ffffff] bg-[#ff562c] rounded-[1.5vw] backdrop-blur-md font-sans"> Klinik Syariah Pertama dan Satu-Satunya di Indonesia </span>
                 </div>
                 <p class="text-[#ffffff] text-4xl md:text-5xl font-extrabold leading-tight">
                   <span class="text-[#ff562c]">Layanan</span>

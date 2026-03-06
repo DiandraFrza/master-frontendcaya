@@ -152,8 +152,7 @@ const getCategoryName = (categoryId) => {
 <template>
   <div>
     <!-- Hero -->
-    <MainHero variant="centered" title="Berita & Edukasi" subtitle="Informasi Terkini Seputar Kesehatan" :showBreadcrumb="true" :showSocialSidebar="true" :showTwitter="true" eyebrow="Konten" eyebrowIcon="fa-book-open" />
-
+    <MainHero variant="centered" title="Berita Terkini Caya" subtitle="Temukan informasi terbaru tentang layanan laboratorium, program kesehatan, dan aktivitas Caya Lab." :showBreadcrumb="true" :showSocialSidebar="true" :showTwitter="true" eyebrow="Konten" eyebrowIcon="fa-book-open" />
     <!-- Main Content -->
     <section class="py-12 bg-gray-50">
       <div class="container mx-auto px-4 max-w-7xl">

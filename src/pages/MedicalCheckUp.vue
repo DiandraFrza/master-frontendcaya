@@ -77,7 +77,7 @@ const openModal = (service) => {
           <span class="font-semibold text-sm">Layanan Komprehensif</span>
         </div>
         <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Kami</h3>
-        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Ragam layanan kesehatan profesional untuk keluarga dan perusahaan dengan standar terbaik.</p>
+        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Beragam layanan kesehatan profesional dengan standar layanan medis yang terpercaya.</p>
       </div>
 
       <!-- Grid -->

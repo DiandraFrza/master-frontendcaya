@@ -7,6 +7,11 @@ module.exports = [
   'strapi::query',
   'strapi::body',
   'strapi::session',
-  'strapi::favicon',
+  {
+    name: 'strapi::favicon',
+    config: {
+      path: './extension/logo-caya.svg',
+    },
+  },
   'strapi::public',
 ];

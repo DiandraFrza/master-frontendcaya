@@ -151,7 +151,7 @@ watch(searchQuery, () => {
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 bg-orange-100/80 backdrop-blur text-orange-700 px-4 py-2 rounded-full mb-6 border border-orange-200/50 animate-fade-in">
               <i class="fa-solid fa-check-circle text-orange-600"></i>
-              <span class="font-semibold text-sm">Klinik Syariah Pertama Di Indonesia</span>
+              <span class="font-semibold text-sm">Klinik Syariah Pertama dan Satu-Satunya di Indonesia</span>
             </div>
 
             <!-- Main Heading -->
@@ -219,12 +219,12 @@ watch(searchQuery, () => {
               <div v-show="activeTab === 'search'" class="absolute inset-0 bg-white/80 backdrop-blur rounded-2xl p-6 shadow-lg border border-orange-100/50 animate-in fade-in">
                 <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <i class="fa-solid fa-search text-orange-500"></i>
-                  Apa yang Anda cari?
+                  Periksa Kesehatan Apa hari ini?
                 </h3>
 
                 <!-- Search Input with Suggestions -->
                 <div class="relative mb-4">
-                  <input v-model="searchQuery" type="text" placeholder="Cari pemeriksaan, layanan, atau keluhan..." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border-2 border-orange-100 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none" @focus="onSearchFocus" @blur="onSearchBlur" @keydown="onKeyDown" />
+                  <input v-model="searchQuery" type="text" placeholder="Tulis jenis pemeriksaannya, Cont. Cek Darah.." class="w-full px-4 py-3 pl-10 pr-10 rounded-lg border-2 border-orange-100 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all outline-none" @focus="onSearchFocus" @blur="onSearchBlur" @keydown="onKeyDown" />
                   <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-orange-500"></i>
                   <button v-if="searchQuery" @click="searchQuery = ''" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
                     <i class="fa-solid fa-times-circle"></i>

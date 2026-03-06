@@ -92,7 +92,7 @@
           </router-link>
 
           <router-link to="/blog-edukasi" class="nav-link hover:scale-[1.05] transition-all duration-300 relative" :class="getNavLinkClass('/blog-edukasi')" :style="navBg ? {} : { color: '#000' }">
-            Blog & Edukasi
+            Berita Terkini
             <span v-if="currentRoute === '/blog-edukasi'" class="absolute -bottom-2 left-0 w-full h-0.5 bg-[#fd543a] transition-all duration-300"></span>
           </router-link>
         </div>

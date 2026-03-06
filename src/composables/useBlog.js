@@ -29,14 +29,14 @@ export function useBlog() {
   const pagination = ref(null);
   const isStrapi = ref(false);
 
-  async function loadPosts({ page = 1, pageSize = 25 } = {}) {
+  async function loadPosts({ page = 1, pageSize = 25, category = null } = {}) {
     loading.value = true;
     error.value = null;
 
     try {
       // Fetch articles, categories, and tags in parallel
       const [articlesResult, cats, tgs] = await Promise.all([
-        fetchArticles({ page, pageSize }),
+        fetchArticles({ page, pageSize, category }),
         fetchCategories().catch(() => []),
         fetchTags().catch(() => []),
       ]);
@@ -68,8 +68,12 @@ export function useBlog() {
 
     } catch (e) {
       console.warn("Strapi tidak tersedia, menggunakan data statis:", e.message);
-      // Add categoryName to static posts
-      posts.value = staticPosts.map((p) => ({
+      // Add categoryName to static posts, filter by category if provided
+      let filteredPosts = staticPosts;
+      if (category) {
+        filteredPosts = staticPosts.filter((p) => p.category === category);
+      }
+      posts.value = filteredPosts.map((p) => ({
         ...p,
         categoryName: staticCategories.find((c) => c.id === p.category)?.name || p.category,
       }));

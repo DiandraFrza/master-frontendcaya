@@ -3,11 +3,11 @@
 import { ref, onMounted } from "vue";
 import { useBlog } from "@/composables/useBlog.js";
 
-// Use Strapi data with fallback
-const { posts, loading, loadPosts } = useBlog();
+// Use Strapi data with fallback - filter by "edukasi" category only
+const { posts, loading, isStrapi, loadPosts } = useBlog();
 const displayArticles = ref([]);
 
-// Static fallback data
+// Static fallback data (edukasi/kesehatan articles only)
 const staticArticles = [
   {
     id: 1,
@@ -36,7 +36,8 @@ const staticArticles = [
 ];
 
 onMounted(async () => {
-  await loadPosts({ pageSize: 6 });
+  // Fetch only "edukasi" category articles
+  await loadPosts({ pageSize: 6, category: "edukasi" });
   if (posts.value.length > 0) {
     // Map Strapi articles to the card format
     displayArticles.value = posts.value.slice(0, 3).map((post) => ({
@@ -47,7 +48,11 @@ onMounted(async () => {
       tag: post.categoryName || post.category || "Edukasi",
       link: `/blog/${post.id}`,
     }));
+  } else if (isStrapi.value) {
+    // Strapi connected but no 'edukasi' articles
+    displayArticles.value = [];
   } else {
+    // Strapi unavailable, use fallback
     displayArticles.value = staticArticles;
   }
 });
@@ -56,14 +61,14 @@ onMounted(async () => {
 <template>
   <section class="py-20 relative overflow-hidden">
     <div class="container mx-auto px-4 max-w-7xl">
-      <!-- Header -->
-      <div class="text-center mb-16">
+      <!-- Header - Left aligned -->
+      <div class="mb-16">
         <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full mb-4">
           <i class="fa-solid fa-newspaper"></i>
           <span class="font-semibold text-sm">Artikel Kesehatan</span>
         </div>
-        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Inspirasi Sehat</h3>
-        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Temukan berbagai artikel kesehatan sebagai sumber inspirasi Anda dan keluarga untuk hidup lebih sehat.</p>
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Inspirasi Hidup Sehat</h3>
+        <p class="text-gray-600 text-lg text-left whitespace-nowrap">Temukan berbagai artikel kesehatan sebagai sumber inspirasi Anda dan keluarga untuk hidup lebih sehat.</p>
       </div>
 
       <!-- Loading State -->
@@ -78,8 +83,15 @@ onMounted(async () => {
         </div>
       </div>
 
+      <!-- Empty State / Belum ada data -->
+      <div v-if="!loading && displayArticles.length === 0" class="text-center py-16 bg-white rounded-2xl shadow-sm border border-gray-100 mb-12">
+        <i class="fa-solid fa-file-circle-xmark text-5xl text-gray-200 mb-4"></i>
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">Belum ada artikel edukasi</h3>
+        <p class="text-gray-500 mb-6">Artikel untuk kategori ini sedang disiapkan oleh tim Caya.</p>
+      </div>
+
       <!-- Grid -->
-      <div v-else class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div v-else-if="!loading && displayArticles.length > 0" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <article v-for="item in displayArticles" :key="item.id" class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
           <!-- Image Container -->
           <div class="relative overflow-hidden h-56">

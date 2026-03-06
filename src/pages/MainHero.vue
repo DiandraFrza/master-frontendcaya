@@ -20,7 +20,7 @@
         <!-- Title -->
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4" :class="{ 'text-white': true }">
           {{ title }}
-          <span v-if="subtitle" class="text-orange-100 block mt-1">{{ subtitle }}</span>
+          <span v-if="subtitle" class="text-lg font-light text-orange-100 block mt-1">{{ subtitle }}</span>
         </h1>
 
         <!-- Description -->
@@ -38,14 +38,14 @@
 
         <!-- Breadcrumb (for centered variant) -->
         <nav v-if="showBreadcrumb && variant === 'centered'" class="mt-6">
-          <ul class="inline-flex items-center gap-2 rounded-full py-2 px-6 bg-white/10 backdrop-blur-sm">
-            <li class="text-sm font-normal text-white/90">
+          <ul class="inline-flex items-center gap-2 rounded-full py-1.5 px-5 bg-orange-800/20 backdrop-blur-sm border border-orange-400/20">
+            <li class="text-sm font-medium text-white/90">
               <router-link to="/" class="hover:text-white transition-colors">Beranda</router-link>
             </li>
             <li class="text-sm font-normal text-white/70">
-              <i class="fa-solid fa-chevron-right text-xs mx-2"></i>
+              <i class="fa-solid fa-chevron-right text-[10px] mx-1"></i>
             </li>
-            <li class="text-sm font-normal text-white">{{ title }}</li>
+            <li class="text-sm font-medium text-white">Berita & Edukasi</li>
           </ul>
         </nav>
 

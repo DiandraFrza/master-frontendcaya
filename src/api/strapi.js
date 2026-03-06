@@ -203,15 +203,22 @@ function estimateReadTime(blocks) {
 /**
  * Fetch all articles from Strapi (with relations populated)
  */
-export async function fetchArticles({ page = 1, pageSize = 25, sort = "publishedAt:desc" } = {}) {
-  const result = await strapiRequest("/articles", {
+export async function fetchArticles({ page = 1, pageSize = 25, sort = "publishedAt:desc", category = null } = {}) {
+  const params = {
     "pagination[page]": page,
     "pagination[pageSize]": pageSize,
     "sort": sort,
     "populate[kategori]": "true",
     "populate[tags]": "true",
     "populate[gambar]": "true",
-  });
+  };
+
+  // Filter by category slug if provided
+  if (category) {
+    params["filters[kategori][slug][$eq]"] = category;
+  }
+
+  const result = await strapiRequest("/articles", params);
 
   return {
     articles: result.data.map(transformArticle),
