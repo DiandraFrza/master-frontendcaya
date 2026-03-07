@@ -49,7 +49,7 @@
           </div>
 
           <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-            <router-link to="/about" class="btn btn-rounded text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3 me-0 sm:me-6">
+            <router-link to="/tentang-caya" class="btn btn-rounded text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3 me-0 sm:me-6">
               Selengkapnya
               <i class="feather icon-arrow-right ms-2"></i>
             </router-link>
