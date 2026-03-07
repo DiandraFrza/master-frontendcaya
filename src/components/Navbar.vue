@@ -182,7 +182,7 @@
           </router-link>
 
           <router-link to="/blog-edukasi" @click="closeMobile" class="block py-2 font-medium relative transition-all duration-300" :class="getMobileNavLinkClass('/blog-edukasi')">
-            Berita & Edukasi
+            Berita Terkini
             <span v-if="currentRoute === '/blog-edukasi'" class="absolute bottom-1 left-0 w-1 h-6 bg-[#fd543a] rounded-full"></span>
           </router-link>
 

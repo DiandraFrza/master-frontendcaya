@@ -45,7 +45,7 @@
             <li class="text-sm font-normal text-white/70">
               <i class="fa-solid fa-chevron-right text-[10px] mx-1"></i>
             </li>
-            <li class="text-sm font-medium text-white">Berita & Edukasi</li>
+            <li class="text-sm font-medium text-white">Berita Terkini</li>
           </ul>
         </nav>
 
